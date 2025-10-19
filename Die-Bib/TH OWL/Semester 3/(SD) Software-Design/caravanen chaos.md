@@ -1,0 +1,24 @@
+- Kamelen-caravane
+- mit "Sitzslots" auf dem Rücken
+- Kamele werden länger und/oder breiter
+	- buff-camel -> camel wird breiter
+	- tetris Formen
+	- Tumur-spritze für einen extra Höcker
+	- 
+- Passagiere haben Bedürfnisse 
+- man kann die Sitzordnung festlegen
+- je nach dem wie gut die Bedürfnisse erfüllt worden sind gibt es Punkte
+- level sind immer gleich, sodass man seinen Highscore immer verbessern kann
+- Punkte werden erst beim losschicken der caravane verteilt
+- nach dem Losschicken kann man in einem idle-screen die Personen durchgehen und die Bedürfnisse checken
+- "stardew valley" top-down Perspektive mit seitenansicht 
+- Kamel können abgefucked werden und spucken dann die leute vorne an
+- 
+
+# extras
+- Bonusgegenstände
+	- Trennwände
+	- Lautsprecher 
+	- Toiletten
+	- Tourguide
+	- 

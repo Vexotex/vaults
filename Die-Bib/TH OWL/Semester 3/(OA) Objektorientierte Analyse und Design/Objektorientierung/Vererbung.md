@@ -1,0 +1,3 @@
+- Eine der wichtigsten Funktionen von Klassen ist die Vererbung
+- Bei der Vererbung wird eine “speziellere” Klasse von einer “allgemeineren” abgeleitet
+- Funktionen und Daten können weiter verwendet oder überschrieben werden.
