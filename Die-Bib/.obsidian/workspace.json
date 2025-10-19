@@ -166,9 +166,14 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1f103d863309d6ff",
-  "lastOpenFiles": []
+  "active": "e5ac1965b148cd25",
+  "lastOpenFiles": [
+    "TH OWL/vim playground.md",
+    "TH OWL/Semester 3/(SY) Signale und Systeme/Signale und Systeme - Master.md"
+  ]
 }
