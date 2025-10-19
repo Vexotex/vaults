@@ -150,13 +150,23 @@
               "icon": "lucide-list",
               "title": "Outline of Signale und Systeme - Master"
             }
+          },
+          {
+            "id": "e83f70e0c6b14bd1",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -173,6 +183,7 @@
   },
   "active": "1f103d863309d6ff",
   "lastOpenFiles": [
+    "TH OWL/Semester 3/(OA) Objektorientierte Analyse und Design/OA Übung/Adas Blumenladen.md",
     "TH OWL/vim playground.md",
     "TH OWL/Semester 3/(SY) Signale und Systeme/Signale und Systeme - Master.md"
   ]
