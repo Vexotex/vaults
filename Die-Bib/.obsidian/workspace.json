@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "f45253f11fba5f29",
+        "id": "a0d8afd7dd2b6cf1",
         "type": "tabs",
         "children": [
           {
-            "id": "1f103d863309d6ff",
+            "id": "52acab94a9b78df8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TH OWL/Semester 3/(SY) Signale und Systeme/Signale und Systeme - Master.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Signale und Systeme - Master"
+              "title": "New tab"
             }
           }
         ]
@@ -171,9 +167,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e5ac1965b148cd25",
+  "active": "52acab94a9b78df8",
   "lastOpenFiles": [
-    "TH OWL/vim playground.md",
-    "TH OWL/Semester 3/(SY) Signale und Systeme/Signale und Systeme - Master.md"
+    "TH OWL/Semester 3/(OA) Objektorientierte Analyse und Design/OA Übung/Adas Blumenladen.md",
+    "TH OWL/Semester 3/(OA) Objektorientierte Analyse und Design/OA Übung/Aufgabenblatt 2.md",
+    "TH OWL/Semester 3/(SY) Signale und Systeme/Signale und Systeme - Master.md",
+    "TH OWL/vim playground.md"
   ]
 }
