@@ -9,7 +9,15 @@
 
 
 # Übung
-
-
-
-
+- [[SY_Uebung_01.pdf]]
+- [[SY_Uebung_02.pdf]]
+- [[SY_Uebung_03.pdf]]
+- [[SY_Uebung_04.pdf]]
+- [[SY_Uebung_05.pdf]]
+- [[SY_Uebung_06.pdf]]
+- [[SY_Uebung_07.pdf]]
+- [[SY_Uebung_08.pdf]]
+- [[SY_Uebung_09.pdf]]
+- [[SY_Uebung_10.pdf]]
+- [[SY_Uebung_11.pdf]]
+- 
