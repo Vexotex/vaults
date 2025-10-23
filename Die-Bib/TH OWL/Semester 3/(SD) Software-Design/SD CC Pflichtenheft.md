@@ -1,0 +1,25 @@
+- Übersicht UI
+	- Main menu
+	- Platzierungsphase (im Level)
+	- Revisionsphase (nach dem Level)
+	- Highscores / Lowscores
+	- Levelauswahl
+	- (setting)
+- Szenarien
+	- wechsel ins main menu
+	- wechsel in level Ansicht
+	- level start
+	- level neustart
+	- level-Ansicht nach level ende
+		- (carvane maschiert weiter)
+	- wechsel in Einstellungen
+	- Einstellungen speichern
+	- wechsel in die Highscore-Ansicht
+	- Szenarien während des Levels
+		- Personen nach Bedürfnissen fragen
+		- Person an unbesetzten Platz setzen
+			- alt Person an besetzten Platz setzten
+		- vom Platz entfernen
+		- level-ende (Berechnung vom score / wechsel Revisionsphase)
+		- Personen in revision inspizieren
+		- 
