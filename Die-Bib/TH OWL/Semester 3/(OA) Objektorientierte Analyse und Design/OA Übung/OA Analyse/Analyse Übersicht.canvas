@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"id":"22df4217698ccc2b","type":"file","file":"TH OWL/Semester 3/(OA) Objektorientierte Analyse und Design/OA Übung/OA Analyse/Anwendungsfall & Akteure.md","x":-220,"y":440,"width":400,"height":400},
+		{"id":"020c73db460b9ea8","type":"file","file":"TH OWL/Semester 3/(OA) Objektorientierte Analyse und Design/OA Übung/OA Analyse/Entwicklung der Fallanalyse.md","x":-220,"y":-400,"width":400,"height":400},
+		{"id":"d1deed6105e13936","type":"file","file":"TH OWL/Semester 3/(OA) Objektorientierte Analyse und Design/OA Übung/zu AB1.md","x":-1760,"y":440,"width":1280,"height":400},
+		{"id":"5bd055c2013a68f2","type":"file","file":"TH OWL/Semester 3/(OA) Objektorientierte Analyse und Design/OA Übung/OA Analyse/Szenario.md","x":440,"y":440,"width":400,"height":400},
+		{"id":"127ef47a1abd6c1e","x":1040,"y":440,"width":2400,"height":400,"type":"file","file":"TH OWL/Semester 3/(OA) Objektorientierte Analyse und Design/OA Übung/OA Analyse/Szenario Diagramm.excalidraw.md"}
+	],
+	"edges":[
+		{"id":"393d4b5d955ef24e","fromNode":"020c73db460b9ea8","fromSide":"bottom","toNode":"22df4217698ccc2b","toSide":"top"},
+		{"id":"52b1157f1701037c","fromNode":"020c73db460b9ea8","fromSide":"bottom","toNode":"5bd055c2013a68f2","toSide":"top"},
+		{"id":"0ad708bdb2a9042e","fromNode":"22df4217698ccc2b","fromSide":"left","toNode":"d1deed6105e13936","toSide":"right"},
+		{"id":"c88d947d18965a76","fromNode":"5bd055c2013a68f2","fromSide":"right","toNode":"127ef47a1abd6c1e","toSide":"left"}
+	]
+}
