@@ -1,5 +1,6 @@
 - Kamelen-caravane
 - mit "Sitzslots" auf dem Rücken
+- Bahnsteig besteht aus Array von slots
 - Kamele werden länger und/oder breiter
 	- buff-camel -> camel wird breiter
 	- tetris Formen

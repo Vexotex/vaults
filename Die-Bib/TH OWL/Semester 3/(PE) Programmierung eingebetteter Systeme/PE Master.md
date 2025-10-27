@@ -3,6 +3,8 @@
 # Vorlesung
 - [[PE_00_Einfuehrung.pdf]]
 - [[PE_01_Grundlagen.pdf]]
+- [[PE_02_Zahlensysteme.pdf]]
+- 
 
 # Praktikum
 - [[PE_Aufbau_Steckplatine.pdf]]
@@ -15,3 +17,6 @@
 - [[MarketingPresentation_en.stm32l4.pdf]]
 - [[ProgrammingManual_0214-stm32-cortexm4.pdf]]
 - [[UserManual_1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf]]
+
+
+
