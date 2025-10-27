@@ -13,3 +13,14 @@
 - [[V_ED_8.pdf]]
 - [[V_ED_9.pdf]]
 
+
+# Übung
+- [[ED_P_1.pdf]]
+	- [[ED_P_1.excalidraw]]
+- [[ED_P_2.pdf]]
+- [[ED_P_3.pdf]]
+- [[ED_P_4.pdf]]
+- [[ED_P_5.pdf]]
+- [[ED_P_6.pdf]]
+
+
