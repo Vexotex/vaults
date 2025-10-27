@@ -6,8 +6,10 @@
 2. [Vorbereitende Grundlagen](V_ED_2.pdf)
 3. [Schaltalgebra und Boolesche Funktionen](V_ED_3.pdf)
 4. [Minimierung Boolescher Funktionen](V_ED_4.pdf)
+	1. [Minimierung nach "Quine-McCluskey-Verfahren"](Quine-McCluskey-Verfahren.excalidraw)
 - [[V_ED_5.pdf]]
 - [[V_ED_6.pdf]]
 - [[V_ED_7.pdf]]
 - [[V_ED_8.pdf]]
 - [[V_ED_9.pdf]]
+
