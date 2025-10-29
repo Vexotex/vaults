@@ -50,3 +50,16 @@
 | Alternative Szenarien | Spieler kommt aus der Revisionsphase mit Qualifikation fürs nächste Level<br>-> nächstes Level wird freigeschaltet und ausgewählt                                                          |
 | Erweiterungen         | zu alt: kein "nächstes Level" verfügbar also letztes Level geschafft<br>-> Victory screen & credits. Anschließend wird in die Levelansicht gewechselt und das letzte Level wird ausgewählt |
 | Fehlersituationen     |                                                                                                                                                                                            |
+
+# Module
+[[SC CC Modulübersicht]]
+[[Klassenübersicht Level]]
+
+- UI
+	- [[caravanen chaos Mockup.excalidraw]]
+- common
+- Main menu
+- Level
+- Levelauswahl (Levelmap)
+- Scoreboard
+- Einstellungen
