@@ -5,3 +5,4 @@ $$
 
 [[Skript-SY-V1.5.pdf#page=19&selection=148,0,148,31|Skript-SY-V1.5, page 19]]
 
+[[Fourier-Reihen]]
