@@ -7,7 +7,8 @@
 - [[Rechteckimpuls - rect()]]
 - [[Dirac-Impuls - 𝛿(t)]]
 - [[Periodische Signale]]
-- [[Sinus-förmige Signale]]
+	- [[Sinus-förmige Signale]]
+	- [[Fourier-Reihen]]
 
 # Signaloperationen
 - [[Faltung]]

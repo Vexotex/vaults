@@ -20,3 +20,7 @@
 - [[SY_Uebung_09.pdf]]
 - [[SY_Uebung_10.pdf]]
 - [[SY_Uebung_11.pdf]]
+
+# Notizen
+- [[Signale]]
+- [[SY Vorlesungsmitschrift]]

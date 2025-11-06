@@ -28,6 +28,7 @@ class DB{
     + LowDict: [int], Levelstate
 }
 class Levelstate{
+    + Kamele: List<Kamel>
     + Score: int
     + Plaetze: List<Platz>
     + Personen: List<Person>

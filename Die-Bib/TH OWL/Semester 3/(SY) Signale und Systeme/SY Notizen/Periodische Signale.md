@@ -1,4 +1,4 @@
-Ein Signal, das sich nach der Zeit 𝑇𝑇 exakt im Verlauf wiederholt
+Ein Signal, das sich nach der Zeit 𝑇 exakt im Verlauf wiederholt
 $$
 x(t) = x(t+kT) \quad \text{mit } T \in \mathbb{Z}
 $$
