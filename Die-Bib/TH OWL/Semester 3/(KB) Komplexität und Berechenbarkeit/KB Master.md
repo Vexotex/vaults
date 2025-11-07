@@ -14,6 +14,7 @@
 
 # Übung
 - [[KuB Uebungen gesamt.pdf]]
+- [[KB Uebungen notizen]]
 
 - [[KB Übung.excalidaw]]
 - [[Übung 1 mit Loesungen.pdf]]

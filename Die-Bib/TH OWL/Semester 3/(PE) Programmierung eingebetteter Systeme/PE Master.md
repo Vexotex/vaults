@@ -5,6 +5,8 @@
 - [[PE_01_Grundlagen.pdf]]
 - [[PE_02_Zahlensysteme.pdf]]
 - [[PE_03_Peripherie.pdf]]
+	- [[PE_03_Peripherie.excalidraw]]
+- 
 
 # Praktikum
 - [[PE_Aufbau_Steckplatine.pdf]]
