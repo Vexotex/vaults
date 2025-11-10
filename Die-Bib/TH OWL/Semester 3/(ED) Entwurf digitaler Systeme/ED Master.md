@@ -8,7 +8,7 @@
 4. [Minimierung Boolescher Funktionen](V_ED_4.pdf)
 	1. [Minimierung nach "Quine-McCluskey-Verfahren"](Quine-McCluskey-Verfahren.excalidraw)
 5. [Kombinatorische Schaltungen](V_ED_5.pdf)
-- [[V_ED_6.pdf]]
+6. [Sequentielle Schaltungen](V_ED_6.pdf)
 - [[V_ED_7.pdf]]
 - [[V_ED_8.pdf]]
 - [[V_ED_9.pdf]]
