@@ -1,6 +1,6 @@
 
 
-## [Aufgabe 19](KuB Uebungen gesamt.pdf#page=6&selection=23,0,24,1|KuB Uebungen gesamt, page 6)
+## [Aufgabe 19](KuB-Uebungen-gesamt.pdf#page=6&selection=23,0,24,1|KuB-Uebungen-gesamt, page 6)
 
 Alles sketschy nicht berrücksichtigen
 
@@ -79,7 +79,7 @@ A_{ij} = K + (i-1)n + (j-1)
 \quad \text{,mit } 1 \leq i < m \quad , \text{und } 1\leq j < n
 $$
 
-# [Aufgabe 20](KuB Uebungen gesamt.pdf#page=7&selection=14,0,14,10|KuB Uebungen gesamt, page 7)
+# [Aufgabe 20](KuB-Uebungen-gesamt.pdf#page=7&selection=14,0,14,10|KuB-Uebungen-gesamt, page 7)
 
 L = {abc, aabbcc, aaabbbccc, ... }
 DTM ist ein 7-Tupel
@@ -107,12 +107,84 @@ $$
 | q7  | -          | -          | -          | (q8, B, N) |
 | q8  | -          | -          | -          | -          |
 
-# [Aufgabe 21](KuB Uebungen gesamt.pdf#page=7&selection=45,0,45,11|KuB Uebungen gesamt, page 7)
+# [Aufgabe 21](KuB-Uebungen-gesamt.pdf#page=7&selection=45,0,45,11|KuB-Uebungen-gesamt, page 7)
+
+a)
+!!! Annahme: Wir stehen irgendwo links von der Binärzahl
 
 |     | 0          | 1          | B          |
 | --- | ---------- | ---------- | ---------- |
-| q0  | (q1, 0, R) | (q1, 1, R) | (q0, B, L) |
-| q1  | (q1, 0, R) | (q1, 1, R) | (q2, B, L) |
-| q2  | (q2, 1, L) | (q3, 0, L) | -          |
-| q3  | (q3, 0, L) | (q3, 1, L) | (q4, B, R) |
-| q4  | (q4, 0, N) | (q4, 1, N) | -          |
+| q0  | (q1, 0, R) | (q1, 1, R) | (q0, B, R) |
+| q1  | (q1, 0, R) | (q2, 1, R) | (q4, B, L) |
+| q2  | (q2, 0, R) | (q2, 1, R) | (q3, B, L) |
+| q3  | (q3, 1, L) | (q4, 0, L) | -          |
+| q4  | (q4, 0, L) | (q4, 1, L) | (q5, B, R) |
+| q5  | (q5, 0, N) | (q5, 1, N) | -          |
+
+b)
+Rechenzeit: 
+	Anzahl Schritte die vom Programm in a) durchlaufen werden müssen, das Wort abzuarbeiten
+
+Speicherplatzbedarf: 
+	Anzahl Speicherstellen die im Durchlauf verwendet werden. 
+	(die "Überschritt" in die "Blank"-Zeichen zählt mit)
+
+|           |     Wort     | Rechenzeit | Speicherplatzbedarf |
+| --------- | :----------: | ---------- | ------------------- |
+| $$w_{1}$$ |     101      | 8          | 5                   |
+| $$w_{2}$$ |     1000     | 10         | 6                   |
+| $$w_{3}$$ |      0       | 4          | 3                   |
+| $$w_{4}$$ | $$\epsilon$$ | $$\infty$$ | 1                   |
+
+
+# [Aufgabe 22](KuB-Uebungen-gesamt.pdf#page=7&selection=152,0,152,11|KuB-Uebungen-gesamt, page 7)
+
+
+$$
+\lceil \log_{2}|\Gamma alt|\rceil
+$$
+
+
+
+# [Aufgabe 23](KuB-Uebungen-gesamt.pdf#page=8&selection=22,0,22,11|KuB-Uebungen-gesamt, page 8)
+
+keine Ahnung
+
+
+# [Aufgabe 24](KuB-Uebungen-gesamt.pdf#page=8&selection=69,0,69,10|KuB-Uebungen-gesamt, page 8)
+
+
+| ... | -3  | -2  | -1  | 0   | 1   | 2   | 3   | ... |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+ |
+\\/
+
+| 0   | 1   | 2   | 3   | 4   | 5   | 6   | ... |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+||
+
+| #   | 0   | -1  | 1   | -2  | 2   | -3  | 3   | ... |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+"#" ist ein symolischer vorzeichenwechsel
+daher ist der wechsel von positiv von negativ von n auf n+1 verändert 
+Also in O()notation kein Zeitverlust
+
+# [Aufgabe 25](KuB-Uebungen-gesamt.pdf#page=8&selection=90,0,90,10|KuB-Uebungen-gesamt, page 8)
+
+ja, alles bleibt gleich, weil wir von den alten Endzuständen dann nur auf den einen Verweisen. 
+An der Funktionsweise ändert sich nichts
+
+
+# [Aufgabe 26](KuB-Uebungen-gesamt.pdf#page=8&selection=123,0,123,10|KuB-Uebungen-gesamt, page 8)
+
+(wechsel zu Zustand, (Band 1), (Band 2))
+
+|     | 0, 0 | 0, 1 | 0, B                 | 1, 0 | 1, 1 | 1, B                 | B, B                 |
+| --- | ---- | ---- | -------------------- | ---- | ---- | -------------------- | -------------------- |
+| q0  |      |      | (q0, (0, R), (0, R)) |      |      | (q0, (1, R), (1, R)) | (q1, (B, L), (B, N)) |
+| q1  |      |      | (q1, (0, L), (B, N)) |      |      | (q1, (1, L), (B, N)) | (q2, (B, R), (B, N)) |
+| q2  |      |      | (q2, (0, R), (0, R)) |      |      | (q2, (1, R), (1, R)) | (q3, (B, L), (B, N)) |
+| q3  |      |      |                      |      |      |                      | (q3, (B, N), (B, N)) |

@@ -208,71 +208,71 @@ f3687fc252519869826ac2b7e1be80081d637c96: $$\{0,1\}^* 0 \{0,1\}^{k-1}$$
 
 012207bf77748614acf3001b3982239cc1fb7b60: $$L_{2} = (a|b)^* aa (a|b)^*$$
 
-e864b195e19eab2581b66e99176778fcfc8068a0: [[KuB Uebungen gesamt.pdf#page=1]]
+e864b195e19eab2581b66e99176778fcfc8068a0: [[KuB-Uebungen-gesamt.pdf#page=1]]
 
-aa3f6c3f105f4ca6f5c07d12ff24d6c19a4baf5a: [[KuB Uebungen gesamt.pdf#page=2]]
+aa3f6c3f105f4ca6f5c07d12ff24d6c19a4baf5a: [[KuB-Uebungen-gesamt.pdf#page=2]]
 
-63ff33563526245682eb834265c790e8e8687109: [[KuB Uebungen gesamt.pdf#page=3]]
+63ff33563526245682eb834265c790e8e8687109: [[KuB-Uebungen-gesamt.pdf#page=3]]
 
-b8185d704cea4a661eaae65c6fdf31355e91d7a2: [[KuB Uebungen gesamt.pdf#page=4]]
+b8185d704cea4a661eaae65c6fdf31355e91d7a2: [[KuB-Uebungen-gesamt.pdf#page=4]]
 
-e0ecae6d80bf6e3181fcd3da0725fd75f0ff06f2: [[KuB Uebungen gesamt.pdf#page=5]]
+e0ecae6d80bf6e3181fcd3da0725fd75f0ff06f2: [[KuB-Uebungen-gesamt.pdf#page=5]]
 
-b0a1701048215b9b7acfb52e5a80085e0063c1de: [[KuB Uebungen gesamt.pdf#page=6]]
+b0a1701048215b9b7acfb52e5a80085e0063c1de: [[KuB-Uebungen-gesamt.pdf#page=6]]
 
-7871f32a9b84f4958e887d5a127730f8e3588c04: [[KuB Uebungen gesamt.pdf#page=7]]
+7871f32a9b84f4958e887d5a127730f8e3588c04: [[KuB-Uebungen-gesamt.pdf#page=7]]
 
-f66774b6a1ff7a2d85143230d5d1e2603c893145: [[KuB Uebungen gesamt.pdf#page=8]]
+f66774b6a1ff7a2d85143230d5d1e2603c893145: [[KuB-Uebungen-gesamt.pdf#page=8]]
 
-4f3bba248db819592c4dc8c0e2ae79388888e4a1: [[KuB Uebungen gesamt.pdf#page=9]]
+4f3bba248db819592c4dc8c0e2ae79388888e4a1: [[KuB-Uebungen-gesamt.pdf#page=9]]
 
-bb67ca8dcfb185d7319516862a4fee5f1aa62520: [[KuB Uebungen gesamt.pdf#page=10]]
+bb67ca8dcfb185d7319516862a4fee5f1aa62520: [[KuB-Uebungen-gesamt.pdf#page=10]]
 
-db9ad5d4dcc77b1f5f2bd2a93a10dcde08a8db64: [[KuB Uebungen gesamt.pdf#page=11]]
+db9ad5d4dcc77b1f5f2bd2a93a10dcde08a8db64: [[KuB-Uebungen-gesamt.pdf#page=11]]
 
-6cbecb69cb2eba65d8c4b87ffcb6e1e94de6005f: [[KuB Uebungen gesamt.pdf#page=12]]
+6cbecb69cb2eba65d8c4b87ffcb6e1e94de6005f: [[KuB-Uebungen-gesamt.pdf#page=12]]
 
-cf6922e0b1a6b85cc065586f310ac77c599af6bd: [[KuB Uebungen gesamt.pdf#page=13]]
+cf6922e0b1a6b85cc065586f310ac77c599af6bd: [[KuB-Uebungen-gesamt.pdf#page=13]]
 
-422cf80e226ea0d7fb2a596f348a3f19a413863d: [[KuB Uebungen gesamt.pdf#page=14]]
+422cf80e226ea0d7fb2a596f348a3f19a413863d: [[KuB-Uebungen-gesamt.pdf#page=14]]
 
-f5c3c4333205f4e12cd87eb5e85f22a1d9fef252: [[KuB Uebungen gesamt.pdf#page=15]]
+f5c3c4333205f4e12cd87eb5e85f22a1d9fef252: [[KuB-Uebungen-gesamt.pdf#page=15]]
 
-01ae24952010fdab9d8e7b22e0fcf18f8cb7ef21: [[KuB Uebungen gesamt.pdf#page=16]]
+01ae24952010fdab9d8e7b22e0fcf18f8cb7ef21: [[KuB-Uebungen-gesamt.pdf#page=16]]
 
-b497dacaedbccc51b3c16cf141e5cfe5e4d828f1: [[KuB Uebungen gesamt.pdf#page=17]]
+b497dacaedbccc51b3c16cf141e5cfe5e4d828f1: [[KuB-Uebungen-gesamt.pdf#page=17]]
 
-9e38ae0603520c07b69a2417c13a2ccb77761218: [[KuB Uebungen gesamt.pdf#page=18]]
+9e38ae0603520c07b69a2417c13a2ccb77761218: [[KuB-Uebungen-gesamt.pdf#page=18]]
 
-8ce981778995cf9056bfecfd637f26231802f2cd: [[KuB Uebungen gesamt.pdf#page=19]]
+8ce981778995cf9056bfecfd637f26231802f2cd: [[KuB-Uebungen-gesamt.pdf#page=19]]
 
-64db96c25010118b4c99d95fa319a850a242866b: [[KuB Uebungen gesamt.pdf#page=20]]
+64db96c25010118b4c99d95fa319a850a242866b: [[KuB-Uebungen-gesamt.pdf#page=20]]
 
-58b5648351e74c29044f8a650309262a5e70ff2a: [[KuB Uebungen gesamt.pdf#page=21]]
+58b5648351e74c29044f8a650309262a5e70ff2a: [[KuB-Uebungen-gesamt.pdf#page=21]]
 
-251fb56cb8842925f9ee9e6d4b03996196025510: [[KuB Uebungen gesamt.pdf#page=22]]
+251fb56cb8842925f9ee9e6d4b03996196025510: [[KuB-Uebungen-gesamt.pdf#page=22]]
 
-977e93f39b4a6ce4fa54df07816c0a6b974dce6f: [[KuB Uebungen gesamt.pdf#page=23]]
+977e93f39b4a6ce4fa54df07816c0a6b974dce6f: [[KuB-Uebungen-gesamt.pdf#page=23]]
 
-05fb4c8ad9de444cca6d00b958ec45e53a7ba03b: [[KuB Uebungen gesamt.pdf#page=24]]
+05fb4c8ad9de444cca6d00b958ec45e53a7ba03b: [[KuB-Uebungen-gesamt.pdf#page=24]]
 
-916ac435fc2807822335e92141c6ea5b770002ec: [[KuB Uebungen gesamt.pdf#page=25]]
+916ac435fc2807822335e92141c6ea5b770002ec: [[KuB-Uebungen-gesamt.pdf#page=25]]
 
-f9343e487ee6e3777052b8c056ff23d22549cb61: [[KuB Uebungen gesamt.pdf#page=26]]
+f9343e487ee6e3777052b8c056ff23d22549cb61: [[KuB-Uebungen-gesamt.pdf#page=26]]
 
-fd799b73703102ce327b9816aec4cde957dc7362: [[KuB Uebungen gesamt.pdf#page=27]]
+fd799b73703102ce327b9816aec4cde957dc7362: [[KuB-Uebungen-gesamt.pdf#page=27]]
 
-fe59abac73663a0ccf07ee089608d12df302e36e: [[KuB Uebungen gesamt.pdf#page=28]]
+fe59abac73663a0ccf07ee089608d12df302e36e: [[KuB-Uebungen-gesamt.pdf#page=28]]
 
-18e442ba3984a592479a9730ff128c8d7d81d474: [[KuB Uebungen gesamt.pdf#page=29]]
+18e442ba3984a592479a9730ff128c8d7d81d474: [[KuB-Uebungen-gesamt.pdf#page=29]]
 
-a7cfd0ea667e6ead39ba956aed00212eba215435: [[KuB Uebungen gesamt.pdf#page=30]]
+a7cfd0ea667e6ead39ba956aed00212eba215435: [[KuB-Uebungen-gesamt.pdf#page=30]]
 
-6c8a00cfa64053d5b7cda75c301e72a76dd888f0: [[KuB Uebungen gesamt.pdf#page=31]]
+6c8a00cfa64053d5b7cda75c301e72a76dd888f0: [[KuB-Uebungen-gesamt.pdf#page=31]]
 
-d278c9c82358025c8afbcc02a6ef8da75a5f5565: [[KuB Uebungen gesamt.pdf#page=32]]
+d278c9c82358025c8afbcc02a6ef8da75a5f5565: [[KuB-Uebungen-gesamt.pdf#page=32]]
 
-8ec96d23b87e2256a1afef37533d8b41353b8c2d: [[KuB Uebungen gesamt.pdf#page=33]]
+8ec96d23b87e2256a1afef37533d8b41353b8c2d: [[KuB-Uebungen-gesamt.pdf#page=33]]
 
 %%
 ## Drawing

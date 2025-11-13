@@ -13,7 +13,7 @@
 - 
 
 # Übung
-- [[KuB Uebungen gesamt.pdf]]
+- [[KuB-Uebungen-gesamt.pdf]]
 - [[KB Uebungen notizen]]
 
 - [[KB Übung.excalidaw]]
