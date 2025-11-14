@@ -6,6 +6,8 @@
 - [[PE_02_Zahlensysteme.pdf]]
 - [[PE_03_Peripherie.pdf]]
 	- [[PE_03_Peripherie.excalidraw]]
+- [[PE_04_Unterprogramme.pdf]]
+- [[PE_05_Exceptions.pdf]]
 - 
 
 # Praktikum
