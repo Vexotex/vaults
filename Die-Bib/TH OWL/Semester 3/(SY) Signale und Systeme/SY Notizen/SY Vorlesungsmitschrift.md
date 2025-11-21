@@ -76,3 +76,5 @@ weil Gleichanteil bei Stammfunktion ja mit "+c" immer frei gewählt / nicht defi
 
 
 
+
+

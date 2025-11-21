@@ -24,3 +24,12 @@
 # Notizen
 - [[Signale]]
 - [[SY Vorlesungsmitschrift]]
+
+
+
+
+$$
+{\displaystyle \sum _{k=m}^{n}a_{k}=\sum _{m\leq k\leq n}a_{k}=a_{m}+a_{m+1}+\dotsb +a_{n}.}
+$$
+
+$$\frac{d}{dx} f^2(x) = 2 f(x) f'(x)$$

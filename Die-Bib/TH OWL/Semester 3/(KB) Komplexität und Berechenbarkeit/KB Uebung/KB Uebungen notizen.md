@@ -188,3 +188,62 @@ An der Funktionsweise ändert sich nichts
 | q1  |      |      | (q1, (0, L), (B, N)) |      |      | (q1, (1, L), (B, N)) | (q2, (B, R), (B, N)) |
 | q2  |      |      | (q2, (0, R), (0, R)) |      |      | (q2, (1, R), (1, R)) | (q3, (B, L), (B, N)) |
 | q3  |      |      |                      |      |      |                      | (q3, (B, N), (B, N)) |
+
+
+# [Aufgabe 28](KuB-Uebungen-gesamt.pdf#page=9&selection=28,0,28,10|KuB-Uebungen-gesamt, page 9)
+{0,1}* = {e, 0, 10, 00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111, ...}
+Länge   0, 1,           2                 ,                          3    
+
+$$
+f: \{0,1\}^k \rightarrow \mathbb{N}
+$$
+$$
+f(\epsilon) = 0, f(0) = 1, f(1) = 2, f(00) = 3, f(01) = 4, \quad \dots
+$$
+
+
+# [Aufgabe 29](KuB-Uebungen-gesamt.pdf#page=9&selection=50,0,50,10|KuB-Uebungen-gesamt, page 9)
+Es gibt unendlich viele Turingmaschinen, da unendlich viele Kombinationen von befehlen möglich sind.
+
+
+
+# Aufgabe 30
+Jede Turingmaschine kann durch {1,0}° Dargestellt werden. und diese Menge ist lauf Aufgabe 28 abzählbar.
+
+
+# [Aufgabe 31](KuB-Uebungen-gesamt.pdf#page=9&selection=74,0,74,10|KuB-Uebungen-gesamt, page 9)
+
+
+| ... | B   | B   | $$a_{1}$$ | $$a_{2}$$ | $$a_{1}$$ | B   | B   | ... |
+| --- | --- | --- | --------- | --------- | --------- | --- | --- | --- |
+
+|           | $$t_{0}$$ | $$t_{1}$$ | $$t_{2}$$ | $$t_{3}$$ | $$t_{4}$$ | $$t_{5}$$ | $$t_{6}$$ | $$t_{7}$$ |
+| --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- |
+| $$R_{1}$$ | 0         | 1         | 2         | 3         | 3         | 3         |           |           |
+| $$R_{1}$$ | 0         | 0         | 0         | 0         | 1         | 1         |           |           |
+| $$R_{1}$$ | 1         | 1         | 1         | 1         | 1         | 1         |           |           |
+| $$R_{1}$$ | 2         | 2         | 1         | 1         | 1         | 1         |           |           |
+| $$R_{1}$$ | 1         | 1         | 1         | 1         | 1         | 1         |           |           |
+| $$R_{1}$$ | 3         | 3         | 3         | 3         | 1         | 1         |           |           |
+| $$R_{1}$$ | 3         | 3         | 3         | 3         | 3         | 3         |           |           |
+
+
+
+# [Aufgabe 32](KuB-Uebungen-gesamt.pdf#page=9&selection=219,0,219,10|KuB-Uebungen-gesamt, page 9)
+Es existiert ein Zustand in dem Spieler x durch perfektes Spielen auf jeden Fall gewinnt.
+(am einfachsten der Zustand wo noch ein Plättchen für eine volle reihe fehlt)
+
+
+
+
+
+# [Aufgabe 33](KuB-Uebungen-gesamt.pdf#page=10&selection=14,0,14,10|KuB-Uebungen-gesamt, page 10)
+Weil beim prüfen müssten wir alle stellen von Pi prüfen. Aber Pi hat unendlich viele Nachkommastellen. Somit würde die Bestätigung "Nein, existiert nicht" niemals erreich werden. 
+Somit, wenn wir was finden bekommen wir eine Antwort. Bei nein würden wir nie ein Ergebnis bekommen.
+
+machmal gibt es ein Ergebnis, manchmal nicht -> Semi-Entscheidbar
+
+
+
+# [Aufgabe 34](KuB-Uebungen-gesamt.pdf#page=11&selection=18,0,18,10|KuB-Uebungen-gesamt, page 11)
+

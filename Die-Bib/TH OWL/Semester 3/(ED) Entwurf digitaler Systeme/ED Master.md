@@ -1,3 +1,4 @@
+
 [[Entwurf digitaler Systeme - Info]]
 [[Vorlagen.excalidraw]]
 
@@ -25,3 +26,8 @@
 - [[ED_P_6.pdf]]
 
 
+$$
+M\{x(-t)\} 
+= \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} x(\tau) \, d\tau
+= M\{x(t)\}
+$$
