@@ -41,6 +41,7 @@ Der Pfeil wird üblicherweise mit der Höhe 1 gezeichnet um 𝛿(𝑡) darzustel
 
 
 ## [Repräsentationsfunktionen](Skript-SY-V1.5.pdf#page=16&selection=6,0,6,24|Skript-SY-V1.5, page 16)
+
 Dreiecksimpuls:
 $$
 \delta_{\varepsilon}(t) = 

@@ -24,6 +24,7 @@
 # Notizen
 - [[Signale]]
 - [[SY Vorlesungsmitschrift]]
+- [[SY Übungen]]
 
 
 

@@ -78,3 +78,11 @@ weil Gleichanteil bei Stammfunktion ja mit "+c" immer frei gewählt / nicht defi
 
 
 
+
+
+
+## [Dauer und Bandbreite](Skript-SY-V1.5.pdf#page=71&selection=8,0,8,20|Skript-SY-V1.5, page 71)
+
+
+# 3 [Systeme](Skript-SY-V1.5.pdf#page=82&selection=8,0,8,7|Skript-SY-V1.5, page 82)
+

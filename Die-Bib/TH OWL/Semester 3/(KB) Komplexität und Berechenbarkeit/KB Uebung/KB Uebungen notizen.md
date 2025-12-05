@@ -189,8 +189,8 @@ An der Funktionsweise ändert sich nichts
 | q2  |      |      | (q2, (0, R), (0, R)) |      |      | (q2, (1, R), (1, R)) | (q3, (B, L), (B, N)) |
 | q3  |      |      |                      |      |      |                      | (q3, (B, N), (B, N)) |
 
-
-# [Aufgabe 28](KuB-Uebungen-gesamt.pdf#page=9&selection=28,0,28,10|KuB-Uebungen-gesamt, page 9)
+# Übung 7
+## [Aufgabe 28](KuB-Uebungen-gesamt.pdf#page=9&selection=28,0,28,10|KuB-Uebungen-gesamt, page 9)
 {0,1}* = {e, 0, 10, 00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111, ...}
 Länge   0, 1,           2                 ,                          3    
 
@@ -202,16 +202,16 @@ f(\epsilon) = 0, f(0) = 1, f(1) = 2, f(00) = 3, f(01) = 4, \quad \dots
 $$
 
 
-# [Aufgabe 29](KuB-Uebungen-gesamt.pdf#page=9&selection=50,0,50,10|KuB-Uebungen-gesamt, page 9)
+## [Aufgabe 29](KuB-Uebungen-gesamt.pdf#page=9&selection=50,0,50,10|KuB-Uebungen-gesamt, page 9)
 Es gibt unendlich viele Turingmaschinen, da unendlich viele Kombinationen von befehlen möglich sind.
 
 
 
-# Aufgabe 30
+## Aufgabe 30
 Jede Turingmaschine kann durch {1,0}° Dargestellt werden. und diese Menge ist lauf Aufgabe 28 abzählbar.
 
 
-# [Aufgabe 31](KuB-Uebungen-gesamt.pdf#page=9&selection=74,0,74,10|KuB-Uebungen-gesamt, page 9)
+## [Aufgabe 31](KuB-Uebungen-gesamt.pdf#page=9&selection=74,0,74,10|KuB-Uebungen-gesamt, page 9)
 
 
 | ... | B   | B   | $$a_{1}$$ | $$a_{2}$$ | $$a_{1}$$ | B   | B   | ... |
@@ -229,7 +229,7 @@ Jede Turingmaschine kann durch {1,0}° Dargestellt werden. und diese Menge ist l
 
 
 
-# [Aufgabe 32](KuB-Uebungen-gesamt.pdf#page=9&selection=219,0,219,10|KuB-Uebungen-gesamt, page 9)
+## [Aufgabe 32](KuB-Uebungen-gesamt.pdf#page=9&selection=219,0,219,10|KuB-Uebungen-gesamt, page 9)
 Es existiert ein Zustand in dem Spieler x durch perfektes Spielen auf jeden Fall gewinnt.
 (am einfachsten der Zustand wo noch ein Plättchen für eine volle reihe fehlt)
 
@@ -237,13 +237,80 @@ Es existiert ein Zustand in dem Spieler x durch perfektes Spielen auf jeden Fall
 
 
 
-# [Aufgabe 33](KuB-Uebungen-gesamt.pdf#page=10&selection=14,0,14,10|KuB-Uebungen-gesamt, page 10)
+## [Aufgabe 33](KuB-Uebungen-gesamt.pdf#page=10&selection=14,0,14,10|KuB-Uebungen-gesamt, page 10)
 Weil beim prüfen müssten wir alle stellen von Pi prüfen. Aber Pi hat unendlich viele Nachkommastellen. Somit würde die Bestätigung "Nein, existiert nicht" niemals erreich werden. 
 Somit, wenn wir was finden bekommen wir eine Antwort. Bei nein würden wir nie ein Ergebnis bekommen.
 
 machmal gibt es ein Ergebnis, manchmal nicht -> Semi-Entscheidbar
 
 
+# Übung 8
 
-# [Aufgabe 34](KuB-Uebungen-gesamt.pdf#page=11&selection=18,0,18,10|KuB-Uebungen-gesamt, page 11)
+## [Aufgabe 34](KuB-Uebungen-gesamt.pdf#page=11&selection=18,0,18,10|KuB-Uebungen-gesamt, page 11)
 
+DTM = linkestes Zeichen einlesen -> rechtestes Zeichen vergleichen -> loop
+"von außen nach innen"
+
+NTM = Mitte raten und bis dahin alle Werte auf zweites Band kopieren -> beim weiterlaufen 2. Band rückwärts laufen lassen und vergleichen.
+
+Überführungsfunktion:
+$$
+\begin{array} \\
+\delta(q_{0}, B, B) = & \{ (q_{3}, (B, N), (B, N)) \} \\
+\delta(q_{0}, 0, B) = & \{ (q_{1}, (0, N), (B, N)) \} \\
+\delta(q_{0}, 1, B) = & \{ (q_{1}, (1, N), (B, N)) \} \\
+  \\
+\delta(q_{1}, 0, B) = & \{ (q_{1}, (0, R), (0, R)) \space , \space (q_{2}, (0, N), (B, L)) \} \\
+\delta(q_{1}, 1, B) = & \{ (q_{1}, (1, R), (1, R) \space , \space (q_{2}, (1, N), (B, L)) \} \\
+\\
+\delta(q_{2}, 0, 0) = & \{ (q_{2}, (0, R), (0, L)) \} \\
+\delta(q_{2}, 1, 1) = & \{ (q_{2}, (1, R), (1, L)) \} \\
+\delta(q_{2}, B, B) = & \{ (q_{3}, (B, R), (B, L)) \}
+\end{array}
+$$
+
+
+## [Aufgabe 35](KuB-Uebungen-gesamt.pdf#page=11&selection=61,0,61,10|KuB-Uebungen-gesamt, page 11)
+
+
+
+
+## [Aufgabe 36](KuB-Uebungen-gesamt.pdf#page=11&selection=110,0,110,10|KuB-Uebungen-gesamt, page 11)
+
+### a)
+Wir gehen über jeden Knoten und raten die Farbe -> überprüfen, ob geratene Farben stimmt
+
+### b)
+Wir raten 2 Zahlen zwischen 1 und n -> multipilzieren diese und schauen dann
+
+### c)
+Wir raten, bei welchem Knoten wir anfangen -> Raten wir wo wir weitergehen -> unterbrechen, wenn bereits besucht / terminieren, wenn wir n knoten besucht haben
+
+alt:
+Wir raten die Reihenfolge -> schauen dann ob es die gibt
+
+### d)
+µ raten und schauen ob alpha richtig ist
+
+
+
+## [Aufgabe 37](KuB-Uebungen-gesamt.pdf#page=11&selection=203,0,203,10|KuB-Uebungen-gesamt, page 11)
+
+c und d folgen aus a und b
+
+???
+
+
+
+# [Übung 9 Berechenbarkeit](KuB-Uebungen-gesamt.pdf#page=13&selection=14,0,15,1|KuB-Uebungen-gesamt, page 13)
+
+
+## [Aufgabe 38](KuB-Uebungen-gesamt.pdf#page=13&selection=147,0,147,11|KuB-Uebungen-gesamt, page 13)
+
+Lösungsidee:
+$$
+\begin{array} \\
+H = & \{ \langle M \rangle w|M \text{ hält auf } w \} \\
+H = & \{ w\#x|T_{w} \text{hält auf x} \}  ,w=\text{code}(T_{w})
+\end{array}
+$$

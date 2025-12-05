@@ -10,7 +10,7 @@
 	1. [Minimierung nach "Quine-McCluskey-Verfahren"](Quine-McCluskey-Verfahren.excalidraw)
 5. [Kombinatorische Schaltungen](V_ED_5.pdf)
 6. [Sequentielle Schaltungen](V_ED_6.pdf)
-- [[V_ED_7.pdf]]
+7. [Anwendung sequentieller Schaltungen](V_ED_7.pdf)
 - [[V_ED_8.pdf]]
 - [[V_ED_9.pdf]]
 
@@ -22,8 +22,8 @@
 - [[ED_P_3.pdf]]
 	- [[ED_P_3.excalidraw]]
 - [[ED_P_4.pdf]]
-	- 
 - [[ED_P_5.pdf]]
+	- [[ED_P_5.excalidraw]]
 - [[ED_P_6.pdf]]
 
 
