@@ -1,3 +1,10 @@
+# **Projektbericht: Entwurf und Implementierung des File-Transfer-Dienstes „myTCP“**
+
+**Verfasser:** Jeremy Braun
+**Datum:** 08.12.25
+**Lehrveranstaltung:** Protocol-Engineering (EK 5060) / Vertiefungspraktikum Rechnernetze (VP 1270)  
+**Betreuer:** Prof. Dr. Jürgen Jasperneite, Wolfgang Sonntag
+
 # Inhaltsverzeichnis
 
 - Glossar
