@@ -1,0 +1,39 @@
+
+- begrüß die Leute 
+- Stell dich vor
+- Das ALayer (Anwendung) 
+- Zusammenschluss der oberen Schichten des OSI-Modells
+- Linie nicht genau zu ziehen
+- ACodex
+	- Ver- und Entschlüsselung der Nachrichten
+	- Interface, um Befehle in der anderen Instanz auszuführen
+- ACom
+	- Zustandsautomat = Herzstück des ALayer
+	- startet im "IDLE"
+	- 1. Möglichkeit - Nachricht senden
+		- wechsel in den "sending"-Zustand
+		- kann jetzt nicht mehr empfangen
+		- warte auf "sendFile()"
+		- warte auf "CNCnf()"
+			- else TimeOut
+		- senden den Filename
+		- senden Datei Zeile um Zeile
+		- zählen den LineCount
+		- warten auf DCNCnf() 
+			- else TimeOut
+	- 2. Möglichkeit - Nachrichten empfangen
+		- Skript von Herr Sommer
+		- Regelmäßig abtastet ob eine neue Nachricht eingetroffen
+		- wenn "CNInd()" schicken "CNRes()"
+		-  warte auf Filename
+		- generieren neue Datei 
+		- schreiben die ankommenden Zeilen in die Datei
+		- bis DCNInd()
+		- Prüfen ob die Zeilenanzahl stimmt
+			- und schicken den DCNRes() mit +/-
+
+Somit kümmert sich das ALayer um:
+- die Delegierung
+- was wann gemacht wird
+- reagiert mit TimeOuts wenn nötig
+- und kontrolliert ob alle Zeilen der Datei angekommen sind
