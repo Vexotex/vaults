@@ -21,6 +21,12 @@
 - [[SY_Uebung_10.pdf]]
 - [[SY_Uebung_11.pdf]]
 
+
+# Anwendungsbeispiele
+- [[SY_Uebung_Z1_Anwendungsbeispiele.pdf]]
+- [[SY_Uebung_Z2_Einfuehrung_Systeme.pdf]]
+
+
 # Notizen
 - [[Signale]]
 - [[SY Vorlesungsmitschrift]]

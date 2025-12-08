@@ -3,6 +3,7 @@
 [[Vorlagen.excalidraw]]
 
 # Vorlesung
+0. [Einführende Anmerkungen](V_ED_0.pdf)
 1. [Einführung](V_ED_1.pdf)
 2. [Vorbereitende Grundlagen](V_ED_2.pdf)
 3. [Schaltalgebra und Boolesche Funktionen](V_ED_3.pdf)

@@ -1,30 +1,47 @@
 # Inhaltsverzeichnis
 
+- Glossar
+- Protocol-Engineering "myTCP"
+	- Aufgabenstellung
+		- Benutzer-Leistungsmerkmale
+		- Technische Leistungsmerkmale
+	- Anforderungen
+		- Analyse der Ebenenfunktionen
+		- Anwendungen
+		- Darstellungen
+		- Transportschicht
+		- Vermittlungsschicht
+		- Sicherungsschicht- und Bitübertragungsschicht
+		- Unsere Kommunikationsschicht
+		- Genereller Aufbau einer Protokollinstanz
+- Lösungskonzept
+
 ---
-$$
-\text{Glossar}
-$$
-$$
-\left[
-\begin{array}\\
-\text{FTD} & - & \text{File Transfere Dienst} \\
-\text{FTD} & - & \text{File Transfere Dienst} \\
+# Glossar
 
-\end{array}
-\right]
-$$
+| Abkürzung | Bedeutung                                            |
+| --------- | ---------------------------------------------------- |
+| FTD       | **F**ile **T**ransfer **D**ienst                     |
+| OSI       | **O**pen **S**ystem **I**nterconnection              |
+| PC        | **p**ersonal **C**omputer                            |
+| MAC       | **M**edia **A**ccess **C**ontrol                     |
+| NIC       | **N**etwork **I**nterface **C**ard/**C**ontroller    |
+| GUI       | **G**raphical **U**ser **I**nterface                 |
+| IDE       | **I**ntegrated **D**evelopment **E**nviorment        |
+| SAP       | **S**oftware **A**daption **P**ort                   |
+
 ---
 
-
-# Aufgabenstellung: Protocol-Engineering „myTCP“ 
+# Protocol-Engineering „myTCP“
+## Aufgabenstellung:  
 
 - Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung zwischen zwei PCs .
 - Randbedingung: Grundsätze des OSI- Schichtenmodell berücksichtigen.
 
 Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 
-
-## Benutzer-Leistungsmerkmale
+## Anforderungen
+### Benutzer-Leistungsmerkmale
 
 - „.. die Leistungsmerkmale der Datei-Übertragung stichwortartig zusammengestellt, wie sie sich aus der Sicht des PC-Benutzers darstellen sollen. ..“
 - Es sollen nur Textdateien übertragen werden können.
@@ -39,33 +56,30 @@ Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 - Die Forderung nach Übertragung von Dateien in einem Netz bedingt eine einheitliche und widerspruchsfreie Adressierung.
 	- Hierzu sind eindeutige MAC-Adressen und logische Adressen (PC- Namen) der Quell- und Ziel-PCs vorzusehen.
 - Der Benutzer soll während der Kommunikation durch Meldungen über den Ablauf der Übertragung informiert werden.
-- Der Ziel-PC könnte besetzt oder gar nicht empfangsbereit sein und die Übertragung könnte stark gestört sein, so daß ein Abbruch erforderlich wird. 
+- Der Ziel-PC könnte besetzt oder gar nicht empfangsbereit sein und die Übertragung könnte stark gestört sein, so dass ein Abbruch erforderlich wird. 
 
 
-## Technische Leistungsmerkmale
+### Technische Leistungsmerkmale
 
-- Auf der Grundlage der bisherigen Festlegungen sollen folgende für die Entwicklung wichtigen Merkmale erfüllt werden: • Benutzung der Ethernet-Schnittstelle der PCs
-- Einstellbarkeit notwendiger Kommunikationsparameter
-- Frei wählbare, alphanumerische Namenswahl (logische Adresse) für den PC
-- Herstellen, Halten und Abbauen von temporären Datenverbindungen zwischen je zwei PCs
-- Zuverlässige Übertragung von Telegrammen zwischen den Stationen
-- Übertragung der Dateien in sinnvollen Blöcken (zeilenweise)
-- Korrekte Übertragung von Dateien hinsichtlich Vollständigkeit, Bestätigung an den Benutzer, Wiederaufsetzen bei Übertragungsfehlern.
+- Auf der Grundlage der bisherigen Festlegungen sollen folgende für die Entwicklung wichtigen Merkmale erfüllt werden:
+	- Benutzung der Ethernet-Schnittstelle der PCs
+	- Einstellbarkeit notwendiger Kommunikationsparameter
+	- Frei wählbare, alphanumerische Namenswahl (logische Adresse) für den PC
+	- Herstellen, Halten und Abbauen von temporären Datenverbindungen zwischen je zwei PCs
+	- Zuverlässige Übertragung von Telegrammen zwischen den Stationen
+	- Übertragung der Dateien in sinnvollen Blöcken (zeilenweise)
+	- Korrekte Übertragung von Dateien hinsichtlich Vollständigkeit, Bestätigung an den Benutzer, Wiederaufsetzen bei Übertragungsfehlern.
 
-- **Rahmenbedingung:**
-  Bei dieser Aufgabenstellung wird auf das Framing (Schicht-2) der Ethernet-Schnittstelle zurückgegriffen. Die Ethernet-Schnittstelle führt auch die Bildung und Auswertung einer Prüfsumme durch. 
+	- **Rahmenbedingung:**
+	  Bei dieser Aufgabenstellung wird auf das Framing (Schicht-2) der Ethernet-Schnittstelle zurückgegriffen. Die Ethernet-Schnittstelle führt auch die Bildung und Auswertung einer Prüfsumme durch. 
 
-
-# Anforderungen
-
-## Analyse der Ebenenfunktionen
+### Analyse der Ebenenfunktionen
 
 - Welche Funktion gehört in welche Schicht?
 - Wieviele Schichten hat unser Kommunikationssystem? 
 
-
-
-## Anwendungsschicht
+![[Einfuehrung zur Lehrveranstaltung.pdf#page=9&selection=40,0,40,6|Einfuehrung zur Lehrveranstaltung, page 9]]
+### Anwendungsschicht
 
 - Stellt SAP für den File-Transfer-Dienst bereit 
 - die Anwendungsschicht benötigt Funktionen, um
@@ -76,7 +90,7 @@ Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 - Wiederholung bei Ungleichheit (n-mal) 
 
 
-## Darstellungsschicht
+### Darstellungsschicht
 
 - Alle PCs
 	- INTEL x86 , WIN XP SP2 .
@@ -85,20 +99,20 @@ Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 - Darstellungsschicht kann entfallen. 
 
 
-## Transportschicht
+### Transportschicht
 
 - Unzulänglichkeiten des Kommunikationsnetzes ausgleichen.
 - Segmentbildung, Flußkontrolle sind nicht notwendig. Daher ist die Transportschicht im vorliegenden Beispiel leer.
 - Transportschicht kann **entfallen**.
 
 
-## Vermittlungsschicht
+### Vermittlungsschicht
 
 - Eine Wegewahl (Routing) ist in unserem Beispiel nicht erforderlich.
 - Die logische Adressierung (N-Adressen) der Endsysteme soll in alphanumerischer Schreibweise erfolgen. 
 
 
-## Sicherungs- und Bitübertragungsschicht
+### Sicherungs- und Bitübertragungsschicht
 
 - hier IEEE802.3
 - Steuerung des Buszugriffs auf das Übertragungsmedium,
@@ -110,12 +124,9 @@ Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 	- Abbildungsfunktion zwischen den logischen Adressen und den physikalischen Adressen (MAC-Adressen) ist vorzusehen.
 	- vgl. ARP S
 
+![[Einfuehrung zur Lehrveranstaltung.pdf#page=15&selection=8,0,8,26|Einfuehrung zur Lehrveranstaltung, page 15]]
 
-## Unser Kommunikationssystem
-
-
-## Genereller Aufbau einer Protokoll-instanz
-
+![[Einfuehrung zur Lehrveranstaltung.pdf#page=16&selection=8,0,10,7|Einfuehrung zur Lehrveranstaltung, page 16]]
 
 
 - i_COM beschreibt das zustandsabhängige Verhalten einer Instanz. (dynamische Protokollspezifikation)
@@ -124,5 +135,15 @@ Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 ---
 
 # Lösungskonzept
+
+## Abbildung der Anforderungen auf das OSI-Schichtenmodell
+
+
+
+## Dienst- und Protokollspezifikationen der realisierten Funktionen
+
+
+
+## Sequenzdiagramme zum Nachweis der wichtigsten Funktionen
 
 
