@@ -314,3 +314,43 @@ H = & \{ \langle M \rangle w|M \text{ hält auf } w \} \\
 H = & \{ w\#x|T_{w} \text{hält auf x} \}  ,w=\text{code}(T_{w})
 \end{array}
 $$
+
+
+
+
+
+
+# [Übung 10: Komplexitätstheorie (1)](KuB-Uebungen-gesamt.pdf#page=14&selection=16,0,16,19|KuB-Uebungen-gesamt, page 14)
+
+
+## [Aufgabe 40](KuB-Uebungen-gesamt.pdf#page=14&selection=18,0,18,11|KuB-Uebungen-gesamt, page 14)
+
+L(T) ist entscheidbar, weil wir nach jedem Wort irgendwann aufhören
+
+
+
+## [Aufgabe 41](KuB-Uebungen-gesamt.pdf#page=14&selection=73,0,73,10|KuB-Uebungen-gesamt, page 14)
+
+- Wenn wir die kürzeste Rundreise kennen kennen wir auch die Kosten dieser Reise
+- Wenn wir alle Kanten k einzeln weglöschen und dann den Algorithmus A für die kürzeste Rundreise laufenlassen haben wir k*o(A) immer noch polynomiellen Aufwand
+- Nehme die Kosten aller Kanten als MAX-Wert an und suche dann binärbaum-artig nach den Kosten der kürzesten Rundreisen
+
+
+## [Aufgabe 42](KuB-Uebungen-gesamt.pdf#page=14&selection=171,0,171,10|KuB-Uebungen-gesamt, page 14)
+
+a)
+$$
+\{ \langle T \rangle w \space | \space w \in L(T) \text{ und } t_{T(w)} \leq|w| \}
+$$
+b)
+Ist in P weil durch die Zeitschranke $$t_{T(w)}$$ beenden wir auch, wenn wir normal nicht anhalten würde
+
+
+
+
+
+# [Übung 11: Komplexitätstheorie (2)](KuB-Uebungen-gesamt.pdf#page=15&selection=16,0,16,19|KuB-Uebungen-gesamt, page 15)
+
+
+## [Aufgabe 43](KuB-Uebungen-gesamt.pdf#page=15&selection=18,0,18,10|KuB-Uebungen-gesamt, page 15)
+
