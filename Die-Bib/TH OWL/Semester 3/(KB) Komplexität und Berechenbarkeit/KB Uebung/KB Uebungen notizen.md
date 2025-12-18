@@ -351,6 +351,61 @@ Ist in P weil durch die Zeitschranke $$t_{T(w)}$$ beenden wir auch, wenn wir nor
 
 # [Übung 11: Komplexitätstheorie (2)](KuB-Uebungen-gesamt.pdf#page=15&selection=16,0,16,19|KuB-Uebungen-gesamt, page 15)
 
-
 ## [Aufgabe 43](KuB-Uebungen-gesamt.pdf#page=15&selection=18,0,18,10|KuB-Uebungen-gesamt, page 15)
+
+a)
+Universelle TM H bekommt eine Maschine M die simuliert werden soll, das Eingabewort w und die Haltebedingung k
+$$
+H = \{ \langle M \rangle w \#k | M \text{ hält auf } w \text{ nach } k \text{ Schritten} \}
+$$
+
+b)
+Idem wir eine Bedingung hinzufügen, sodass z.B. nach k Schritten immer akzeptiert wird
+
+
+c)
+k hinschreiben dauert
+$$
+\log_{2}(k) = s
+$$
+daher rückt die maximale Laufzeit exponentiell mit der länge des Wortes k
+
+
+
+## [Aufgabe 44](KuB-Uebungen-gesamt.pdf#page=15&selection=48,0,48,10|KuB-Uebungen-gesamt, page 15)
+
+a)
+$$
+P \subseteq NP \subseteq EXPTIME 
+$$
+b)
+Aktuelle Annahme ist ja, dass P eine wahre Teilmenge von NP ist. Dann könnte P auch nicht gleich EXPTIME sein
+
+c)
+keine eindeutige Aussage treffbar. Warscheinlich sind die ungleich
+
+
+
+## [Aufgabe 45](KuB-Uebungen-gesamt.pdf#page=15&selection=70,0,70,10|KuB-Uebungen-gesamt, page 15)
+
+a)
+geg.
+$$
+G=\{ V,E \}
+$$
+$$
+L\{ x\in V | \cap (v,w) \in E \text{ und } x = v \text{ oder } x = w \}
+$$
+
+b)
+Rate ein Zertifikat der länge n und Verifiziere ob es richtig ist.
+- Erst prüfen, ob wir kleiner k geraten haben
+- Liste von Knoten die erfasst werden sollen erstellen
+- rausstreichen der Knoten die vom Zertifikat erfasst worden ist
+
+
+
+# [Übung 12: Kopmlexitätstheorie (3)](KuB-Uebungen-gesamt.pdf#page=16&selection=14,0,14,9|KuB-Uebungen-gesamt, page 16)
+
+## [Aufgabe 46](KuB-Uebungen-gesamt.pdf#page=16&selection=19,0,19,10|KuB-Uebungen-gesamt, page 16)
 
