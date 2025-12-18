@@ -15,6 +15,8 @@
 - [[06a-KuB-Berechenbarkeitstheorie.pdf]]
 - [[06b-KuB-Berechenbarkeitstheorie.pdf]]
 - [[07a-KuB-Komplexitaetstheorie.pdf]]
+- [[07b-KuB-Komplexitaetstheorie.pdf]]
+- [[07c-KuB-Komplexitaetstheorie.pdf]]
 - 
 
 # Übung

@@ -10,6 +10,8 @@
 - [[PE_05_Exceptions.pdf]]
 - [[PE_06_C_Allgemein.pdf]]
 - [[PE_06_C_Ausgabe_Variablen.pdf]]
+- [[PE_07_C_Pointer_Funktionen.pdf]]
+- [[PE_08_C_Felder_Strukturen.pdf]]
 - 
 
 # Praktikum
