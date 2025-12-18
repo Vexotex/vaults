@@ -34,6 +34,6 @@
 
 Somit kümmert sich das ALayer um:
 - die Delegierung
-- was wann gemacht wird
+- was, wann, in welcher Reihenfolge
 - reagiert mit TimeOuts wenn nötig
 - und kontrolliert ob alle Zeilen der Datei angekommen sind
