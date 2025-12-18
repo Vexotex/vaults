@@ -22,7 +22,7 @@
 		- warten auf DCNCnf() 
 			- else TimeOut
 	- 2. Möglichkeit - Nachrichten empfangen
-		- Skript von Herr Sommer
+		- Skript von Herr Sonntag
 		- Regelmäßig abtastet ob eine neue Nachricht eingetroffen
 		- wenn "CNInd()" schicken "CNRes()"
 		-  warte auf Filename
