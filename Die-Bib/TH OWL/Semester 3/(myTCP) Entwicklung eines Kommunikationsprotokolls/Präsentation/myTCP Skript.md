@@ -31,11 +31,14 @@
 		- Skript von Herr Sonntag
 		- Regelmäßig abtastet ob eine neue Nachricht eingetroffen
 		- wenn "CNInd()" schicken "CNRes()"
-		-  warte auf Filename
+		- warte auf Filename
 		- generieren neue Datei 
 		- schreiben die ankommenden Zeilen in die Datei
+			- Charakteristik der Transportschicht (wieder Zusammensetzung)
 		- bis DCNInd()
+			- Charakteristik der Sitzungsschicht (Verbindungsabbau)
 		- Prüfen ob die Zeilenanzahl stimmt
+			- Charakteristik der Transportschicht (Flusskontrolle)
 			- und schicken den DCNRes() mit +/-
 
 Somit kümmert sich das ALayer um:
