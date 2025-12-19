@@ -12,6 +12,7 @@
 - [[PE_06_C_Ausgabe_Variablen.pdf]]
 - [[PE_07_C_Pointer_Funktionen.pdf]]
 - [[PE_08_C_Felder_Strukturen.pdf]]
+- [[PE_09_C_Peripherie.pdf]]
 - 
 
 # Praktikum
