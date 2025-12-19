@@ -7,6 +7,7 @@
 - ACodex
 	- Ver- und Entschlüsselung der Nachrichten
 	- Interface, um Befehle in der anderen Instanz auszuführen
+		- Charakteristik der Darstellungsschicht (Verschlüsselung)
 - ACom
 	- Zustandsautomat = Herzstück des ALayer
 	- startet im "IDLE"
@@ -14,13 +15,18 @@
 		- wechsel in den "sending"-Zustand
 		- kann jetzt nicht mehr empfangen
 		- warte auf "sendFile()"
+			- Charakteristik der Anwendungsschicht (Schnittstelle)
 		- warte auf "CNCnf()"
+			- Charakteristik der Sitzungsschicht (Auf-/ Abbau der Verbindung)
 			- else TimeOut
 		- senden den Filename
 		- senden Datei Zeile um Zeile
+			- Charakteristik der Transportschicht (Segmentierung)
 		- zählen den LineCount
+			- Charakteristik der Transportschicht (Flusskontrolle, wieder zusammensetzten)
 		- warten auf DCNCnf() 
 			- else TimeOut
+			- Charakteristik der Transportschicht (Fehlerbehandlung)
 	- 2. Möglichkeit - Nachrichten empfangen
 		- Skript von Herr Sonntag
 		- Regelmäßig abtastet ob eine neue Nachricht eingetroffen
