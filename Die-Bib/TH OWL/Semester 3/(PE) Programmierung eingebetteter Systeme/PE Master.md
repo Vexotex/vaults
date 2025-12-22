@@ -22,6 +22,7 @@
 
 ## Spezifikationen
 - [[Datasheet_stm32l476xx.pdf]]
+	- [Memory Mapping](Datasheet_stm32l476xx.pdf#page=108&selection=0,0,0,14|Datasheet_stm32l476xx, page 108)
 - [[ReferenceManual_0351-stm32l47xxx.pdf]]
 - [[MarketingPresentation_en.stm32l4.pdf]]
 - [[ProgrammingManual_0214-stm32-cortexm4.pdf]]
