@@ -29,7 +29,7 @@ Weiterhin soll es die Möglichkeit geben, automatisch neue Waren zu bestellen. H
 |      | Beteiligte Akteure        | Lagerverwalter                                                                                                                          |
 |      | Vorbedingung              | Artikel ist am Standort eingetroffen                                                                                                    |
 |      | Nachbedingung             | Artikel im System erfasst, Position zugewiesen, Lagerbestand aktualisiert                                                               |
-|      | Auslöser                  | Artikel müssen eingelagert werden. <br>- Anlieferung neuer Ware <br>- Auftragsstornierung und wieder-Einlagerung                        |
+|      | Auslöser                  | Artikel müssen eingelagert werden. <br>- Anlieferung neuer Ware <br>- Auftragsstornierung und wieder-Einlagerung<br>- etc.              |
 |      | **Standardszenario**      |                                                                                                                                         |
 | 1    | LV                        | Lagerverwalter gibt Artikelnummer ein                                                                                                   |
 | 2    | S                         | System zeigt Artikelinformationen an                                                                                                    |
@@ -69,24 +69,31 @@ Weiterhin soll es die Möglichkeit geben, automatisch neue Waren zu bestellen. H
 
 ### Artikel auslagern
 
-|     | Anwendungsfall            | Artikel auslagern                                                                                                                                                                                        |
-| --- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     | Kurzbeschreibung          | Der Lagerverwalter kann Artikel auslagern. Dabei kann er Entscheiden, welche Position im Lager ausgelagert wird.                                                                                         |
-|     | Beteiligte Akteure        | Lagerverwalter,                                                                                                                                                                                          |
-|     | Vorbedingung              | Artikel im System erfasst, Bestand größer 0                                                                                                                                                              |
-|     | Nachbedingung             | Lagerbestand Aktualisiert, Positionsgröße aktualisiert                                                                                                                                                   |
-|     | Auslöser                  | Artikel muss ausgelagert werden.<br>- Verkauf getätigt und Ware muss für den Versand aus dem Lager.<br>- Ware ist abgelaufen und muss entsorgt.<br>- Ware muss zur Weiterverarbeitung in die Produktion. |
-|     | **Standardszenario**      |                                                                                                                                                                                                          |
-| 1   | LV                        | Lagerverwalter gibt Artikelnummer ein                                                                                                                                                                    |
-| 2   | S                         | System zeigt alle Im lokalen Standort vorhandenen Lagerpositionen und deren Verfallsdaten an                                                                                                             |
-| 3   | LV                        | Lagerverwalter wählt Position aus und gibt entnommene Stückzahl an                                                                                                                                       |
-| 4   | S                         | System aktualisiert Die Lagerposition                                                                                                                                                                    |
-| 5   | S                         | System sendet Bestandsaktualisierung an Zentralsystem                                                                                                                                                    |
-| 6   | S                         | Zentralsystem aktualisiert Gesamtbestand                                                                                                                                                                 |
-|     | **Alternative Szenarien** |                                                                                                                                                                                                          |
-|     |                           |                                                                                                                                                                                                          |
+|     | Anwendungsfall            | Artikel auslagern                                                                                                                                                                                                  |
+| --- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|     | Kurzbeschreibung          | Der Lagerverwalter kann Artikel auslagern. Dabei kann er Entscheiden, welche Position im Lager ausgelagert wird.                                                                                                   |
+|     | Beteiligte Akteure        | Lagerverwalter,                                                                                                                                                                                                    |
+|     | Vorbedingung              | Artikel im System erfasst, Bestand größer 0                                                                                                                                                                        |
+|     | Nachbedingung             | Lagerbestand Aktualisiert, Positionsgröße aktualisiert                                                                                                                                                             |
+|     | Auslöser                  | Artikel muss ausgelagert werden.<br>- Verkauf getätigt und Ware muss für den Versand aus dem Lager.<br>- Ware ist abgelaufen und muss entsorgt.<br>- Ware muss zur Weiterverarbeitung in die Produktion.<br>- etc. |
+|     | **Standardszenario**      |                                                                                                                                                                                                                    |
+| 1   | LV                        | Lagerverwalter gibt Artikelnummer ein                                                                                                                                                                              |
+| 2   | S                         | System zeigt alle Im lokalen Standort vorhandenen Lagerpositionen und deren Verfallsdaten an                                                                                                                       |
+| 3   | LV                        | Lagerverwalter wählt Position aus und gibt auszulagernde Stückzahl an                                                                                                                                              |
+| 4   | S                         | System aktualisiert Die Lagerposition                                                                                                                                                                              |
+| 5   | S                         | System sendet Bestandsaktualisierung an Zentralsystem                                                                                                                                                              |
+| 6   | S                         | Zentralsystem aktualisiert Gesamtbestand                                                                                                                                                                           |
+|     | **Alternative Szenarien** |                                                                                                                                                                                                                    |
+|     |                           |                                                                                                                                                                                                                    |
 
 
 
 
-# Eidsstaatliche Erklärung
+# Eidesstattliche Erklärung
+
+Ich erkläre hiermit an Eides statt, dass ich die vorliegende Ausarbeitung selbstständig und ohne unerlaubte fremde Hilfe angefertigt, andere als die angegebenen Quellen und Hilfsmittel nicht benutzt und die den benutzten Quellen wörtlich oder inhaltlich entnommenen Stellen als solche kenntlich gemacht habe.
+
+………………………………………, den ………………………………
+
+……………………………………………………………………………….
+(Unterschrift)
