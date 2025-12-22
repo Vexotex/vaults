@@ -14,11 +14,10 @@ Weiterhin soll es die Möglichkeit geben, automatisch neue Waren zu bestellen. H
 
 ## Akteure
 
-1. S   - **System** – Automatische Nachbestellung, Artikel-Umverteilung
-2. LV - **Lagerverwalter** – Verwaltet lokalen Lagerbestand, Ein-/Auslagerungen
-3. EK - **Einkäufer** – Erhält Bestellvorschläge, bestellt bei Lieferanten
-4. VK - **Verkäufer** – Fragt Artikel an, löst Auslagerungen aus
-5. L - **Lieferant** 
+1. LV - **Lagerverwalter** – Verwaltet lokalen Lagerbestand, Ein-/Auslagerungen
+2. EK - **Einkäufer** – Erhält Bestellvorschläge, bestellt bei Lieferanten
+3. VK - **Verkäufer** – Fragt Artikel an, löst Auslagerungen aus
+4. L - **Lieferant** 
 
 ## Anwendungsfälle
 
@@ -27,10 +26,10 @@ Weiterhin soll es die Möglichkeit geben, automatisch neue Waren zu bestellen. H
 |      | Anwendungsfall            | Artikel einlagern                                                                                                                       |
 | ---- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 |      | Kurzbeschreibung          | Der Lagerverwalter kann Lagerartikel im System erfassen. Dabei bekommt er einen Lagerplatz vom System, wenn er selber keinen definiert. |
-|      | Beteiligte Akteure        | Lagerverwalter, System                                                                                                                  |
+|      | Beteiligte Akteure        | Lagerverwalter                                                                                                                          |
 |      | Vorbedingung              | Artikel ist am Standort eingetroffen                                                                                                    |
-|      | Nachbedingung             | Artikel im System erfasst, Position zugewiesen                                                                                          |
-|      | Auslöser                  | Artikel müssen eingelagert werden. <br>z.B. durch Anlieferung neuer Ware, Auftragsstornierung und wieder-Einlagerung, etc.              |
+|      | Nachbedingung             | Artikel im System erfasst, Position zugewiesen, Lagerbestand aktualisiert                                                               |
+|      | Auslöser                  | Artikel müssen eingelagert werden. <br>- Anlieferung neuer Ware <br>- Auftragsstornierung und wieder-Einlagerung                        |
 |      | **Standardszenario**      |                                                                                                                                         |
 | 1    | LV                        | Lagerverwalter gibt Artikelnummer ein                                                                                                   |
 | 2    | S                         | System zeigt Artikelinformationen an                                                                                                    |
@@ -48,44 +47,44 @@ Weiterhin soll es die Möglichkeit geben, automatisch neue Waren zu bestellen. H
 
 ### Artikel anzeigen
 
-|      | Anwendungsfall            | Artikel anzeigen                                                                                                                                                                                 |     |
-| ---- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --- |
-|      | Kurzbeschreibung          | Jeder Akteur kann sich Details zu den Artikeln anzeigen lassen                                                                                                                                   |     |
-|      | Beteiligte Akteure        | Lagerverwalter / Einkäufer / Ver                                                                                                                                                                 |     |
-|      | Vorbedingung              | Artikelnummer oder Art                                                                                                                                                                           |     |
-|      | Nachbedingung             | Eindeutige Artikelinformationen, sowie zugehörige Statistiken werden Angezeigt                                                                                                                   |     |
-|      | Auslöser                  | Anfrage durch einen Akteur (LV, EK, VK)                                                                                                                                                          |     |
-|      | **Standardszenario**      |                                                                                                                                                                                                  |     |
-| 1    | LV                        | Lagerverwalter gibt Artikelnummer ein                                                                                                                                                            |     |
-| 2    | S                         | System zeigt Artikelinformationen und Statistiken an                                                                                                                                             |     |
-|      | **Alternative Szenarien** |                                                                                                                                                                                                  |     |
-| zu 1 | LV                        | Lagerverwalter scannt Barcode ein                                                                                                                                                                |     |
-| zu 1 | EK                        | Einkäufer gibt Artikelnummer ein                                                                                                                                                                 |     |
-| zu 1 | VK                        | Verkäufer gibt Artikelnummer ein                                                                                                                                                                 |     |
-| zu 2 | S                         | Verbindung zu anderen Systemen schlägt fehl; globale Statistiken werden nicht angezeigt und Akteur über Situation Informiert                                                                     |     |
-|      | **Erweiterung**           |                                                                                                                                                                                                  |     |
-| zu 1 | LV / EK / VK              | Es wird der Artikelname eingegeben; Es wird eine Liste mit den wahrscheinlichsten Treffern und deren Artikelnummern angezeigt; Durch Auswahl eines Eintrags wird diese Artikelnummer eingegeben. |     |
-|      | **Fehlersituationen**     |                                                                                                                                                                                                  |     |
-| zu 1 | LV                        | Artikelnummer existiert nicht; kurzer Hinweistext wird angezeigt; Vorgang wird abgebrochen                                                                                                       |     |
+|      | Anwendungsfall            | Artikel anzeigen                                                                                                                                                                                         |     |
+| ---- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+|      | Kurzbeschreibung          | Jeder Akteur kann sich Details zu den Artikeln anzeigen lassen                                                                                                                                           |     |
+|      | Beteiligte Akteure        | Lagerverwalter / Einkäufer / Verkäufer                                                                                                                                                                   |     |
+|      | Vorbedingung              | Artikelnummer oder Artikelname bekannt                                                                                                                                                                   |     |
+|      | Nachbedingung             | Eindeutige Artikelinformationen, sowie zugehörige Statistiken werden Angezeigt                                                                                                                           |     |
+|      | Auslöser                  | Anfrage durch einen Akteur (LV, EK, VK)                                                                                                                                                                  |     |
+|      | **Standardszenario**      |                                                                                                                                                                                                          |     |
+| 1    | LV                        | Lagerverwalter gibt Artikelnummer ein                                                                                                                                                                    |     |
+| 2    | S                         | System zeigt Artikelinformationen und Statistiken an                                                                                                                                                     |     |
+|      | **Alternative Szenarien** |                                                                                                                                                                                                          |     |
+| zu 1 | LV                        | Lagerverwalter scannt Barcode ein                                                                                                                                                                        |     |
+| zu 1 | EK                        | Einkäufer gibt Artikelnummer ein                                                                                                                                                                         |     |
+| zu 1 | VK                        | Verkäufer gibt Artikelnummer ein                                                                                                                                                                         |     |
+| zu 2 | S                         | Verbindung zu anderen Systemen schlägt fehl; globale Statistiken werden nicht angezeigt und Akteur über Situation Informiert                                                                             |     |
+|      | **Erweiterung**           |                                                                                                                                                                                                          |     |
+| zu 1 | LV / EK / VK              | Es wird der Artikelname eingegeben; <br>Es wird eine Liste mit den wahrscheinlichsten Treffern und deren Artikelnummern angezeigt; <br>Durch Auswahl eines Eintrags wird diese Artikelnummer eingegeben. |     |
+|      | **Fehlersituationen**     |                                                                                                                                                                                                          |     |
+| zu 1 | LV                        | Artikelnummer existiert nicht; kurzer Hinweistext wird angezeigt; Vorgang wird abgebrochen                                                                                                               |     |
 
 ### Artikel auslagern
 
-|     | Anwendungsfall            | Artikel auslagern                                                                                                |
-| --- | ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-|     | Kurzbeschreibung          | Der Lagerverwalter kann Artikel auslagern. Dabei kann er Entscheiden, welche Position im Lager ausgelagert wird. |
-|     | Beteiligte Akteure        |                                                                                                                  |
-|     | Vorbedingung              |                                                                                                                  |
-|     | Nachbedingung             |                                                                                                                  |
-|     | Auslöser                  |                                                                                                                  |
-|     | **Standardszenario**      |                                                                                                                  |
-| 1   | LV                        | Lagerverwalter gibt Artikelnummer ein                                                                            |
-| 2   | S                         | System zeigt alle Im lokalen Standort vorhandenen Lagerpositionen und deren Verfallsdaten an                     |
-| 3   | LV                        | Lagerverwalter wählt Position aus und gibt entnommene Stückzahl an                                               |
-| 4   | S                         | System aktualisiert Die Lagerposition                                                                            |
-| 5   | S                         | System sendet Bestandsaktualisierung an Zentralsystem                                                            |
-| 6   | S                         | Zentralsystem aktualisiert Gesamtbestand                                                                         |
-|     | **Alternative Szenarien** |                                                                                                                  |
-|     |                           |                                                                                                                  |
+|     | Anwendungsfall            | Artikel auslagern                                                                                                                                                                                        |
+| --- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     | Kurzbeschreibung          | Der Lagerverwalter kann Artikel auslagern. Dabei kann er Entscheiden, welche Position im Lager ausgelagert wird.                                                                                         |
+|     | Beteiligte Akteure        | Lagerverwalter,                                                                                                                                                                                          |
+|     | Vorbedingung              | Artikel im System erfasst, Bestand größer 0                                                                                                                                                              |
+|     | Nachbedingung             | Lagerbestand Aktualisiert, Positionsgröße aktualisiert                                                                                                                                                   |
+|     | Auslöser                  | Artikel muss ausgelagert werden.<br>- Verkauf getätigt und Ware muss für den Versand aus dem Lager.<br>- Ware ist abgelaufen und muss entsorgt.<br>- Ware muss zur Weiterverarbeitung in die Produktion. |
+|     | **Standardszenario**      |                                                                                                                                                                                                          |
+| 1   | LV                        | Lagerverwalter gibt Artikelnummer ein                                                                                                                                                                    |
+| 2   | S                         | System zeigt alle Im lokalen Standort vorhandenen Lagerpositionen und deren Verfallsdaten an                                                                                                             |
+| 3   | LV                        | Lagerverwalter wählt Position aus und gibt entnommene Stückzahl an                                                                                                                                       |
+| 4   | S                         | System aktualisiert Die Lagerposition                                                                                                                                                                    |
+| 5   | S                         | System sendet Bestandsaktualisierung an Zentralsystem                                                                                                                                                    |
+| 6   | S                         | Zentralsystem aktualisiert Gesamtbestand                                                                                                                                                                 |
+|     | **Alternative Szenarien** |                                                                                                                                                                                                          |
+|     |                           |                                                                                                                                                                                                          |
 
 
 
