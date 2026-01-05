@@ -22,7 +22,9 @@
 
 ## Spezifikationen
 - [[Datasheet_stm32l476xx.pdf]]
+	- [Memory Mapping](Datasheet_stm32l476xx.pdf#page=108&selection=0,0,0,14|Datasheet_stm32l476xx, page 108)
 - [[ReferenceManual_0351-stm32l47xxx.pdf]]
+	- [GPIO register map and reset values](ReferenceManual_0351-stm32l47xxx.pdf#page=312&selection=14,10,14,44|ReferenceManual_0351-stm32l47xxx, page 312)
 - [[MarketingPresentation_en.stm32l4.pdf]]
 - [[ProgrammingManual_0214-stm32-cortexm4.pdf]]
 	- Befehle [[ProgrammingManual_0214-stm32-cortexm4.pdf#page=81&selection=12,0,14,8|ProgrammingManual_0214-stm32-cortexm4, page 81]]
