@@ -24,31 +24,29 @@
 - Lösungskonzept
 
 ---
-# Glossar
+# 1. Glossar
 
-| Abkürzung | Bedeutung                                            |
-| --------- | ---------------------------------------------------- |
-| FTD       | **F**ile **T**ransfer **D**ienst                     |
-| OSI       | **O**pen **S**ystem **I**nterconnection              |
-| PC        | **p**ersonal **C**omputer                            |
-| MAC       | **M**edia **A**ccess **C**ontrol                     |
-| NIC       | **N**etwork **I**nterface **C**ard/**C**ontroller    |
-| GUI       | **G**raphical **U**ser **I**nterface                 |
-| IDE       | **I**ntegrated **D**evelopment **E**nviorment        |
-| SAP       | **S**oftware **A**daption **P**ort                   |
+| Abkürzung | Bedeutung                                         |
+| --------- | ------------------------------------------------- |
+| FTD       | **F**ile **T**ransfer **D**ienst                  |
+| OSI       | **O**pen **S**ystem **I**nterconnection           |
+| PC        | **p**ersonal **C**omputer                         |
+| MAC       | **M**edia **A**ccess **C**ontrol                  |
+| NIC       | **N**etwork **I**nterface **C**ard/**C**ontroller |
+| GUI       | **G**raphical **U**ser **I**nterface              |
+| IDE       | **I**ntegrated **D**evelopment **E**nviorment     |
+| SAP       | **S**ervice **A**ccess **P**oint                  |
 
 ---
 
-# Protocol-Engineering „myTCP“
-## Aufgabenstellung:  
+# 2. Aufgabenstellung:  
 
 - Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung zwischen zwei PCs .
 - Randbedingung: Grundsätze des OSI- Schichtenmodell berücksichtigen.
 
-Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 
-## Anforderungen
-### Benutzer-Leistungsmerkmale
+# 3. Anforderungen
+## 3.1 Benutzer-Leistungsmerkmale
 
 - „.. die Leistungsmerkmale der Datei-Übertragung stichwortartig zusammengestellt, wie sie sich aus der Sicht des PC-Benutzers darstellen sollen. ..“
 - Es sollen nur Textdateien übertragen werden können.
@@ -66,7 +64,7 @@ Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 - Der Ziel-PC könnte besetzt oder gar nicht empfangsbereit sein und die Übertragung könnte stark gestört sein, so dass ein Abbruch erforderlich wird. 
 
 
-### Technische Leistungsmerkmale
+## 3.2 Technische Leistungsmerkmale
 
 - Auf der Grundlage der bisherigen Festlegungen sollen folgende für die Entwicklung wichtigen Merkmale erfüllt werden:
 	- Benutzung der Ethernet-Schnittstelle der PCs
@@ -80,13 +78,13 @@ Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 	- **Rahmenbedingung:**
 	  Bei dieser Aufgabenstellung wird auf das Framing (Schicht-2) der Ethernet-Schnittstelle zurückgegriffen. Die Ethernet-Schnittstelle führt auch die Bildung und Auswertung einer Prüfsumme durch. 
 
-### Analyse der Ebenenfunktionen
+## 3.3 Analyse der Ebenenfunktionen
 
 - Welche Funktion gehört in welche Schicht?
-- Wieviele Schichten hat unser Kommunikationssystem? 
+- Wieviele Schichten hat unser Kommunikationssystem?
 
 ![[Einfuehrung zur Lehrveranstaltung.pdf#page=9&selection=40,0,40,6|Einfuehrung zur Lehrveranstaltung, page 9]]
-### Anwendungsschicht
+### 3.3.1 Anwendungsschicht
 
 - Stellt SAP für den File-Transfer-Dienst bereit 
 - die Anwendungsschicht benötigt Funktionen, um
@@ -97,7 +95,7 @@ Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 - Wiederholung bei Ungleichheit (n-mal) 
 
 
-### Darstellungsschicht
+### 3.3.2 Darstellungsschicht
 
 - Alle PCs
 	- INTEL x86 , WIN XP SP2 .
@@ -106,20 +104,20 @@ Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 - Darstellungsschicht kann entfallen. 
 
 
-### Transportschicht
+### 3.3.3 Transportschicht
 
 - Unzulänglichkeiten des Kommunikationsnetzes ausgleichen.
 - Segmentbildung, Flußkontrolle sind nicht notwendig. Daher ist die Transportschicht im vorliegenden Beispiel leer.
 - Transportschicht kann **entfallen**.
 
 
-### Vermittlungsschicht
+### 3.3.4 Vermittlungsschicht
 
 - Eine Wegewahl (Routing) ist in unserem Beispiel nicht erforderlich.
 - Die logische Adressierung (N-Adressen) der Endsysteme soll in alphanumerischer Schreibweise erfolgen. 
 
 
-### Sicherungs- und Bitübertragungsschicht
+### 3.3.5 Sicherungs- und Bitübertragungsschicht
 
 - hier IEEE802.3
 - Steuerung des Buszugriffs auf das Übertragungsmedium,
@@ -141,16 +139,55 @@ Von: Wolfgang Sonntag & Prof. Dr. Jürgen Jasperneite
 
 ---
 
-# Lösungskonzept
+# 4. Lösungskonzept
 
-## Abbildung der Anforderungen auf das OSI-Schichtenmodell
+## 4.1 Abbildung der Anforderungen auf das OSI-Schichtenmodell
+
+In diesem Kapitel wird erläutert, wie die Anforderungen dieses Projekts auf das siebenschichtige OSI-Referenzmodell abgebildet wurden. Dieses Modell diente als konzeptionelle Grundlage für die zuverlässigen Dateiübertragung zwischen zwei PCs, da allerdings nicht alle Schichten für das gegebene Szenario notwendig sind, wurde eine reduzierte, anwendungsorientierte Schichtenarchitektur entworfen.
+
+### 4.1.1 Grundlegende Überlegungen zur Schichtenauswahl
+#### Anwendungsschicht
+Die Bereitstellung für den Nutzer wurde in Form von aufrufbaren Funktionen realisiert.
+
+#### Darstellungsschicht
+Es wurde keine Form der Datenkomprimierung oder Datenformatierung implementiert. Die Kodierung wurde in stark vereinfachter Form implementiert, wie in XXX beschrieben.
+
+#### Sitzungsschicht
+Im A-Layer wurde eine Halbduplex-Steuerung in vereinfachter Form integriert.
+
+#### Transportschicht
+Bei der Übertragung wird die .txt - Datei in Zeilenweise aufgeteilten Strings übertragen und Anschließend wird geprüft ob die Anzahl der Übertragenen Zeilen mit der Anzahl der Empfangenen übereinstimmt.
+
+#### Vermittlungsschicht
+Die logische Addressierung wird durch Eingabe der PC-Namen realisiert, aber kein Routing in andere Netzwerke. Somit kann die Kommunikation mit einem anderen PC nur erfolgen, wenn sie sich im selben Netzwerk befinden. 
+
+#### Sicherungsschicht
+Nach einem Initialen Broadcast wird anschließend auch die MAC-Adresse des Übertragungspartners dokumentiert und in den darauffolgenden Frames genutzt. Allerdings wird hier weder eine zuverlässige noch eine fehlerfreie Datenübertrargung gesorgt.
+
+#### Bitübertragung
+Durch Funktionen, die von Herr Wolfgang Sonntag gestellt worden sind, nutzen wir den vollen Umfang Ethernet-Harware der Netzwerkkarte. 
+
+
+### 4.1.2 Eigenes Schichtenmodell für "myTCP"
+
+Auf Basis dieser Analyse wurde ein dreischtigter Protokoll-Stack entworfen, der die OSI-Funktionalitäten bündelt:
+
+#### A_Layer
+Das A_Layer ist eine grobe Zusammenfassung der Schichten 7-4 (Anwendung, Darstellung, Sitzung, Transport):
+- Stellt einen SAP für den FTD
+
+#### Adaption_Layer
+
+
+#### DL-Layer
 
 
 
-## Dienst- und Protokollspezifikationen der realisierten Funktionen
+
+## 4.2 Dienst- und Protokollspezifikationen der realisierten Funktionen
 
 
 
-## Sequenzdiagramme zum Nachweis der wichtigsten Funktionen
+## 4.3 Sequenzdiagramme zum Nachweis der wichtigsten Funktionen
 
 

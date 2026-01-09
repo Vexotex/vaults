@@ -17,7 +17,6 @@
 - [[07a-KuB-Komplexitaetstheorie.pdf]]
 - [[07b-KuB-Komplexitaetstheorie.pdf]]
 - [[07c-KuB-Komplexitaetstheorie.pdf]]
-- 
 
 # Übung
 - [[KuB-Uebungen-gesamt.pdf]]
