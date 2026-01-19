@@ -21,6 +21,7 @@
 
 [[Themenbeschreibung]]
 [[Design Template]]
+[[Darstellung_der_Akteure_und_Anwendungsfälle.excalidraw]]
 ## Infos
 1. Themen für die Ausarbeitung werden durch Umfrage im Ilias bis zum 15.12.2025 vergeben. Die Themen werden am 8.12.2025 vorgestellt.
 2. Gruppeneinteilung bitte über Umfrage auf der Vorlesungsseite, maximal 3 Personen pro Gruppe. Die Gruppen müssen bis zum 15.12.2025 feststehen.

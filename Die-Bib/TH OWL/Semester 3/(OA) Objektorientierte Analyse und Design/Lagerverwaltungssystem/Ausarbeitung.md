@@ -92,7 +92,7 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 |      | Anwendungsfall            | Artikel auslagern                                                                                                                                                                                                  |
 | ---- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 |      | Kurzbeschreibung          | Der Lagerverwalter kann Artikel auslagern. Dabei kann er entscheiden, welche Position im Lager ausgelagert wird.                                                                                                   |
-|      | Beteiligte Akteure        | Lagerverwalter, System, Zentralsystem                                                                                                                                                                              |
+|      | Beteiligte Akteure        | Lagerverwalter, Zentralsystem                                                                                                                                                                                      |
 |      | Vorbedingung              | Artikelnummer bekannt, Artikelbestand > 0                                                                                                                                                                          |
 |      | Nachbedingung             | Bestand an Lagerposition aktualisiert, Änderung protokolliert, Zentrallagerbestand aktualisiert                                                                                                                    |
 |      | Auslöser                  | Artikel muss ausgelagert werden.<br>- Verkauf getätigt und Ware muss für den Versand aus dem Lager.<br>- Ware ist abgelaufen und muss entsorgt.<br>- Ware muss zur Weiterverarbeitung in die Produktion.<br>- etc. |
@@ -116,7 +116,7 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 |      | Anwendungsfall            | Artikel auswerten                                                                                                                                                                                                                                                          |
 | ---- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |      | Kurzbeschreibung          | Jeder Akteur kann Auswertungen zu einem Artikel erstellen lassen, um Informationen über globale Bestände zu erhalten                                                                                                                                                       |
-|      | Beteiligte Akteure        | Lagerverwalter / Einkäufer / Verkäufer, System, Zentralsystem                                                                                                                                                                                                              |
+|      | Beteiligte Akteure        | Lagerverwalter / Einkäufer / Verkäufer / Job-Scheduler, Zentralsystem                                                                                                                                                                                                      |
 |      | Vorbedingung              | Artikelnummer bekannt                                                                                                                                                                                                                                                      |
 |      | Nachbedingung             | globale Menge und die Verteilung dieser über die Standorte werden angezeigt.<br>Statistiken zu globalen und lokalen Verkaufszahlen werden angezeigt                                                                                                                        |
 |      | Auslöser                  | - Einkauf will indizieren, ob eine Bestellung ausgelöst werden sollte oder ob es sich überhaupt lohnt diesen Artikel weiter zu führen.<br>- Lagerverwalter will entscheiden, ob er gewisse Artikel sehr erreichbar oder eher schwer erreichbar einlagern sollte.<br>- etc. |
@@ -129,7 +129,7 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 | zu 1 | LV                        | Lagerverwalter scannt Barcode ein                                                                                                                                                                                                                                          |
 | zu 1 | EK                        | Einkäufer gibt Artikelnummer ein                                                                                                                                                                                                                                           |
 | zu 1 | VK                        | Verkäufer gibt Artikelnummer ein                                                                                                                                                                                                                                           |
-| zu 1 | JS                        | Job Scheduler löst Routineauswertung aus                                                                                                                                                                                                                                   |
+| zu 1 | JS                        | Job-Scheduler löst Routineauswertung aus                                                                                                                                                                                                                                   |
 | zu 3 | Z                         | Zentralsystem merkt, dass seit der letzten Statistikberechnung keine Änderung vorgenommen worden ist und gibt die letzte Berechnung zurück                                                                                                                                 |
 |      | **Erweiterungen**         |                                                                                                                                                                                                                                                                            |
 | zu 4 | Z                         | Zentralsystem erkennt, dass Standortbezogener Lagerbestand unter Mindestbestand liegt; <br>System informiert zuständigen Einkauf per E-Mail                                                                                                                                |
@@ -140,29 +140,29 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 | zu 4 | LV                        | Zentralsystem antwortet nicht / Es herrscht keine Verbindung;<br>dem Lagerverwalter werden nur lokale Statistiken angezeigt                                                                                                                                                |
 
 ### Artikel bestellen
-#### *Aus platzgründen wurde dieser Anwendungsfall ausgelassen*
+#### *Aus Platzgründen wurde dieser Anwendungsfall ausgelassen*
 
-|     | Anwendungsfall        | Artikel bestellen                                                                                                        |
-| --- | --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-|     | Kurzbeschreibung      | Durch den Einkauf oder automatisch über das System können Bestellungen bei dem zugehörigen Lieferanten ausgelöst werden. |
-|     | Beteiligte Akteure    | Einkauf, System, Lieferant                                                                                               |
-|     | Vorbedingung          | Artikel muss bestellbar sein                                                                                             |
-|     | Nachbedingung         | Bestellung wurde an den Lieferanten übermittelt                                                                          |
-|     | Auslöser              | Ein Einkäufer oder das Zentralsystem entschiedet den Artikel zu bestellen.                                               |
-|     | **Standardszenario**  |                                                                                                                          |
-| 1   | EK                    | Einkäufer gibt Artikelnummer ein                                                                                         |
-| 2   | EK                    | Dem Einkäufer werden allgemeine Artikelinformationen, lokale Bestände und verfügbare Lieferanten angezeigt               |
-| 3   | EK                    | Einkäufer wählt Lieferanten aus, trägt Bestellmenge und gewünschtes Lieferdatum ein                                      |
-| 4   | EK                    | Dem Einkäufer wird eine Vorschau zur Bestellung angezeigt, welche Bestätigt werden kann                                  |
-| 5   | EK                    | Einkäufer bestätigt generierte Bestellung                                                                                |
-| 6   | S, L                  | System sendet Bestellung an Lieferanten und protokolliert den Vorgang                                                    |
-|     | **Erweiterungen**     |                                                                                                                          |
-|     |                       |                                                                                                                          |
-|     | **Fehlersituationen** |                                                                                                                          |
-|     |                       |                                                                                                                          |
+|      | Anwendungsfall        | Artikel bestellen                                                                                                                                                                                        |
+| ---- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      | Kurzbeschreibung      | Durch den Einkauf oder automatisch über das System können Bestellungen bei dem zugehörigen Lieferanten ausgelöst werden.                                                                                 |
+|      | Beteiligte Akteure    | Einkauf, Lieferant                                                                                                                                                                                       |
+|      | Vorbedingung          | Artikel muss bestellbar sein                                                                                                                                                                             |
+|      | Nachbedingung         | Bestellung wurde an den Lieferanten übermittelt                                                                                                                                                          |
+|      | Auslöser              | Ein Einkäufer oder das Zentralsystem entschiedet den Artikel zu bestellen.                                                                                                                               |
+|      | **Standardszenario**  |                                                                                                                                                                                                          |
+| 1    | EK                    | Einkäufer gibt Artikelnummer ein                                                                                                                                                                         |
+| 2    | EK                    | Dem Einkäufer werden allgemeine Artikelinformationen, lokale Bestände und verfügbare Lieferanten angezeigt                                                                                               |
+| 3    | EK                    | Einkäufer wählt Lieferanten aus, trägt Bestellmenge und gewünschtes Lieferdatum ein                                                                                                                      |
+| 4    | EK                    | Dem Einkäufer wird eine Vorschau zur Bestellung angezeigt, welche Bestätigt werden kann                                                                                                                  |
+| 5    | EK                    | Einkäufer bestätigt generierte Bestellung                                                                                                                                                                |
+| 6    | L                     | Bestellung wird an Lieferanten gesendet und Vorgang wird protokolliert                                                                                                                                   |
+|      | **Erweiterungen**     |                                                                                                                                                                                                          |
+| zu 1 | EK                    | Es wird der Artikelname eingegeben; <br>Es wird eine Liste mit den wahrscheinlichsten Treffern und deren Artikelnummern angezeigt; <br>Durch Auswahl eines Eintrags wird diese Artikelnummer eingegeben. |
+|      | **Fehlersituationen** |                                                                                                                                                                                                          |
+| zu 1 | LV                    | Artikelnummer existiert nicht; Vorgang wird abgebrochen                                                                                                                                                  |
 
 ### Artikel für automatische Verwaltung markieren
-#### *Aus platzgründen wurde dieser Anwendungsfall ausgelassen*
+#### *Aus Platzgründen wurde dieser Anwendungsfall ausgelassen*
 
 |     | Anwendungsfall        |     |
 | --- | --------------------- | --- |
@@ -180,7 +180,7 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 
 
 ### Artikel nicht länger automatisch Verwalten
-#### *Aus platzgründen wurde dieser Anwendungsfall ausgelassen*
+#### *Aus Platzgründen wurde dieser Anwendungsfall ausgelassen*
 
 |     | Anwendungsfall        |     |
 | --- | --------------------- | --- |
@@ -198,22 +198,22 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 
 ### Artikel automatisch verwalten
 
-|     | Anwendungsfall        | Artikel automatisch verwalten                                                                                                                                                          |
-| --- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     | Kurzbeschreibung      In regelmaßigen Abständen ruft der Job-Scheduler diese Funktion auf und es wird geprüft, ob ein Artikel bestellt werden muss.<br>Darauf hin wird der Einkäufer per E-Mail informiert  t  |
-|     | Beteiligte Akteure                                                                                                                                                                                             |
-|     | Vorbedingung                                                                                                                                                                                                   |
-|     | Nachbedingung                                                                                                                                                                                                  |
-|     | Auslöser                                                                                                                                                                                                       |
-|     | **Standardszenari                                                                                                                                                                                              |
-|     |                                                                                                                                                                                                                |
-|     | **Erweiterungen                                                                                                                                                                                                |
-|     |                                                                                                                                                                                                                |
-|     | **Fehlersitua                                                                                                                                                                                                  |
-|     |                                                                                                                                                                                                                |
+|     | Anwendungsfall     | Artikel automatisch verwalten                                                                                                                                                                                                 |
+| --- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     | Kurzbeschreibung   | In regelmaßigen Abständen ruft der Job-Scheduler diese Funktion auf. Darauf hin wird geprüft, ob ein Artikel bestellt werden muss und ggf. wird der Einkäufer per E-Mail informiert oder die Bestellung wird direkt ausgelöst |
+|     | Beteiligte Akteure | Job-Scheduler, Lieferant, Einkäufer                                                                                                                                                                                           |
+|     | Vorbedingung       | Vordefinierte Zeit des Intervalls ist abgelaufen                                                                                                                                                                              |
+|     | Nachbedingung      |                                                                                                                                                                                                                               |
+|     | Auslöser           |                                                                                                                                                                                                                               |
+|     | **Standardszenari  |                                                                                                                                                                                                                               |
+|     |                    |                                                                                                                                                                                                                               |
+|     | **Erweiterungen    |                                                                                                                                                                                                                               |
+|     |                    |                                                                                                                                                                                                                               |
+|     | **Fehlersitua      |                                                                                                                                                                                                                               |
+|     |                    |                                                                                                                                                                                                                               |
 
 ### Log ausgeben
-#### *Aus platzgründen wurde dieser Anwendungsfall ausgelassen*
+#### *Aus Platzgründen wurde dieser Anwendungsfall ausgelassen*
 
 
 # Systemdesign
