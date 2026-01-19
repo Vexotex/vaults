@@ -36,9 +36,30 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 
 ## Darstellung der Akteure und Anwendungsfälle
 
-
+[[Darstellung_der_Akteure_und_Anwendungsfälle.excalidraw]]
 
 ## Anwendungsfälle / Szenarien
+### Artikel anzeigen
+
+|      | Anwendungsfall            | Artikel anzeigen                                                                                                                                                                                         |
+| ---- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      | Kurzbeschreibung          | Jeder Akteur kann sich Details zu den Artikeln anzeigen lassen                                                                                                                                           |
+|      | Beteiligte Akteure        | Lagerverwalter / Einkäufer / Verkäufer, System                                                                                                                                                           |
+|      | Vorbedingung              | Artikelnummer oder Artikelname bekannt                                                                                                                                                                   |
+|      | Nachbedingung             | Allgemeine Artikelinformationen, sowie die letzten Änderungsprotokolle werden angezeigt                                                                                                                  |
+|      | Auslöser                  | Anfrage durch einen Akteur (LV, EK, VK)                                                                                                                                                                  |
+|      | **Standardszenario**      |                                                                                                                                                                                                          |
+| 1    | LV                        | Lagerverwalter gibt Artikelnummer ein                                                                                                                                                                    |
+| 2    | LV                        | dem Lagerverwalter werden allgemeine Artikelinformationen, lokale Bestände und deren Lagerpositionen und Änderungsprotokolle angezeigt                                                                   |
+|      | **Alternative Szenarien** |                                                                                                                                                                                                          |
+| zu 1 | LV                        | Lagerverwalter scannt Barcode ein                                                                                                                                                                        |
+| zu 1 | EK                        | Einkäufer gibt Artikelnummer ein                                                                                                                                                                         |
+| zu 1 | VK                        | Verkäufer gibt Artikelnummer ein                                                                                                                                                                         |
+|      | **Erweiterung**           |                                                                                                                                                                                                          |
+| zu 1 | LV / EK / VK              | Es wird der Artikelname eingegeben; <br>Es wird eine Liste mit den wahrscheinlichsten Treffern und deren Artikelnummern angezeigt; <br>Durch Auswahl eines Eintrags wird diese Artikelnummer eingegeben. |
+|      | **Fehlersituationen**     |                                                                                                                                                                                                          |
+| zu 1 | LV                        | Artikelnummer existiert nicht; Vorgang wird abgebrochen                                                                                                                                                  |
+
 
 ### Artikel einlagern
 
@@ -64,27 +85,6 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 |      | **Fehlersituationen**     |                                                                                                                                                     |
 | zu 1 | LV                        | eingetragene Artikelnummer nicht vorhanden; Anwendungsfall wird abgebrochen                                                                         |
 | zu 4 | Z                         | Zentralsystem nicht erreichbar;<br>Änderungen bleiben lokal gespeichert und für spätere Synchronisierung markiert                                   |
-
-### Artikel anzeigen
-
-|      | Anwendungsfall            | Artikel anzeigen                                                                                                                                                                                         |
-| ---- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|      | Kurzbeschreibung          | Jeder Akteur kann sich Details zu den Artikeln anzeigen lassen                                                                                                                                           |
-|      | Beteiligte Akteure        | Lagerverwalter / Einkäufer / Verkäufer, System                                                                                                                                                           |
-|      | Vorbedingung              | Artikelnummer oder Artikelname bekannt                                                                                                                                                                   |
-|      | Nachbedingung             | Allgemeine Artikelinformationen, sowie die letzten Änderungsprotokolle werden angezeigt                                                                                                                  |
-|      | Auslöser                  | Anfrage durch einen Akteur (LV, EK, VK)                                                                                                                                                                  |
-|      | **Standardszenario**      |                                                                                                                                                                                                          |
-| 1    | LV                        | Lagerverwalter gibt Artikelnummer ein                                                                                                                                                                    |
-| 2    | LV                        | dem Lagerverwalter werden allgemeine Artikelinformationen, lokale Bestände und deren Lagerpositionen und Änderungsprotokolle angezeigt                                                                   |
-|      | **Alternative Szenarien** |                                                                                                                                                                                                          |
-| zu 1 | LV                        | Lagerverwalter scannt Barcode ein                                                                                                                                                                        |
-| zu 1 | EK                        | Einkäufer gibt Artikelnummer ein                                                                                                                                                                         |
-| zu 1 | VK                        | Verkäufer gibt Artikelnummer ein                                                                                                                                                                         |
-|      | **Erweiterung**           |                                                                                                                                                                                                          |
-| zu 1 | LV / EK / VK              | Es wird der Artikelname eingegeben; <br>Es wird eine Liste mit den wahrscheinlichsten Treffern und deren Artikelnummern angezeigt; <br>Durch Auswahl eines Eintrags wird diese Artikelnummer eingegeben. |
-|      | **Fehlersituationen**     |                                                                                                                                                                                                          |
-| zu 1 | LV                        | Artikelnummer existiert nicht; Vorgang wird abgebrochen                                                                                                                                                  |
 
 
 ### Artikel auslagern
@@ -197,21 +197,20 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 |     |                       |     |
 
 ### Artikel automatisch verwalten
-#### *Aus platzgründen wurde dieser Anwendungsfall ausgelassen*
 
-|     | Anwendungsfall        |     |
-| --- | --------------------- | --- |
-|     | Kurzbeschreibung      |     |
-|     | Beteiligte Akteure    |     |
-|     | Vorbedingung          |     |
-|     | Nachbedingung         |     |
-|     | Auslöser              |     |
-|     | **Standardszenario**  |     |
-|     |                       |     |
-|     | **Erweiterungen**     |     |
-|     |                       |     |
-|     | **Fehlersituationen** |     |
-|     |                       |     |
+|     | Anwendungsfall        | Artikel automatisch verwalten                                                                                                                                                          |
+| --- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     | Kurzbeschreibung      In regelmaßigen Abständen ruft der Job-Scheduler diese Funktion auf und es wird geprüft, ob ein Artikel bestellt werden muss.<br>Darauf hin wird der Einkäufer per E-Mail informiert  t  |
+|     | Beteiligte Akteure                                                                                                                                                                                             |
+|     | Vorbedingung                                                                                                                                                                                                   |
+|     | Nachbedingung                                                                                                                                                                                                  |
+|     | Auslöser                                                                                                                                                                                                       |
+|     | **Standardszenari                                                                                                                                                                                              |
+|     |                                                                                                                                                                                                                |
+|     | **Erweiterungen                                                                                                                                                                                                |
+|     |                                                                                                                                                                                                                |
+|     | **Fehlersitua                                                                                                                                                                                                  |
+|     |                                                                                                                                                                                                                |
 
 ### Log ausgeben
 #### *Aus platzgründen wurde dieser Anwendungsfall ausgelassen*
