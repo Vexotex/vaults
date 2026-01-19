@@ -1,6 +1,5 @@
 [[Komplexität und Berechenbarkeit - Info]]
 
-
 ## Vorlesung
 - [[KB Vorlesung Notizen]]
 
@@ -17,6 +16,9 @@
 - [[07a-KuB-Komplexitaetstheorie.pdf]]
 - [[07b-KuB-Komplexitaetstheorie.pdf]]
 - [[07c-KuB-Komplexitaetstheorie.pdf]]
+- [[07d-KuB-Komplexitaetstheorie.pdf]]
+	- [[07d-Beispiel.excalidraw]]
+- 
 
 # Übung
 - [[KuB-Uebungen-gesamt.pdf]]
@@ -44,4 +46,6 @@
 # wichtig für Prüfung
 - Pumping Lemma
 - Halteproblem
+- Knappsackproblem / SAT-Problem
+- [[KB_Probeklausur_mit_Loesungen.pdf]]
 - 

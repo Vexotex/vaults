@@ -1,4 +1,5 @@
 [[Programmierung eingebetteter Systeme - Info]]
+[[Klausur_Beispiel_PE.pdf]]
 
 # Vorlesung
 - [[PE_00_Einfuehrung.pdf]]
@@ -28,7 +29,6 @@
 - [[MarketingPresentation_en.stm32l4.pdf]]
 - [[ProgrammingManual_0214-stm32-cortexm4.pdf]]
 	- Befehle [[ProgrammingManual_0214-stm32-cortexm4.pdf#page=81&selection=12,0,14,8|ProgrammingManual_0214-stm32-cortexm4, page 81]]
+	- [conditional execution](ProgrammingManual_0214-stm32-cortexm4.pdf#page=65&selection=84,0,84,21|ProgrammingManual_0214-stm32-cortexm4, page 65)
 - [[UserManual_1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf]]
 
-
-# [[Gastvorlesung]]

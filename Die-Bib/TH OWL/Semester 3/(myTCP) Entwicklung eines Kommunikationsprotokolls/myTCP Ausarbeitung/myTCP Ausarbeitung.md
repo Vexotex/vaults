@@ -36,6 +36,8 @@
 | GUI       | **G**raphical **U**ser **I**nterface              |
 | IDE       | **I**ntegrated **D**evelopment **E**nviorment     |
 | SAP       | **S**ervice **A**ccess **P**oint                  |
+| RX        | **R**ecieve / Empfangen                           |
+| TX        | **T**ransmit / Senden                             |
 
 ---
 
@@ -141,16 +143,22 @@
 
 # 4. Lösungskonzept
 
-## 4.1 Abbildung der Anforderungen auf das OSI-Schichtenmodell
+## 4.1 Umsetzung der Anforderungen
+
+Als zentrales Werkzeug dieser Umsetzung wurde das Programm "IBM Engineering Systems Design Rhapsody" verwendet. 
+Rhapsody ermöglicht es uns unser komplexes Systeme durch Nutzung von UML-Standards zu entwerfen, zu analysieren und simulieren. Wobei aus den graphisch erstellten Diagrammen code mit hohem Qualitätsstandard generiert wird. 
+
+
+## 4.2 Abbildung der Anforderungen auf das OSI-Schichtenmodell
 
 In diesem Kapitel wird erläutert, wie die Anforderungen dieses Projekts auf das siebenschichtige OSI-Referenzmodell abgebildet wurden. Dieses Modell diente als konzeptionelle Grundlage für die zuverlässigen Dateiübertragung zwischen zwei PCs, da allerdings nicht alle Schichten für das gegebene Szenario notwendig sind, wurde eine reduzierte, anwendungsorientierte Schichtenarchitektur entworfen.
 
-### 4.1.1 Grundlegende Überlegungen zur Schichtenauswahl
+### 4.2.1 Grundlegende Überlegungen zur Schichtenauswahl
 #### Anwendungsschicht
 Die Bereitstellung für den Nutzer wurde in Form von aufrufbaren Funktionen realisiert.
 
 #### Darstellungsschicht
-Es wurde keine Form der Datenkomprimierung oder Datenformatierung implementiert. Die Kodierung wurde in stark vereinfachter Form implementiert, wie in XXX beschrieben.
+Es wurde keine Form der Datenkomprimierung oder Datenformatierung implementiert. Die Kodierung wurde in stark vereinfachter Form implementiert, wie in 4.2.1 beschrieben.
 
 #### Sitzungsschicht
 Im A-Layer wurde eine Halbduplex-Steuerung in vereinfachter Form integriert.
@@ -165,29 +173,65 @@ Die logische Addressierung wird durch Eingabe der PC-Namen realisiert, aber kein
 Nach einem Initialen Broadcast wird anschließend auch die MAC-Adresse des Übertragungspartners dokumentiert und in den darauffolgenden Frames genutzt. Allerdings wird hier weder eine zuverlässige noch eine fehlerfreie Datenübertrargung gesorgt.
 
 #### Bitübertragung
-Durch Funktionen, die von Herr Wolfgang Sonntag gestellt worden sind, nutzen wir den vollen Umfang Ethernet-Harware der Netzwerkkarte. 
+Durch Funktionen, die von Herr Wolfgang Sonntag gestellt worden sind, können wir die Ethernet-Harware der Netzwerkkarte nutzen und Frames zum senden weitergeben und prüfen ob neue Frames angekommen sind. 
 
 
-### 4.1.2 Eigenes Schichtenmodell für "myTCP"
+### 4.2.2 Eigenes Schichtenmodell für "myTCP"
 
 Auf Basis dieser Analyse wurde ein dreischtigter Protokoll-Stack entworfen, der die OSI-Funktionalitäten bündelt:
 
 #### A_Layer
-Das A_Layer ist eine grobe Zusammenfassung der Schichten 7-4 (Anwendung, Darstellung, Sitzung, Transport):
-- Stellt einen SAP für den FTD
+Das A_Layer ist eine grobe Zusammenfassung der Schichten 7-4 (Anwendung, Darstellung, Sitzung, Transport) und:
+- stellt einen SAP für den FTD
+- öffnet liest und schreibt Dateien
+- steuert die Halbduplex-Verbindung 
+- kontrolliert die Vollständigkeit der Übertragung mittels RX- / TX-Zählern
+- löst Timeouts aus, bei fehlenden Antworten
 
 #### Adaption_Layer
-
+Das Adaption_Layer hat keine eigene Funktionalität und reicht die ankommenden Signale des A_Layer an das DL-Layer durch und andersherum. 
+Dieses Layer dient als Platzhalter, um dieses Modell erweitern zu können ohne die SAPs des A_Layers oder DL_Layers anpassen zu müssen.
 
 #### DL-Layer
+Das DL_Layer fasst die übrigen Schichten 3-1 Zusammen (Vermittlung, Sicherung, Bitübertragung) und:
+- verwaltet die Aufschlüsselung der PC-Namen
+- Abbildung der PC-Namen auf MAC-Adressen
+- gibt Frames an die NIC des PCs weiter
+- prüft regelmäßig ob neue Frames angekommen sind 
+
+
+## 4.3 Dienst- und Protokollspezifikationen der realisierten Funktionen
+
+
+### 4.3.1 A_Layer 
+
+Um die Funktionen des A_layer übersichtlicher Strukturieren zu können wurde er logisch in ACodex und ACom getrennt. Der ACodex übernimmt die En- und Decodierung der Nachrichten und der ACom stellt den Gesamtablauf und Behaldelung der Sonderfälle in einem Zustandsautomaten dar.
+
+
+#### ACom
+Der Zustandsautomat  
+
+
+#### ACodex
+
+
+### 4.3.2 Adaption
+Der Adaption-Layer besteht aus einem Zustand "Idle" und kann auf zwei Aktionen reagieren.
+Erstens kann der A_Layer die Funktion "PDataReq" aufrufen und darauf hin wird der Payload des "PDataReq" neu in einem "DLDataReq" neu verpackt und im DL_Layer oder genauer dem DLCom aufgerufen.
+Zweitens kann der DL_Layer die Funktion "DLDataInd" aufrufen und folgend wird der Payload der "DLDataInd" neu in einer "PDataInd" neu verpackt und im A_Layer oder genauer dem ACodex aufgerufen.
+
+
+### 4.3.3 DL_Layer
+
+
+#### DLCodex
+
+
+#### DLCom
 
 
 
-
-## 4.2 Dienst- und Protokollspezifikationen der realisierten Funktionen
-
+## 4.4 Sequenzdiagramme zum Nachweis der wichtigsten Funktionen
 
 
-## 4.3 Sequenzdiagramme zum Nachweis der wichtigsten Funktionen
-
-
+[[Diagramme.pdf]]

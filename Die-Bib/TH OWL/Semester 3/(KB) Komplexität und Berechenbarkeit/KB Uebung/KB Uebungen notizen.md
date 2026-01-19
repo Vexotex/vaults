@@ -409,3 +409,10 @@ Rate ein Zertifikat der länge n und Verifiziere ob es richtig ist.
 
 ## [Aufgabe 46](KuB-Uebungen-gesamt.pdf#page=16&selection=19,0,19,10|KuB-Uebungen-gesamt, page 16)
 
+
+
+
+## [Aufgabe 47](KuB-Uebungen-gesamt.pdf#page=16&selection=54,0,54,10|KuB-Uebungen-gesamt, page 16)
+
+
+
