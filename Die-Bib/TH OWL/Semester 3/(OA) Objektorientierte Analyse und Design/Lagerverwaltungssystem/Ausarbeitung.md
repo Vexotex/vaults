@@ -215,7 +215,7 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 |     | **Fehlersituationen** |     |
 |     |                       |     |
 
-
+### Log ausgeben
 
 # Systemdesign
 
