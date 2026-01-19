@@ -1,7 +1,7 @@
 $$
 r(t) = \begin{cases}
 0 & ;t < 0 \\
-0 & ;t \geq_{}0
+t & ;t \geq_{}0
 \end{cases}
 $$
 

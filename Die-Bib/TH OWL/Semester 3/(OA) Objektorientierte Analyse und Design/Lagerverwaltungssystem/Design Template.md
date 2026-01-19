@@ -7,7 +7,7 @@ Dokumentiere möglichst genau, was das System tun soll. Dieser Abschnitt soll en
 - Ablaufpläne
 - Dokumentation von nicht ersichtlichem Bedarf
 Beschreibe für jeden Anwendungsfall mindestens einen Ablaufplan! Am besten unterlegst du die tabellarische Form mit einem Kommunikationsdiagram (siehe Vorlesung Systemdesign).
-- [ ] 
+- [x] 
 # Systemdesign
 Gebe eine grobe Übersicht über alle Komponenten des Systems (Server/Client/Datenbank/etc.) und wie diese Systeme zusammenspielen. Zeichne Diagramme und dokumentiere alle APIs.
 - [ ] 

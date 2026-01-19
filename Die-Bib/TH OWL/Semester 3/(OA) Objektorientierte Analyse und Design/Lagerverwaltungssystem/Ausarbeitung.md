@@ -198,19 +198,22 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 
 ### Artikel automatisch verwalten
 
-|     | Anwendungsfall     | Artikel automatisch verwalten                                                                                                                                                                                                 |
-| --- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     | Kurzbeschreibung   | In regelmaßigen Abständen ruft der Job-Scheduler diese Funktion auf. Darauf hin wird geprüft, ob ein Artikel bestellt werden muss und ggf. wird der Einkäufer per E-Mail informiert oder die Bestellung wird direkt ausgelöst |
-|     | Beteiligte Akteure | Job-Scheduler, Lieferant, Einkäufer                                                                                                                                                                                           |
-|     | Vorbedingung       | Vordefinierte Zeit des Intervalls ist abgelaufen                                                                                                                                                                              |
-|     | Nachbedingung      |                                                                                                                                                                                                                               |
-|     | Auslöser           |                                                                                                                                                                                                                               |
-|     | **Standardszenari  |                                                                                                                                                                                                                               |
-|     |                    |                                                                                                                                                                                                                               |
-|     | **Erweiterungen    |                                                                                                                                                                                                                               |
-|     |                    |                                                                                                                                                                                                                               |
-|     | **Fehlersitua      |                                                                                                                                                                                                                               |
-|     |                    |                                                                                                                                                                                                                               |
+|      | Anwendungsfall        | Artikel automatisch verwalten                                                                                                                                                                                              |
+| ---- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      | Kurzbeschreibung      | In regelmaßigen Abständen ruft der Job-Scheduler diese Funktion auf. Darauf hin wird geprüft, ob ein Artikel bestellt werden muss und ggf. wird eine Bestellung ausgelöst                                                  |
+|      | Beteiligte Akteure    | Job-Scheduler, Lieferant, Einkäufer, LAgerverwalter                                                                                                                                                                        |
+|      | Vorbedingung          | Vordefinierte Zeit des Intervalls ist abgelaufen.<br>Mindestens ein Artikel für automatische Verwaltung markiert.                                                                                                          |
+|      | Nachbedingung         | Alle für automatische Verwaltung markierten Artikel wurden geprüft und der Einkauf wurde informiert bzw. die Bestellung wurde ausgelöst                                                                                    |
+|      | Auslöser              | Ablauf des Zeitintervalls                                                                                                                                                                                                  |
+|      | **Standardszenario**  |                                                                                                                                                                                                                            |
+| 1    | JS                    | Der Job-Scheduler iteriert über seine Liste, der für automatische Verwaltung markierter Artikel                                                                                                                            |
+| 2    | JS                    | prüft, ob eine Lagerposition des Artikels abgelaufen ist                                                                                                                                                                   |
+| 3    | JS                    | prüft, ob der Mindestbestand unterschritten worden ist                                                                                                                                                                     |
+|      | **Erweiterungen**     |                                                                                                                                                                                                                            |
+| zu 2 | JS, LV                | Der Job-Scheduler stellt fest, dass Lagerpositionen des Artikels abgelaufen sind. Es wird der Lagerverwalter informiert die Artikel auszulagern und zu entsorgen und die Lagerposition wird aus dem Gesamtbestand entfernt |
+| zu 3 | JS, EK, L             | Der Job-Scheduler stellt fest, dass der Mindestbestand unterschritten worden ist;<br>die Bestellung wird beim zugeordneten Lieferanten ausgelöst und der                                                                   |
+|      | **Fehlersituationen** |                                                                                                                                                                                                                            |
+| zu 3 | JS, EK                | Der Job-Scheduler stellt fest, dass der Mindestbestand unterschritten worden ist, aber es wurde kein Lieferant zugeordnet;<br>der Einkauf wird per E-mail über den Mangel informiert und aufgefordert zu Bestellen         |
 
 ### Log ausgeben
 #### *Aus Platzgründen wurde dieser Anwendungsfall ausgelassen*
@@ -218,9 +221,13 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 
 # Systemdesign
 
-# Threat Modeling
 
-# Komponentendesign
+
+## Threat Modeling
+
+
+
+## Komponentendesign
 
 
 
