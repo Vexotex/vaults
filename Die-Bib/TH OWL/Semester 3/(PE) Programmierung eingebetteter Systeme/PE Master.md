@@ -61,4 +61,3 @@
 - PDF über Stick oder durch online hochladen
 - [[Klausur_Beispiel_PE.pdf]]
 - 90 min
-- 
