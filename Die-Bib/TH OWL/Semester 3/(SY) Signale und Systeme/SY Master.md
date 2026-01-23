@@ -40,3 +40,12 @@ $$
 $$
 
 $$\frac{d}{dx} f^2(x) = 2 f(x) f'(x)$$
+
+
+
+# Klausur 
+
+- 2 DIN A4 Handbeschrieben (Kein Ausdruck! / keine Kopien!)
+- Taschenrechner
+- Formelsammulng aus dem Illias wird gestellt
+-  

@@ -1,5 +1,5 @@
 [[Programmierung eingebetteter Systeme - Info]]
-[[Klausur_Beispiel_PE.pdf]]
+
 
 # Vorlesung
 - [[PE_00_Einfuehrung.pdf]]
@@ -14,7 +14,7 @@
 - [[PE_07_C_Pointer_Funktionen.pdf]]
 - [[PE_08_C_Felder_Strukturen.pdf]]
 - [[PE_09_C_Peripherie.pdf]]
-- 
+- [[PE_10_C_ErweitertePeripherie.pdf]]
 
 # Praktikum
 - [[PE_Aufbau_Steckplatine.pdf]]
@@ -32,3 +32,33 @@
 	- [conditional execution](ProgrammingManual_0214-stm32-cortexm4.pdf#page=65&selection=84,0,84,21|ProgrammingManual_0214-stm32-cortexm4, page 65)
 - [[UserManual_1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf]]
 
+
+
+|     | 0   | 28  |
+| --- | --- | --- |
+|     | 1   | 6   |
+|     | 2   | 22  |
+|     | 3   | 20  |
+|     | 4   | 16  |
+|     | 5   | 24  |
+|     | 6   | 20  |
+|     | 7   | 4   |
+|     | 8   | 0   |
+|     | 9   | 12  |
+|     |     |     |
+
+80MHz <=> 80.000.000 1/s
+/1024
+= 78125
+
+2^{16} = 65536
+65536 / 78125 = 0.83886s
+
+
+# Klausur
+- Notepad++
+- Adobe Acrobat
+- PDF über Stick oder durch online hochladen
+- [[Klausur_Beispiel_PE.pdf]]
+- 90 min
+- 

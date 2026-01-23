@@ -416,3 +416,28 @@ Rate ein Zertifikat der länge n und Verifiziere ob es richtig ist.
 
 
 
+
+
+# Übung 13
+
+## [Aufgabe 51](KuB-Uebungen-gesamt.pdf#page=18&selection=72,0,72,11|KuB-Uebungen-gesamt, page 18)
+
+polynomielle Reduktion:
+Sei G = (V, E)
+V = Knoten
+E = Kanten
+
+so gibt es Gc = (V, Ec)
+mit Ec = VxV \ E (alle Knoten, ohne die in E)
+
+so ist die Lösungsmenge des Cliquen-Problem auf Gc 
+<=> der Lösungsmenge des IndependentSet-Problems auf G
+
+
+
+## [Aufgabe 52](KuB-Uebungen-gesamt.pdf#page=18&selection=111,0,112,1|KuB-Uebungen-gesamt, page 18)
+
+alternative Argumentation wie poly. Reduktion von SAT auf Hamiltonkreis (Diamanten - ohne Kreisverbindung am Ende) 
+
+
+## Aufgabe 53

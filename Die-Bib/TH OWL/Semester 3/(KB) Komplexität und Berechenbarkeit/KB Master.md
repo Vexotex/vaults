@@ -18,7 +18,7 @@
 - [[07c-KuB-Komplexitaetstheorie.pdf]]
 - [[07d-KuB-Komplexitaetstheorie.pdf]]
 	- [[07d-Beispiel.excalidraw]]
-- 
+- [[07e-KuB-Komplexitaetstheorie.pdf]]
 
 # Übung
 - [[KuB-Uebungen-gesamt.pdf]]
@@ -48,4 +48,9 @@
 - Halteproblem
 - Knappsackproblem / SAT-Problem
 - [[KB_Probeklausur_mit_Loesungen.pdf]]
+
+
+
+# Klausur
+- alles an Papier was ich mitbringen kann
 - 
