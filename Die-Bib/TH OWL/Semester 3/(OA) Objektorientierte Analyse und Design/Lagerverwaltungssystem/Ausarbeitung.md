@@ -91,14 +91,14 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 
 |      | Anwendungsfall            | Artikel auslagern                                                                                                                                                                                                  |
 | ---- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|      | Kurzbeschreibung          | Der Lagerverwalter kann Artikel auslagern. Dabei kann er entscheiden, welche Position im Lager ausgelagert wird.                                                                                                   |
+|      | Kurzbeschreibung          | Der Lagerverwalter kann Artikel auslagern. Dabei kann er entscheiden, welche Position im Lager ausgelagert wird.<br>Es werden die Bestände der anderen Standorten angezeigt.                                       |
 |      | Beteiligte Akteure        | Lagerverwalter, Zentralsystem                                                                                                                                                                                      |
 |      | Vorbedingung              | Artikelnummer bekannt, Artikelbestand > 0                                                                                                                                                                          |
 |      | Nachbedingung             | Bestand an Lagerposition aktualisiert, Änderung protokolliert, Zentrallagerbestand aktualisiert                                                                                                                    |
 |      | Auslöser                  | Artikel muss ausgelagert werden.<br>- Verkauf getätigt und Ware muss für den Versand aus dem Lager.<br>- Ware ist abgelaufen und muss entsorgt.<br>- Ware muss zur Weiterverarbeitung in die Produktion.<br>- etc. |
 |      | **Standardszenario**      |                                                                                                                                                                                                                    |
 | 1    | LV                        | Lagerverwalter gibt Artikelnummer ein                                                                                                                                                                              |
-| 2    | LV                        | Dem Lagerverwalter werden alle Im lokalen Standort vorhandenen Lagerpositionen und deren Verfallsdaten angezeigt                                                                                                   |
+| 2    | LV                        | Dem Lagerverwalter werden alle Im lokalen Standort vorhandenen Lagerpositionen und deren Verfallsdaten angezeigt. Separat werden die Bestände in anderen Standorten angezeigt.                                     |
 | 3    | LV                        | Lagerverwalter wählt Position aus und gibt auszulagernde Menge an                                                                                                                                                  |
 | 4    | Z                         | System sendet Bestandsaktualisierung, mit Artikelnummer und entnommener Stückzahl an Zentralsystem                                                                                                                 |
 | 7    | Z                         | Zentralsystem aktualisiert Gesamtbestand und erstellt eigens Protokoll zu: Mengenänderung und Standort der Änderung                                                                                                |
@@ -221,8 +221,51 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 
 # Systemdesign
 
+## Übersicht
+Das Systemdesign der Lagerverwaltung für den Großhändler beschreibt die strukturelle Gliederung der Software in Komponenten und deren Interaktion. Es wird eine **verteilte Architektur** mit autonomen Lokalsystemen und einem zentralen Koordinationssystem entworfen, um die Anforderungen an Ausfallsicherheit, Skalierbarkeit und Echtzeit-Bestandsführung zu erfüllen.
+
+Das System folgt einem **Microservice-Ansatz**, bei dem jede wesentliche Funktion (z. B. Bestandsverwaltung, Bestellmanagement, etc.) als eigenständiger Service implementiert wird. Die Kommunikation zwischen den Services erfolgt über definierte APIs (REST/HTTP) und asynchrone Nachrichten (Message Queue). Dadurch können einzelne Teile des Systems unabhängig skaliert, deployed und gewartet werden.
 
 
+### Kernkomponenten
+1. **Lokaler Lagerdienst (LLD)** – Pro Standort ein Service, der die lokale Lagerverwaltung (Ein‑/Auslagerung, Positionsverwaltung, Verfallsdatum) übernimmt.
+2. **Zentraler Bestandsdienst (ZBD)** – Führt die aggregierten Bestandsdaten aller Standorte, koordiniert Abfragen und Synchronisation.
+3. **Bestellservice (BS)** – Verwaltet Bestellvorgänge (manuell/automatisch) und kommuniziert mit Lieferanten.
+4. **Analytics-Service (AS)** – Berechnet Statistiken, Kennzahlen und generiert automatisierte Empfehlungen (z. B. Nachbestellung, Umschichtung).
+5. **Job-Scheduler (JS)** – Führt zeitgesteuerte Aufgaben aus (automatische Bestandsprüfung, Auswertungen, Benachrichtigungen).
+6. **API-Gateway** – Zentrale Eintrittspunkt für alle Client-Anfragen (Web‑Frontend, Mobile Apps) und Routing zu den jeweiligen Services.
+7. **Nachrichten-Broker** (z. B. RabbitMQ, Apache Kafka) – Für asynchrone Kommunikation, insbesondere bei Bestandsaktualisierungen und Ereignis‑Benachrichtigungen.
+
+### Datenbanken
+- **Zentrale Datenbank** (z. B. PostgreSQL/MySQL): Speichert Stammdaten (Artikel, Lieferanten, Standorte), aggregierte Bestände, Bestellhistorien und globale Protokolle.
+- **Lokale Datenbanken** (pro Standort, z. B. SQLite oder PostgreSQL): Enthalten die detaillierten Lagerpositionen, Verfallsdaten und lokale Transaktionsprotokolle.
+- **Analytics-Datenbank** (z. B. TimescaleDB oder ClickHouse): Optimiert für zeitreihenbasierte Abfragen und statistische Auswertungen.
+
+### Caching
+- **Valkey** oder ähnlicher In‑Memory‑Cache wird eingesetzt, um häufig abgefragte Daten (z. B. Artikelstammdaten, aktuelle Bestände) zwischenzuspeichern und die Antwortzeiten zu verbessern.
+- Cache‑Strategie: LRU (Least Recently Used) mit Time‑to‑Live (TTL) für volatile Daten.
+
+
+## API-Schnittstellen (REST)
+
+Die APIs werden nach REST‑Prinzipien definiert. Beispiele:
+### Artikel anzeigen
+```
+get_Artikel: {ArtikleID} -> bool x string
+```
+Eingabe ist die Artikelnummer, Die Rückgabe ist ein Boolean, der Erfolg oder Misserfolg signalisiert, und, im Falle des Erfolgs, eine JSON-Datei mit Artikelinformationen, oder im Falle eines Misserfolgs, eine Fehlermeldung zurückgibt.
+
+### Artikel einlagern
+```
+store_Artikel: {ArtikelID} -> bool
+```
+Die Eingabe ist hier die gekürzte URL, die Ausgabe eine Indikation über Erfolg oder Misserfolg. Auch hier können wir wieder eine Fehlermeldung oder einen Fehlercode zusätzlich zurückgeben. 
+
+### Artikel auslagern
+```
+withdraw_Artikel: {ArtikelID} -> bool
+```
+Body: { "quantity": 2, "location": "A-12" }
 ## Threat Modeling
 
 
