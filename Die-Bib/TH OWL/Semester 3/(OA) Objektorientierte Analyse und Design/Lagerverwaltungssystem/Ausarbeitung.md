@@ -38,7 +38,7 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 
 [[Darstellung_der_Akteure_und_Anwendungsfälle.excalidraw]]
 
-## Anwendungsfälle / Szenarien
+## Anwendugsfälle / Szenarien
 ### Artikel anzeigen
 
 |      | Anwendungsfall            | Artikel anzeigen                                                                                                                                                                                         |
