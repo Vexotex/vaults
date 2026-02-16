@@ -38,7 +38,7 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 
 [[Darstellung_der_Akteure_und_Anwendungsfälle.excalidraw]]
 
-## Anwendugsfälle / Szenarien
+## Anwendungsfälle / Szenarien
 ### Artikel anzeigen
 
 |      | Anwendungsfall            | Artikel anzeigen                                                                                                                                                                                         |
@@ -257,18 +257,230 @@ Eingabe ist die Artikelnummer, Die Rückgabe ist ein Boolean, der Erfolg oder Mi
 
 ### Artikel einlagern
 ```
-store_Artikel: {ArtikelID} -> bool
+store_Artikel: {ArtikelID x int} -> bool
 ```
-Die Eingabe ist hier die gekürzte URL, die Ausgabe eine Indikation über Erfolg oder Misserfolg. Auch hier können wir wieder eine Fehlermeldung oder einen Fehlercode zusätzlich zurückgeben. 
+Eingabe ist die Artikelnummer und Menge, Die Rückgabe ist ein Boolean, der Erfolg oder Misserfolg signalisiert.
 
 ### Artikel auslagern
 ```
-withdraw_Artikel: {ArtikelID} -> bool
+withdraw_Artikel: {ArtikelID x int} -> bool
 ```
-Body: { "quantity": 2, "location": "A-12" }
+Eingabe ist die Artikelnummer und Menge, Die Rückgabe ist ein Boolean, der Erfolg oder Misserfolg signalisiert.
+
+### *Aus Platzgründen wurden die restlichen API-Schnittstelle ausgelassen*
+
+## Sequenzdiagramme (Auszug)
+
+### Artikel einlagern (mit Synchronisation)
+
+![[TH OWL/Semester 3/(OA) Objektorientierte Analyse und Design/Lagerverwaltungssystem/Sequenzdiagramme.excalidraw.md#^group=a4eSi_2YSpRZ9kpDjImcA]]
+
+
+### Automatische Bestandsprüfung durch Job-Scheduler
+
+![[TH OWL/Semester 3/(OA) Objektorientierte Analyse und Design/Lagerverwaltungssystem/Sequenzdiagramme.excalidraw.md#^group=JKgYxuf6FOyzLVl-gGWyN]]
+
+
+
 ## Threat Modeling
+### Trust Boundaries
 
+| Grenze | Beschreibung                                        | Beteiligte Komponenten               |
+| ------ | --------------------------------------------------- | ------------------------------------ |
+| **G1** | Zwischen Benutzer (LV/EK/VK) und API-Gateway        | Externes Netzwerk ↔ interner Service |
+| **G2** | Zwischen API-Gateway und Microservices              | API-Gateway ↔ LLD/ZBD/BS/AS          |
+| **G3** | Zwischen Lokalsystem und Zentralsystem              | LLD ↔ ZBD (über Netzwerk)            |
+| **G4** | Zwischen Services und Datenbanken                   | Services ↔ Datenbanken               |
+| **G5** | Zwischen System und externen Partnern (Lieferanten) | Bestellservice ↔ Lieferanten-API     |
+| **G6** | Zwischen Job-Scheduler und internen Services        | JS ↔ ZBD/AS/BS                       |
+| **G7** | Zwischen Services und Message Queue                 | Services ↔ MQ                        |
 
+### STRIDE-Analyse pro Komponente
+
+#### 1. Lokaler Lagerdienst (LLD)
+
+| STRIDE-Kategorie           | Bedrohung | Beschreibung                                                                                                       |
+| -------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Spoofing**               | S1        | Ein Angreifer gibt sich als legitimer LLD aus und übermittelt falsche Bestandsdaten an das Zentralsystem           |
+| **Tampering**              | T1        | Manipulation der lokalen Datenbank (Bestände, Positionen, Verfallsdaten) durch Schadsoftware oder direkten Zugriff |
+| **Tampering**              | T2        | Manipulation der Kommunikation zwischen LLD und ZBD (Man-in-the-Middle)                                            |
+| **Repudiation**            | R1        | Ein Lagerverwalter führt eine Ein- oder Auslagerung durch, die Aktion kann später nicht nachgewiesen werden        |
+| **Information Disclosure** | I1        | Unbefugter Zugriff auf lokale Bestandsdaten (z. B. durch fehlende Verschlüsselung)                                 |
+| **Information Disclosure** | I2        | Verlust von sensiblen Lagerdaten durch fehlerhafte Logausgaben                                                     |
+| **Denial of Service**      | D1        | Überlastung des LLD durch zu viele gleichzeitige Anfragen                                                          |
+| **Denial of Service**      | D2        | Ausfall des LLD durch gezielte Attacke oder Hardwarefehler, Lokalsystem wird autark unbrauchbar                    |
+| **Elevation of Privilege** | E1        | Ausnutzen von Schwachstellen im LLD, um Adminrechte auf dem lokalen Server zu erlangen                             |
+
+#### 2. Zentraler Bestandsdienst (ZBD)
+
+|STRIDE-Kategorie|Bedrohung|Beschreibung|
+|---|---|---|
+|**Spoofing**|S2|Ein Angreifer gibt sich als ZBD aus und liefert falsche aggregierte Bestandsdaten an anfragende Standorte|
+|**Spoofing**|S3|Ein Standort gibt sich als anderer Standort aus, um Zugriff auf dessen Daten zu erhalten|
+|**Tampering**|T3|Manipulation der zentralen Datenbank, um Bestände zu verfälschen (z. B. Diebstahl vertuschen)|
+|**Tampering**|T4|Manipulation der Synchronisationsnachrichten zwischen ZBD und LLD|
+|**Repudiation**|R2|Ein Administrator ändert kritische Daten (z. B. Mindestbestände), die Änderung ist nicht nachvollziehbar|
+|**Information Disclosure**|I3|Unbefugter Zugriff auf die zentrale Datenbank mit allen Bestandsdaten aller Standorte|
+|**Information Disclosure**|I4|Abhören der Kommunikation zwischen ZBD und LLD (wichtige Geschäftsdaten im Klartext)|
+|**Denial of Service**|D3|ZBD wird durch DDoS-Attacke lahmgelegt → keine standortübergreifende Bestandsabfrage möglich|
+|**Denial of Service**|D4|Datenbanküberlastung durch ineffiziente Abfragen oder gezielte Anfrageflut|
+|**Elevation of Privilege**|E2|SQL-Injection-Angriff auf die zentrale Datenbank über unsichere API-Endpunkte|
+
+#### 3. Bestellservice (BS)
+
+|STRIDE-Kategorie|Bedrohung|Beschreibung|
+|---|---|---|
+|**Spoofing**|S4|Ein Angreifer gibt sich als Einkäufer aus und löst unberechtigte Bestellungen aus|
+|**Spoofing**|S5|Ein Angreifer gibt sich als Lieferant aus und fängt Bestellungen ab (manipulierte Lieferanten-API)|
+|**Tampering**|T5|Manipulation von Bestelldaten (Menge, Lieferadresse, Artikel) während der Übertragung|
+|**Tampering**|T6|Manipulation der Lieferantenstammdaten (Kontoverbindungen, Adressen)|
+|**Repudiation**|R3|Ein Einkäufer bestellt Waren, bestreitet dies später (kein Protokoll)|
+|**Information Disclosure**|I5|Offenlegung von Lieferantenverträgen, Preisen und Konditionen an Wettbewerber|
+|**Denial of Service**|D5|Bestellservice nicht erreichbar → dringende Nachbestellungen können nicht ausgelöst werden|
+|**Elevation of Privilege**|E3|Ein regulärer Nutzer erhält Berechtigung, Bestellungen ohne Freigabe auszulösen|
+
+#### 4. Analytics-Service (AS)
+
+|STRIDE-Kategorie|Bedrohung|Beschreibung|
+|---|---|---|
+|**Spoofing**|S6|Angreifer gibt sich als Analytics-Service aus und liefert manipulierte Auswertungen|
+|**Tampering**|T7|Manipulation der Berechnungslogik, um falsche Bestellvorschläge zu generieren|
+|**Information Disclosure**|I6|Zugriff auf vertrauliche Geschäftskennzahlen (Umsatz, Marge, Absatzprognosen)|
+|**Information Disclosure**|I7|Rückschlüsse auf Geschäftsstrategien durch Analyse der Auswertungsalgorithmen|
+|**Denial of Service**|D6|Analytics-Service überlastet → keine automatischen Bestellvorschläge|
+|**Elevation of Privilege**|E4|Manipulation der Algorithmen zur Beeinflussung von Bestellentscheidungen|
+
+#### 5. Job-Scheduler (JS)
+
+|STRIDE-Kategorie|Bedrohung|Beschreibung|
+|---|---|---|
+|**Spoofing**|S7|Angreifer triggert unberechtigt Jobs (z. B. außerplanmäßige Bestandsprüfungen)|
+|**Tampering**|T8|Manipulation der Job-Konfiguration (Intervalle, Parameter)|
+|**Tampering**|T9|Deaktivieren kritischer Jobs (z. B. Verfallsdatumskontrolle)|
+|**Information Disclosure**|I8|Einblick in Job-Planung gibt Hinweise auf Geschäftsprozesse|
+|**Denial of Service**|D7|Job-Scheduler fällt aus → keine automatischen Prozesse mehr|
+|**Elevation of Privilege**|E5|Jobs werden mit zu hohen Berechtigungen ausgeführt (Privilegieneskalation)|
+
+#### 6. API-Gateway
+
+|STRIDE-Kategorie|Bedrohung|Beschreibung|
+|---|---|---|
+|**Spoofing**|S8|Angreifer umgeht Authentifizierung und greift direkt auf interne APIs zu|
+|**Tampering**|T10|Manipulation von API-Anfragen (Parameter, Header)|
+|**Information Disclosure**|I9|Offenlegung interner API-Strukturen durch zu ausführliche Fehlermeldungen|
+|**Denial of Service**|D8|API-Gateway durch DDoS-Attacke lahmgelegt → gesamtes System unerreichbar|
+|**Elevation of Privilege**|E6|Umgehung von Rate-Limits oder Zugriffsbeschränkungen|
+
+#### 7. Datenbanken (zentral & lokal)
+
+|STRIDE-Kategorie|Bedrohung|Beschreibung|
+|---|---|---|
+|**Spoofing**|S9|Unberechtigte Datenbankverbindungen durch fehlende oder schwache Authentifizierung|
+|**Tampering**|T11|Direkte Manipulation der Datenbankfiles (physischer Zugriff, Backup-Diebstahl)|
+|**Information Disclosure**|I10|Unverschlüsselte Datenbankbackups in falschen Händen|
+|**Information Disclosure**|I11|Datenbank-Logs enthalten sensible Daten im Klartext|
+|**Denial of Service**|D9|Datenbank füllt sich durch fehlende Archivierung/Löschung alter Daten|
+|**Elevation of Privilege**|E7|Datenbank-Benutzer mit zu vielen Rechten (z. B. Anwendung nutzt Admin-Account)|
+
+#### 8. Kommunikationswege
+
+|STRIDE-Kategorie|Bedrohung|Beschreibung|
+|---|---|---|
+|**Spoofing**|S10|DNS-Spoofing leitet Anfragen an bösartigen Server um|
+|**Tampering**|T12|Man-in-the-Middle-Angriff auf unverschlüsselte Verbindungen|
+|**Information Disclosure**|I12|Abhören des Netzwerkverkehrs (Sniffing)|
+|**Denial of Service**|D10|Netzwerksegment wird überlastet oder getrennt|
+
+### Detailbeschreibung ausgewählter Bedrohungen
+
+#### Bedrohung T3: Manipulation der zentralen Datenbank
+
+|Aspekt|Beschreibung|
+|---|---|
+|**Kategorie**|Tampering|
+|**Angreifer**|Externer Hacker, unzufriedener Mitarbeiter, Administrator mit böswilliger Absicht|
+|**Beteiligte**|Zentrale DB, ZBD, ggf. andere Services|
+|**Beschreibung**|Ein Angreifer erlangt Zugriff auf die zentrale Datenbank (direkt oder über eine Schwachstelle im ZBD) und manipuliert Bestandsdaten. Beispiel: Reduzierung der Bestände eines Artikels, um einen Diebstahl zu vertuschen, oder Erhöhung der Bestände, um eine automatische Bestellung zu verhindern.|
+|**Auswirkung**|- Falsche Bestandsführung führt zu Fehlbeständen oder Überbeständen  <br>- Finanzielle Verluste durch Fehlbestellungen oder Diebstahl  <br>- Vertrauensverlust bei Kunden (nicht lieferbare Artikel)|
+|**Gegenmaßnahmen**|- **Authentifizierung**: Starke Passwörter, Zwei-Faktor-Authentifizierung für DB-Zugriff  <br>- **Autorisierung**: Least-Privilege-Prinzip (Anwendung nutzt eigenen DB-User mit minimalen Rechten)  <br>- **Integrität**: Checksummen/Hashes für kritische Daten  <br>- **Monitoring**: Erkennung ungewöhnlicher Zugriffsmuster (z. B. Massenänderungen außerhalb der Geschäftszeiten)  <br>- **Verschlüsselung**: Verschlüsselung der Datenbank und Backups  <br>- **Audit-Logging**: Nachvollziehbarkeit aller Änderungen (wer, wann, was)|
+
+#### Bedrohung E2: SQL-Injection auf zentrale Datenbank
+
+|Aspekt|Beschreibung|
+|---|---|
+|**Kategorie**|Elevation of Privilege / Tampering|
+|**Angreifer**|Externer Hacker, registrierter Nutzer|
+|**Beteiligte**|ZBD, Zentrale DB|
+|**Beschreibung**|Ein Angreifer nutzt unsichere API-Endpunkte des ZBD aus, um SQL-Befehle in Eingabefelder einzuschleusen. Dadurch kann er beliebige Datenbankoperationen ausführen (Lesen, Ändern, Löschen).|
+|**Auswirkung**|- Vollständiger Datenverlust oder -diebstahl  <br>- Übernahme des Datenbankservers  <br>- Zugriff auf alle Bestands-, Kunden- und Lieferantendaten|
+|**Gegenmaßnahmen**|- **Parameterized Queries / Prepared Statements**: Trennung von Code und Daten  <br>- **Input-Validierung**: Whitelist-Ansatz für alle Eingaben  <br>- **Least Privilege**: DB-User hat nur notwendige Rechte (kein DROP, keine Administrative Rechte)  <br>- **Web Application Firewall (WAF)**: Erkennung und Blockierung von SQL-Injection-Versuchen  <br>- **Regelmäßige Penetrationstests**|
+
+#### Bedrohung R1: Fehlende Nachweisbarkeit von Ein-/Auslagerungen
+
+|Aspekt|Beschreibung|
+|---|---|
+|**Kategorie**|Repudiation|
+|**Angreifer**|Lagerverwalter (mit böswilliger Absicht oder fahrlässig)|
+|**Beteiligte**|LV, LLD, ZBD|
+|**Beschreibung**|Ein Lagerverwalter lagert Waren aus (z. B. für privaten Gebrauch) und das System protokolliert diesen Vorgang nicht ausreichend. Später kann die Tat nicht nachgewiesen werden.|
+|**Auswirkung**|- Inventurdifferenzen bleiben ungeklärt  <br>- Keine Abschreckung gegen Diebstahl  <br>- Rechtliche Konsequenzen für das Unternehmen (keine Nachvollziehbarkeit bei Audits)|
+|**Gegenmaßnahmen**|- **Unveränderliches Audit-Log**: Jede Ein-/Auslagerung wird mit Zeitstempel, Benutzer-ID, Artikel, Menge und alter/neuer Menge protokolliert  <br>- **Digitale Signatur**: Logeinträge werden kryptographisch signiert, sodass sie nachträglich nicht manipuliert werden können  <br>- **Vier-Augen-Prinzip**: Kritische Vorgänge (z. B. Entsorgung großer Mengen) benötigen Bestätigung durch zweiten Mitarbeiter  <br>- **Regelmäßige Überprüfung** der Logs durch Vorgesetzte oder Revision|
+
+#### Bedrohung I3: Unbefugter Zugriff auf zentrale Datenbank
+
+|Aspekt|Beschreibung|
+|---|---|
+|**Kategorie**|Information Disclosure|
+|**Angreifer**|Externer Hacker, unzufriedener Mitarbeiter, Wettbewerber|
+|**Beteiligte**|Zentrale DB, ZBD|
+|**Beschreibung**|Ein Angreifer erhält Zugriff auf die zentrale Datenbank und kann alle Bestandsdaten, Lieferanteninformationen, Preise und Verkaufszahlen einsehen.|
+|**Auswirkung**|- Wettbewerber erhalten Einblick in Geschäftsstrategien (welche Artikel laufen gut, welche Lager sind wo)  <br>- Verhandlungsposition gegenüber Lieferanten geschwächt (Bekannte Konditionen)  <br>- Verstoß gegen Datenschutz (falls personenbezogene Daten vorhanden)|
+|**Gegenmaßnahmen**|- **Verschlüsselung**: Verschlüsselung der Datenbank (ruhende Daten)  <br>- **Netzwerksegmentierung**: Datenbank nur aus internem Netz erreichbar, nicht direkt aus dem Internet  <br>- **Zugriffskontrolle**: Strikte Authentifizierung und Autorisierung  <br>- **Datenklassifikation**: Kritische Daten zusätzlich schützen (z. B. separate Verschlüsselung)  <br>- **Audit-Log**: Überwachung aller Zugriffe auf sensible Daten|
+
+#### Bedrohung D8: DDoS-Attacke auf API-Gateway
+
+|Aspekt|Beschreibung|
+|---|---|
+|**Kategorie**|Denial of Service|
+|**Angreifer**|Externer Hacker, Wettbewerber (geschäftsschädigend), Erpresser|
+|**Beteiligte**|API-Gateway, alle nachgelagerten Services|
+|**Beschreibung**|Das API-Gateway wird mit einer Flut von Anfragen überlastet, sodass legitime Nutzer (Lagerverwalter, Verkäufer) das System nicht mehr erreichen können.|
+|**Auswirkung**|- Keine Ein-/Auslagerungen möglich  <br>- Keine Bestandsabfragen für Verkäufer (Kundenanfragen können nicht beantwortet werden)  <br>- Umsatzausfälle, wenn Bestellungen nicht bearbeitet werden können|
+|**Gegenmaßnahmen**|- **Rate Limiting**: Begrenzung der Anfragen pro IP/Benutzer  <br>- **Auto-Scaling**: Automatisches Hochskalieren der Gateway-Instanzen bei Lastspitzen  <br>- **DDoS-Schutzdienste**: Cloud-basierte DDoS-Mitigation (z. B. AWS Shield, Cloudflare)  <br>- **Web Application Firewall**: Blockierung von Bot-Traffic  <br>- **Fallback-Strategien**: Lokale Systeme können autark weiterarbeiten (Offline-Modus)|
+### Risikobewertung mit DREAD
+
+|ID|Bedrohung|D|R|E|A|D|Ø|Priorität|
+|---|---|---|---|---|---|---|---|---|
+|T3|Manipulation zentrale DB|9|5|4|10|3|6,2|Hoch|
+|E2|SQL-Injection|10|8|7|10|7|8,4|**Kritisch**|
+|R1|Fehlende Nachweisbarkeit|6|10|8|5|4|6,6|Hoch|
+|I3|Unbefugter DB-Zugriff|8|6|5|10|5|6,8|Hoch|
+|D8|DDoS auf API-Gateway|7|10|8|10|9|8,8|**Kritisch**|
+|T1|Manipulation lokale DB|7|8|6|5|4|6,0|Mittel|
+|I1|Unbefugter Zugriff lokal|5|8|7|3|4|5,4|Mittel|
+|D1|Überlastung LLD|4|9|7|5|6|6,2|Hoch|
+|E3|Unberechtigte Bestellungen|8|7|5|8|6|6,8|Hoch|
+|T5|Manipulation Bestelldaten|9|6|5|9|5|6,8|Hoch|
+
+**Legende:**
+- **D** = Damage Potential (Schadenspotenzial)
+- **R** = Reproducibility (Reproduzierbarkeit)
+- **E** = Exploitability (Ausnutzbarkeit)
+- **A** = Affected Users (Betroffene Nutzer)
+- **D** = Discoverability (Auffindbarkeit)
+
+### Spezifische Maßnahmen pro Komponente
+
+| Komponente                   | Maßnahmen                                                                                                                                                                               |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Lokaler Lagerdienst**      | - Lokale Datenbankverschlüsselung  <br>- Regelmäßige Sicherungen  <br>- Authentifizierung aller Nutzer  <br>- Offline-Modus mit späterer Synchronisation  <br>- Zugriffsprotokollierung |
+| **Zentraler Bestandsdienst** | - API mit Ratenbegrenzung  <br>- Eingabevalidierung (gegen SQL-Injection)  <br>- Mutex bei gleichzeitigen Bestandsänderungen  <br>- Redundante Auslegung (Cluster)                      |
+| **Bestellservice**           | - Vier-Augen-Prinzip für Bestellungen > X €  <br>- Automatische Prüfung auf Auffälligkeiten  <br>- Signierte Bestelldaten  <br>- Lieferanten-Zertifikate                                |
+| **Analytics-Service**        | - Zugriff nur für berechtigte Rollen  <br>- Anonymisierung von Daten für Reports  <br>- Getrennte Datenbank für Analysedaten                                                            |
+| **Job-Scheduler**            | - Authentifizierung der Jobs  <br>- Job-Konfigurationen signiert  <br>- Monitoring der Job-Ausführung                                                                                   |
+| **API-Gateway**              | - TLS-Terminierung  <br>- Authentifizierung aller Anfragen  <br>- Rate Limiting  <br>- Request/Response-Validierung                                                                     |
+| **Datenbanken**              | - Verschlüsselung ruhender Daten  <br>- Getrennte Benutzer pro Anwendung  <br>- Regelmäßige Sicherungen (verschlüsselt)  <br>- Zugriff nur aus definierten Netzwerken                   |
+| **Kommunikation**            | - TLS für alle externen Verbindungen  <br>- mTLS für interne Service-Kommunikation  <br>- VPN für Standortanbindungen                                                                   |
 
 ## Komponentendesign
 
