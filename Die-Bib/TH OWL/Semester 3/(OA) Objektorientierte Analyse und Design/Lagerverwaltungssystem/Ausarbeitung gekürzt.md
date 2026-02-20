@@ -174,9 +174,9 @@ Hierzu wird nach dem Schema der Vorlesung "Objektorientierte Analyse" das Proble
 # Systemdesign
 
 ## Übersicht
-Das Systemdesign der Lagerverwaltung für den Großhändler beschreibt die strukturelle Gliederung der Software in Komponenten und deren Interaktion. Es wird eine **verteilte Architektur** mit autonomen Lokalsystemen und einem zentralen Koordinationssystem entworfen, um die Anforderungen an Ausfallsicherheit, Skalierbarkeit und Echtzeit-Bestandsführung zu erfüllen.
+Das Systemdesign der Lagerverwaltung für den Großhändler beschreibt die strukturelle Gliederung der Software in Komponenten und deren Interaktion. Es wird eine verteilte Architektur mit autonomen Lokalsystemen und einem zentralen Koordinationssystem entworfen, um die Anforderungen an Ausfallsicherheit, Skalierbarkeit und Echtzeit-Bestandsführung zu erfüllen.
 
-Das System folgt einem **Microservice-Ansatz**, bei dem jede wesentliche Funktion (z. B. Bestandsverwaltung, Bestellmanagement, etc.) als eigenständiger Service implementiert wird. Die Kommunikation zwischen den Services erfolgt über definierte APIs (REST/HTTP) und asynchrone Nachrichten (Message Queue). Dadurch können einzelne Teile des Systems unabhängig skaliert, deployed und gewartet werden.
+Das System folgt einem Microservice-Ansatz, bei dem jede wesentliche Funktion (z. B. Bestandsverwaltung, Bestellmanagement, etc.) als eigenständiger Service implementiert wird. Die Kommunikation zwischen den Services erfolgt über definierte APIs (REST/HTTP) und asynchrone Nachrichten (Message Queue). Dadurch können einzelne Teile des Systems unabhängig skaliert, deployed und gewartet werden.
 
 
 ### Kernkomponenten
@@ -203,7 +203,7 @@ Das System folgt einem **Microservice-Ansatz**, bei dem jede wesentliche Funktio
 Die APIs werden nach REST‑Prinzipien definiert. Beispiele:
 ### Artikel anzeigen
 ```
-get_Artikel: {ArtikleID} -> bool x string
+get_Artikel: {ArtikelID} -> bool x string
 ```
 Eingabe ist die Artikelnummer, Die Rückgabe ist ein Boolean, der Erfolg oder Misserfolg signalisiert, und, im Falle des Erfolgs, eine JSON-Datei mit Artikelinformationen, oder im Falle eines Misserfolgs, eine Fehlermeldung zurückgibt.
 

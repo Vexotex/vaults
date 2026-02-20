@@ -10,7 +10,7 @@ Beschreibe für jeden Anwendungsfall mindestens einen Ablaufplan! Am besten unte
 - [x] 
 # Systemdesign
 Gebe eine grobe Übersicht über alle Komponenten des Systems (Server/Client/Datenbank/etc.) und wie diese Systeme zusammenspielen. Zeichne Diagramme und dokumentiere alle APIs.
-- [ ] 
+- [x] 
 ## Threat model
 Erzeuge threat model und Risikoanalyse deines Systemdesigns. Hierbei können die folgenden Werte für die Risikoanalyse verwendet werden:
 - Damage potential
@@ -41,25 +41,25 @@ Erzeuge threat model und Risikoanalyse deines Systemdesigns. Hierbei können die
 	- 10: Alle Nutzer
 - Discoverability
 	- Übernehme die Werte aus der Vorlesung
-- [ ] 
+- [x] 
 Beschreibe für jeden potentiellen threat eine Lösung
-- [ ] 
+- [x] 
 
 # Komponentendesign
 Erzeuge den nächsten Abschnitt für jede Komponente
-- [ ] 
+- [x] 
 ## Komponente 1
 ### Beschreibung
 Beschreibe die Komponente: Funktion, Rolle im System
-- [ ] 
+- [x] 
 ### Design: Klassendiagramm/Datenflussdiagram
 Erzeuge, je nachdem, ob die Komponente funktional oder objektorientiert implementiert werden soll, die passenden Diagramme, und dokumentiere diese.
 Dokumentiere alle Funktionen in den Klassen/Datenflussdiagrammen.
 Falls UI, so muss ein UI mock erzeugt werden.
-- [ ] 
+- [x] 
 ### Threat model und Risikoanalyse
 Führe, wie oben, eine threat Analyse und eine Risikobewertung durch
-- [ ] 
+- [x] 
 ### Optional: Code
 Implementiere die Komponente, oder schaffe ein Gerüst für die Klassen
 
