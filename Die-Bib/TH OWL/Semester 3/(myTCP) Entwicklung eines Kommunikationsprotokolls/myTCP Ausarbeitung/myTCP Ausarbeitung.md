@@ -218,9 +218,12 @@ Erhält der Automat im Idle eine Connect-Indication, so erwiedern wir den Verbin
 
 
 #### ACodex
-Hier wird jede der Anfragen und Antworten in einem PDataReq verpackt und an das DLLayer weitergegeben. Gehandhabt werden die Befehle
+Hier wird jede Anfrage und Antwort des ACom in einer PDU encodiert, in einem PDataReq verpackt und an den Adaption Layer weitergegeben.
+Sollte eine PData-Indication empfangen werden, so wird der Inhalt decodiert und der zugehörige Befehl im ACom ausgelöst.
+
 
 ### 4.3.2 Adaption
+
 Der Adaption-Layer besteht aus einem Zustand "Idle" und kann auf zwei Aktionen reagieren.
 Erstens kann der A_Layer die Funktion "PDataReq" aufrufen und darauf hin wird der Payload des "PDataReq" neu in einem "DLDataReq" neu verpackt und im DL_Layer oder genauer dem DLCom aufgerufen.
 Zweitens kann der DL_Layer die Funktion "DLDataInd" aufrufen und folgend wird der Payload der "DLDataInd" neu in einer "PDataInd" neu verpackt und im A_Layer oder genauer dem ACodex aufgerufen.
@@ -228,11 +231,19 @@ Zweitens kann der DL_Layer die Funktion "DLDataInd" aufrufen und folgend wird de
 
 ### 4.3.3 DL_Layer
 
+#### DLCom
+Dieser Zustandsautomat beginnt wie der ACom und kann ebenfalls logisch in "empfangen" und "senden" getrennt werden.
+
+Bekommt der Automat einen DLData-Request vom DLCodex, so wird geprüft, ob es sich um einen Verbindungsaufbau handelt. In diesem Fall wird ein Transmit im DLCodex als Broadcast versendet.
+Andernfalls gab es zumindest eine Bestätigung des Verbindungsaufbaus und somit kann ein Single cast mit der zugehörigen MAC-Adresse ausgelöst werden.
+
+Bei einem Eingangssignal wird zuerst geprüft für wen das Paket vorgesehen war und die empfangene MAC-Addresse mit unserer verglichen. Ist es für jemand anderen spezifiziert, so wird das Paket verworfen und in den Idle zurückgekehrt. Ist es an uns addressiert, so wird der Payload der Empfangenden Nachricht in einer DLData-Indication neu verpackt und an Adaption weitergeleitet. 
+Handelt es sich um einen Broadcast, so decodieren wir den Payload der PDU und prüfen, ob jemand versucht mit uns eine Verbindung einzugehen. Versucht jemand mit uns eine Verbindung aufzubauen, so speichern wir seine MAC-Addresse zwischen und geben die DLData-Indication an Adaption weiter.
+
+
 
 #### DLCodex
 
-
-#### DLCom
 
 
 
