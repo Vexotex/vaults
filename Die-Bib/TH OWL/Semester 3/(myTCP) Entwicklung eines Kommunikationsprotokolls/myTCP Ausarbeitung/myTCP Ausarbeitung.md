@@ -38,6 +38,8 @@
 | SAP       | **S**ervice **A**ccess **P**oint                  |
 | RX        | **R**ecieve / Empfangen                           |
 | TX        | **T**ransmit / Senden                             |
+| PDU       | **p**rotokoll **d**ata **u**nit                   |
+| PCI       | **p**rotokoll **c**ontroll **i**nformation        |
 
 ---
 
@@ -204,15 +206,19 @@ Das DL_Layer fasst die übrigen Schichten 3-1 Zusammen (Vermittlung, Sicherung, 
 
 ### 4.3.1 A_Layer 
 
-Um die Funktionen des A_layer übersichtlicher Strukturieren zu können wurde er logisch in ACodex und ACom getrennt. Der ACodex übernimmt die En- und Decodierung der Nachrichten und der ACom stellt den Gesamtablauf und Behaldelung der Sonderfälle in einem Zustandsautomaten dar.
+Um die Funktionen des A_layer übersichtlicher Strukturieren zu können wurde er logisch in ACodex und ACom getrennt. Der ACodex übernimmt die En- und Decodierung der Nachrichten und der ACom stellt den Gesamtablauf und Behandlung der Sonderfälle in einem Zustandsautomaten dar.
 
 
 #### ACom
-Der Zustandsautomat  
+Der Zustandsautomat und beginnt im "Idle" von hier aus kann er entweder in den Send-mode oder über eine Connect-Indication in den receiving-Pfad übergehen.
+
+Im Send-mode wartet der Automat nun auf einen sendFile Befehl mit den notwendigen Informationen zum Empfänger, dem Namen der Datei, die versendet werden soll und unter welchem Namen die Datei ankommen soll. Nach dem erhalt wird ein Connect-Request zur Encodierung an den ACodex weitergegeben. Sollte dieser nicht innerhalb von 3 Sekunden bestätigt werden, geht der Automat wieder in den Idle. Nach Bestätigung der Verbindung sendet der Automat als erstes Dateinamen an Adaption und anschließend wird die Text-Datei Zeile für Zeile übertragen. Sobald die letzte Zeile Übertragen wurde wird ein Disconnect-Request, mit der Anzahl übertragenen Zeilen, an ACodex weitergegeben. Nun erwarten Wir eine Bestätigung des Verbindungsabbaus zusammen mit der Bestätigung, dass alle Zeilen angekommen sind. Nach 3 Sekunden gibt es einen TimeOut und der Automat kehrt zurück in den Idle. Sollte die gesendete Zeilenanzahl nicht mit der empfangenen Zeilenanzahl übereinstimmen, erhalten wir in der Bestätigung des Verbindungsabbaus ein "-" statt eines "+", kehren aber immer in den Idle zurück.  
+
+Erhält der Automat im Idle eine Connect-Indication, so erwiedern wir den Verbindungsversuch mit einem Connect-Response und warten auf den Dateinamen und die Folgenden Zeilen der Text-Datei. Dabei zählen wir die empfangenen Zeilen und schreiben die Datei. Sobald die Disconnect-Indication empfangen wurde prüfen wir ob die Anzahl empfangender Zeilen mit der mitgegebenen Zahl der Disconnect-Indication und senden einen Disconnect-Response mit einem "+" bei identischer Zeilenanzahl und einem "-" bei einem Unterschied.  
 
 
 #### ACodex
-
+Hier wird jede der Anfragen und Antworten in einem PDataReq verpackt und an das DLLayer weitergegeben. Gehandhabt werden die Befehle
 
 ### 4.3.2 Adaption
 Der Adaption-Layer besteht aus einem Zustand "Idle" und kann auf zwei Aktionen reagieren.
