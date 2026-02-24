@@ -43,8 +43,7 @@
 
 # 2. Aufgabenstellung:  
 
-- Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung zwischen zwei PCs .
-- Randbedingung: Grundsätze des OSI- Schichtenmodell berücksichtigen.
+Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung zwischen zwei PCs. Randbedingung: Grundsätze des OSI- Schichtenmodell berücksichtigen.
 
 
 # 3. Anforderungen
@@ -145,7 +144,7 @@
 
 ## 4.1 Umsetzung der Anforderungen
 
-Als zentrales Werkzeug dieser Umsetzung wurde das Programm "IBM Engineering Systems Design Rhapsody" verwendet. 
+Als zentrales Werkzeug dieser Umsetzung wurde dir Software "IBM Engineering Systems Design Rhapsody" verwendet. 
 Rhapsody ermöglicht es uns unser komplexes Systeme durch Nutzung von UML-Standards zu entwerfen, zu analysieren und simulieren. Wobei aus den graphisch erstellten Diagrammen code mit hohem Qualitätsstandard generiert wird. 
 
 
@@ -158,7 +157,7 @@ In diesem Kapitel wird erläutert, wie die Anforderungen dieses Projekts auf das
 Die Bereitstellung für den Nutzer wurde in Form von aufrufbaren Funktionen realisiert.
 
 #### Darstellungsschicht
-Es wurde keine Form der Datenkomprimierung oder Datenformatierung implementiert. Die Kodierung wurde in stark vereinfachter Form implementiert, wie in 4.2.1 beschrieben.
+Es wurde keine Form der Datenkomprimierung oder Datenformatierung implementiert. Die Kodierung wurde in stark vereinfachter Form implementiert.
 
 #### Sitzungsschicht
 Im A-Layer wurde eine Halbduplex-Steuerung in vereinfachter Form integriert.
