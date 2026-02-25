@@ -34,12 +34,12 @@
 | MAC       | **M**edia **A**ccess **C**ontrol                  |
 | NIC       | **N**etwork **I**nterface **C**ard/**C**ontroller |
 | GUI       | **G**raphical **U**ser **I**nterface              |
-| IDE       | **I**ntegrated **D**evelopment **E**nviorment     |
+| IDE       | **I**ntegrated **D**evelopment **E**nvironment    |
 | SAP       | **S**ervice **A**ccess **P**oint                  |
-| RX        | **R**ecieve / Empfangen                           |
+| RX        | **R**eceive / Empfangen                           |
 | TX        | **T**ransmit / Senden                             |
-| PDU       | **p**rotokoll **d**ata **u**nit                   |
-| PCI       | **p**rotokoll **c**ontroll **i**nformation        |
+| PDU       | **P**rotokoll **D**ata **U**nit                   |
+| PCI       | **P**rotokoll **C**ontroll **I**nformation        |
 
 ---
 
@@ -62,7 +62,7 @@ Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung
 	- Name der Datei, die übertragen werden soll
 	- Ziel-Dateiname, unter dem der übertragene Inhalt auf dem Ziel-PC abgelegt werden soll. 
 - Die Forderung nach Übertragung von Dateien in einem Netz bedingt eine einheitliche und widerspruchsfreie Adressierung.
-	- Hierzu sind eindeutige MAC-Adressen und logische Adressen (PC- Namen) der Quell- und Ziel-PCs vorzusehen.
+	- Hierzu sind eindeutige MAC-Adressen und logische Adressen (PC-Namen) der Quell- und Ziel-PCs vorzusehen.
 - Der Benutzer soll während der Kommunikation durch Meldungen über den Ablauf der Übertragung informiert werden.
 - Der Ziel-PC könnte besetzt oder gar nicht empfangsbereit sein und die Übertragung könnte stark gestört sein, so dass ein Abbruch erforderlich wird. 
 
@@ -84,12 +84,12 @@ Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung
 ## 3.3 Analyse der Ebenenfunktionen
 
 - Welche Funktion gehört in welche Schicht?
-- Wieviele Schichten hat unser Kommunikationssystem?
+- Wie viele Schichten hat unser Kommunikationssystem?
 
 ![[Einfuehrung zur Lehrveranstaltung.pdf#page=9&selection=40,0,40,6|Einfuehrung zur Lehrveranstaltung, page 9]]
 ### 3.3.1 Anwendungsschicht
 
-- Stellt SAP für den File-Transfer-Dienst bereit 
+- Stellt SAP für den File-Transfer-Dienst bereit.
 - die Anwendungsschicht benötigt Funktionen, um
 	- Dateien öffnen, lesen, schreiben,
 	- Senden und Empfangen zeilenweise durchzuführen.
@@ -101,7 +101,7 @@ Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung
 ### 3.3.2 Darstellungsschicht
 
 - Alle PCs
-	- INTEL x86 , WIN XP SP2 .
+	- INTEL x86, WIN XP SP2 .
 	- Dateien bestehen aus ASCII-Zeichen (Codierung/Dekodierung macht Betriebssystem)
 	- homogener Rechnerverbund.
 - Darstellungsschicht kann entfallen. 
@@ -110,7 +110,7 @@ Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung
 ### 3.3.3 Transportschicht
 
 - Unzulänglichkeiten des Kommunikationsnetzes ausgleichen.
-- Segmentbildung, Flußkontrolle sind nicht notwendig. Daher ist die Transportschicht im vorliegenden Beispiel leer.
+- Segmentbildung, Flusskontrolle sind nicht notwendig. Daher ist die Transportschicht im vorliegenden Beispiel leer.
 - Transportschicht kann **entfallen**.
 
 
@@ -122,15 +122,15 @@ Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung
 
 ### 3.3.5 Sicherungs- und Bitübertragungsschicht
 
-- hier IEEE802.3
+- hier IEEE 802.3
 - Steuerung des Buszugriffs auf das Übertragungsmedium,
 - die Framebildung, Fehler-Sicherung.
-- Projektvorgabe: Nutzung NIC
+- Projektvorgabe: Nutzung der NIC
 	- Steuerung des Buszugriffs
 	- Fehlersicherung mit Hilfe eines CRC-32
 - Die logische Adressierung (N-Adressen) der Endsysteme soll in alphanumerischer Schreibweise erfolgen.
 	- Abbildungsfunktion zwischen den logischen Adressen und den physikalischen Adressen (MAC-Adressen) ist vorzusehen.
-	- vgl. ARP S
+	- vgl. ARP
 
 ![[Einfuehrung zur Lehrveranstaltung.pdf#page=15&selection=8,0,8,26|Einfuehrung zur Lehrveranstaltung, page 15]]
 
@@ -146,27 +146,28 @@ Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung
 
 ## 4.1 Umsetzung der Anforderungen
 
-Als zentrales Werkzeug dieser Umsetzung wurde dir Software "IBM Engineering Systems Design Rhapsody" verwendet. 
-Rhapsody ermöglicht es uns unser komplexes Systeme durch Nutzung von UML-Standards zu entwerfen, zu analysieren und simulieren. Wobei aus den graphisch erstellten Diagrammen code mit hohem Qualitätsstandard generiert wird. 
+Als zentrales Werkzeug dieser Umsetzung wurde die Software "IBM Engineering Systems Design Rhapsody" verwendet. 
+Rhapsody ermöglicht es uns unser komplexes System durch Nutzung von UML-Standards zu entwerfen, zu analysieren und zu simulieren. Wobei aus den graphisch erstellten Diagrammen Code mit hohem Qualitätsstandard generiert wird. 
 
 
 ## 4.2 Abbildung der Anforderungen auf das OSI-Schichtenmodell
 
-In diesem Kapitel wird erläutert, wie die Anforderungen dieses Projekts auf das siebenschichtige OSI-Referenzmodell abgebildet wurden. Dieses Modell diente als konzeptionelle Grundlage für die zuverlässigen Dateiübertragung zwischen zwei PCs, da allerdings nicht alle Schichten für das gegebene Szenario notwendig sind, wurde eine reduzierte, anwendungsorientierte Schichtenarchitektur entworfen.
+In diesem Kapitel wird erläutert, wie die Anforderungen dieses Projekts auf das siebenschichtige OSI-Referenzmodell abgebildet wurden. Dieses Modell diente als konzeptionelle Grundlage für die zuverlässige Dateiübertragung zwischen zwei PCs. Da jedoch nicht alle Schichten für das gegebene Szenario notwendig sind, wurde eine reduzierte, anwendungsorientierte Schichtenarchitektur entworfen.
 
 ### 4.2.1 Grundlegende Überlegungen zur Schichtenauswahl
 #### Anwendungsschicht
 Die Bereitstellung für den Nutzer wurde in Form von aufrufbaren Funktionen realisiert.
 
 #### Darstellungsschicht
-Es wurde keine Form der Datenkomprimierung oder Datenformatierung implementiert. Die Kodierung wurde in stark vereinfachter Form implementiert.
+Es wurde keine Form der Datenkomprimierung oder Datenformatierung implementiert. Die De-/Encodierung wurde in stark vereinfachter Form implementiert.
 
 #### Sitzungsschicht
 Im A-Layer wurde eine Halbduplex-Steuerung in vereinfachter Form integriert.
 
 #### Transportschicht
-Bei der Übertragung wird die .txt - Datei in Zeilenweise aufgeteilten Strings übertragen und Anschließend wird geprüft ob die Anzahl der Übertragenen Zeilen mit der Anzahl der Empfangenen übereinstimmt.
+Bei der Übertragung wird die .txt - Datei in zeilenweise aufgeteilte Strings übertragen und anschließend wird geprüft, ob die Anzahl der übertragenen Zeilen mit der Anzahl der empfangenen übereinstimmt.
 
+#todo
 #### Vermittlungsschicht
 Die logische Addressierung wird durch Eingabe der PC-Namen realisiert, aber kein Routing in andere Netzwerke. Somit kann die Kommunikation mit einem anderen PC nur erfolgen, wenn sie sich im selben Netzwerk befinden. 
 
@@ -234,16 +235,18 @@ Zweitens kann der DL_Layer die Funktion "DLDataInd" aufrufen und folgend wird de
 #### DLCom
 Dieser Zustandsautomat beginnt wie der ACom und kann ebenfalls logisch in "empfangen" und "senden" getrennt werden.
 
-Bekommt der Automat einen DLData-Request vom DLCodex, so wird geprüft, ob es sich um einen Verbindungsaufbau handelt. In diesem Fall wird ein Transmit im DLCodex als Broadcast versendet.
+Bekommt der Automat einen DLData-Request vom DLCodex, so wird geprüft, ob es sich um einen Verbindungsaufbau handelt. In diesem Fall wird ein Transmit im DLCodex als Broadcast ausgelöst.
 Andernfalls gab es zumindest eine Bestätigung des Verbindungsaufbaus und somit kann ein Single cast mit der zugehörigen MAC-Adresse ausgelöst werden.
 
-Bei einem Eingangssignal wird zuerst geprüft für wen das Paket vorgesehen war und die empfangene MAC-Addresse mit unserer verglichen. Ist es für jemand anderen spezifiziert, so wird das Paket verworfen und in den Idle zurückgekehrt. Ist es an uns addressiert, so wird der Payload der Empfangenden Nachricht in einer DLData-Indication neu verpackt und an Adaption weitergeleitet. 
-Handelt es sich um einen Broadcast, so decodieren wir den Payload der PDU und prüfen, ob jemand versucht mit uns eine Verbindung einzugehen. Versucht jemand mit uns eine Verbindung aufzubauen, so speichern wir seine MAC-Addresse zwischen und geben die DLData-Indication an Adaption weiter.
+Bei einem Eingangssignal (RX) wird zuerst geprüft für wen das Paket vorgesehen war und die empfangene Target-MAC-Addresse mit unserer verglichen. Ist es für jemand anderen spezifiziert, so wird das Paket verworfen und in den Idle zurückgekehrt. Ist es an uns addressiert, so wird der Payload der Empfangenden Nachricht in einer DLData-Indication neu verpackt und an Adaption weitergeleitet. 
+Handelt es sich um einen Broadcast, so decodieren wir die PDU der Payload und prüfen, ob unserer Name gemeint ist. Versucht jemand mit uns eine Verbindung aufzubauen, so speichern wir seine MAC-Addresse zwischen und geben die DLData-Indication an Adaption weiter.
 
 
 
 #### DLCodex
-
+Hier wird die Kommunikation mit dem physikal Layer realisiert.
+Erhalten wir vom DLCodex ein Transmit, so verpacken wir die Nachricht in einem Frame und geben ihn zum versenden an die NIC weiter.
+Andersherum prüfen wir im regelmäßigen interval, ob an der NIC ein neuer Frame angekommen ist und verpacken diesen neu und lösen einen RX im DLCom aus.
 
 
 
