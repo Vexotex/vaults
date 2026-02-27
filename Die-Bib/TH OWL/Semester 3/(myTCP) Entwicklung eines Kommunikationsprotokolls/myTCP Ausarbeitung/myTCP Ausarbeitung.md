@@ -7,21 +7,28 @@
 
 # Inhaltsverzeichnis
 
-- Glossar
-- Protocol-Engineering "myTCP"
-	- Aufgabenstellung
-		- Benutzer-Leistungsmerkmale
-		- Technische Leistungsmerkmale
-	- Anforderungen
-		- Analyse der Ebenenfunktionen
-		- Anwendungen
-		- Darstellungen
-		- Transportschicht
-		- Vermittlungsschicht
-		- Sicherungsschicht- und Bitübertragungsschicht
-		- Unsere Kommunikationsschicht
-		- Genereller Aufbau einer Protokollinstanz
-- Lösungskonzept
+1. Glossar
+2. Aufgabenstellung Protocol-Engineering "myTCP"
+3. Anforderungen
+	1. Benutzer-Leistungsmerkmale
+	2. Technische Leistungsmerkmale
+	3. Analyse der Ebenenfunktionen
+		1. Anwendungen
+		2. Darstellungen
+		3. Transportschicht
+		4. Vermittlungsschicht
+		5. Sicherungsschicht- und Bitübertragungsschicht
+	4. Lösungskonzept
+		1. Umsetzung der Anforderungen
+		2. Abbildung der Anforderungen auf das OSI-Schichtenmodell
+			1. Grundlegende Überlegungen zur Schichtenauswahl
+			2. Eigenes Schichtenmodell für "myTCP"
+		3. Dienst- und Protokollspezifikationen der realisierten Funktionen
+			1. A_Layer 
+			2. Adaption
+			3. DL_Layer
+	5. Fazit
+	6. Sequenzdiagramme zum Nachweis der wichtigsten Funktionen
 
 ---
 # 1. Glossar
@@ -43,7 +50,7 @@
 
 ---
 
-# 2. Aufgabenstellung:  
+# 2. Aufgabenstellung:  Protocol-Engineering "myTCP"
 
 Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung zwischen zwei PCs. Randbedingung: Grundsätze des OSI- Schichtenmodell berücksichtigen.
 
@@ -146,8 +153,7 @@ Entwurf und Realisierung eines Dienstes für die zuverlässige Dateiübertragung
 
 ## 4.1 Umsetzung der Anforderungen
 
-Als zentrales Werkzeug dieser Umsetzung wurde die Software "IBM Engineering Systems Design Rhapsody" verwendet. 
-Rhapsody ermöglicht es uns unser komplexes System durch Nutzung von UML-Standards zu entwerfen, zu analysieren und zu simulieren. Wobei aus den graphisch erstellten Diagrammen Code mit hohem Qualitätsstandard generiert wird. 
+Als zentrales Werkzeug dieser Umsetzung wurde die Software „IBM Engineering Systems Design Rhapsody“ verwendet. Rhapsody ermöglicht es uns, unser komplexes System durch Nutzung von UML-Standards zu entwerfen, zu analysieren und zu simulieren. Dabei wird aus den grafisch erstellten Diagrammen Code mit hohem Qualitätsstandard generiert.
 
 
 ## 4.2 Abbildung der Anforderungen auf das OSI-Schichtenmodell
@@ -158,99 +164,99 @@ In diesem Kapitel wird erläutert, wie die Anforderungen dieses Projekts auf das
 #### Anwendungsschicht
 Die Bereitstellung für den Nutzer wurde in Form von aufrufbaren Funktionen realisiert.
 
-#### Darstellungsschicht
-Es wurde keine Form der Datenkomprimierung oder Datenformatierung implementiert. Die De-/Encodierung wurde in stark vereinfachter Form implementiert.
+#### Darstellungsschicht 
+Es wurde keine Form der Datenkomprimierung oder -formatierung implementiert. Die Kodierung der Nachrichten erfolgt in stark vereinfachter Form im ACodex (siehe 4.3.1).
 
 #### Sitzungsschicht
 Im A-Layer wurde eine Halbduplex-Steuerung in vereinfachter Form integriert.
 
 #### Transportschicht
-Bei der Übertragung wird die .txt - Datei in zeilenweise aufgeteilte Strings übertragen und anschließend wird geprüft, ob die Anzahl der übertragenen Zeilen mit der Anzahl der empfangenen übereinstimmt.
+Bei der Übertragung wird die .txt-Datei in zeilenweise aufgeteilte Strings übertragen. Anschließend wird geprüft, ob die Anzahl der übertragenen Zeilen mit der Anzahl der empfangenen Zeilen übereinstimmt.
 
-#todo
 #### Vermittlungsschicht
-Die logische Addressierung wird durch Eingabe der PC-Namen realisiert, aber kein Routing in andere Netzwerke. Somit kann die Kommunikation mit einem anderen PC nur erfolgen, wenn sie sich im selben Netzwerk befinden. 
+Die logische Adressierung wird durch Eingabe der PC-Namen realisiert, aber es findet kein Routing in andere Netzwerke statt. Somit kann die Kommunikation mit einem anderen PC nur erfolgen, wenn sich beide im selben Netzwerk befinden.
 
 #### Sicherungsschicht
-Nach einem Initialen Broadcast wird anschließend auch die MAC-Adresse des Übertragungspartners dokumentiert und in den darauffolgenden Frames genutzt. Allerdings wird hier weder eine zuverlässige noch eine fehlerfreie Datenübertrargung gesorgt.
+Nach einem initialen Broadcast wird die MAC-Adresse des Übertragungspartners gespeichert und in den darauffolgenden Frames genutzt. Die Ethernet-Hardware übernimmt die Fehlererkennung (CRC), jedoch keine Bestätigungen oder Wiederholungen – dies obliegt den höheren Schichten.
 
 #### Bitübertragung
-Durch Funktionen, die von Herr Wolfgang Sonntag gestellt worden sind, können wir die Ethernet-Harware der Netzwerkkarte nutzen und Frames zum senden weitergeben und prüfen ob neue Frames angekommen sind. 
+Durch Funktionen, die von Herrn Wolfgang Sonntag bereitgestellt wurden, können wir die Ethernet-Hardware der Netzwerkkarte nutzen, Frames zum Senden übergeben und prüfen, ob neue Frames angekommen sind.
 
 
 ### 4.2.2 Eigenes Schichtenmodell für "myTCP"
 
-Auf Basis dieser Analyse wurde ein dreischtigter Protokoll-Stack entworfen, der die OSI-Funktionalitäten bündelt:
+Auf Basis dieser Analyse wurde ein dreischichtiger Protokoll-Stack entworfen, der die OSI-Funktionalitäten bündelt:
 
 #### A_Layer
-Das A_Layer ist eine grobe Zusammenfassung der Schichten 7-4 (Anwendung, Darstellung, Sitzung, Transport) und:
-- stellt einen SAP für den FTD
-- öffnet liest und schreibt Dateien
-- steuert die Halbduplex-Verbindung 
-- kontrolliert die Vollständigkeit der Übertragung mittels RX- / TX-Zählern
-- löst Timeouts aus, bei fehlenden Antworten
+Das A_Layer fasst die Schichten 7–4 (Anwendung, Darstellung, Sitzung, Transport) grob zusammen und:
+- stellt einen SAP für den FTD bereit,
+- öffnet, liest und schreibt Dateien,
+- steuert die Halbduplex-Verbindung,
+- kontrolliert die Vollständigkeit der Übertragung mittels RX-/TX-Zählern,
+- löst Timeouts bei ausbleibenden Antworten aus.
 
 #### Adaption_Layer
-Das Adaption_Layer hat keine eigene Funktionalität und reicht die ankommenden Signale des A_Layer an das DL-Layer durch und andersherum. 
-Dieses Layer dient als Platzhalter, um dieses Modell erweitern zu können ohne die SAPs des A_Layers oder DL_Layers anpassen zu müssen.
+Das Adaption_Layer hat keine eigene Funktionalität und reicht die ankommenden Signale des A_Layer an das DL-Layer weiter und umgekehrt. Dieses Layer dient als Platzhalter, um das Modell erweitern zu können, ohne die SAPs des A_Layer oder DL_Layer anpassen zu müssen.
 
 #### DL-Layer
-Das DL_Layer fasst die übrigen Schichten 3-1 Zusammen (Vermittlung, Sicherung, Bitübertragung) und:
-- verwaltet die Aufschlüsselung der PC-Namen
-- Abbildung der PC-Namen auf MAC-Adressen
-- gibt Frames an die NIC des PCs weiter
-- prüft regelmäßig ob neue Frames angekommen sind 
+Das DL_Layer fasst die übrigen Schichten 3–1 zusammen (Vermittlung, Sicherung, Bitübertragung) und:
+- verwaltet die Zuordnung der PC-Namen zu MAC-Adressen,
+- bildet PC-Namen auf MAC-Adressen ab,
+- gibt Frames an die NIC des PCs weiter,
+- prüft regelmäßig, ob neue Frames angekommen sind.
 
 
 ## 4.3 Dienst- und Protokollspezifikationen der realisierten Funktionen
 
-
 ### 4.3.1 A_Layer 
 
-Um die Funktionen des A_layer übersichtlicher Strukturieren zu können wurde er logisch in ACodex und ACom getrennt. Der ACodex übernimmt die En- und Decodierung der Nachrichten und der ACom stellt den Gesamtablauf und Behandlung der Sonderfälle in einem Zustandsautomaten dar.
-
+Um die Funktionen des A_Layer übersichtlich zu strukturieren, wurde er logisch in ACodex und ACom getrennt. Der ACodex übernimmt die En- und Dekodierung der Nachrichten, der ACom stellt den Gesamtablauf und die Behandlung von Sonderfällen in einem Zustandsautomaten dar.
 
 #### ACom
-Der Zustandsautomat und beginnt im "Idle" von hier aus kann er entweder in den Send-mode oder über eine Connect-Indication in den receiving-Pfad übergehen.
+Der Zustandsautomat beginnt im Zustand „Idle“. Von hier aus kann er entweder in den Send-Modus wechseln oder über eine Connect-Indication in den Empfangspfad übergehen.
 
-Im Send-mode wartet der Automat nun auf einen sendFile Befehl mit den notwendigen Informationen zum Empfänger, dem Namen der Datei, die versendet werden soll und unter welchem Namen die Datei ankommen soll. Nach dem erhalt wird ein Connect-Request zur Encodierung an den ACodex weitergegeben. Sollte dieser nicht innerhalb von 3 Sekunden bestätigt werden, geht der Automat wieder in den Idle. Nach Bestätigung der Verbindung sendet der Automat als erstes Dateinamen an Adaption und anschließend wird die Text-Datei Zeile für Zeile übertragen. Sobald die letzte Zeile Übertragen wurde wird ein Disconnect-Request, mit der Anzahl übertragenen Zeilen, an ACodex weitergegeben. Nun erwarten Wir eine Bestätigung des Verbindungsabbaus zusammen mit der Bestätigung, dass alle Zeilen angekommen sind. Nach 3 Sekunden gibt es einen TimeOut und der Automat kehrt zurück in den Idle. Sollte die gesendete Zeilenanzahl nicht mit der empfangenen Zeilenanzahl übereinstimmen, erhalten wir in der Bestätigung des Verbindungsabbaus ein "-" statt eines "+", kehren aber immer in den Idle zurück.  
+**Sendepfad**
+Im Send-Modus wartet der Automat auf einen `sendFile`-Befehl mit den notwendigen Informationen (Ziel-PC, Quell-Dateiname, Ziel-Dateiname). Nach dem Erhalt wird ein Connect-Request (`CNReq`) zur Kodierung an den ACodex weitergegeben. Erfolgt innerhalb von drei Sekunden keine Bestätigung (`CNCnf`), kehrt der Automat in den Idle zurück. Nach erfolgreichem Verbindungsaufbau sendet der Automat zuerst den Dateinamen (`Filename`) und anschließend die Textdatei Zeile für Zeile (`Transmit`). Sobald die letzte Zeile übertragen wurde, wird ein Disconnect-Request (`DCNReq`) mit der Anzahl der gesendeten Zeilen an den ACodex übergeben. Nun erwartet der Automat eine Bestätigung des Verbindungsabbaus (`DCNCnf`) zusammen mit der Information, ob alle Zeilen korrekt angekommen sind („+“) oder nicht („-“). Bei einem Timeout von drei Sekunden oder bei einer negativen Bestätigung kehrt der Automat ebenfalls in den Idle zurück.
 
-Erhält der Automat im Idle eine Connect-Indication, so erwiedern wir den Verbindungsversuch mit einem Connect-Response und warten auf den Dateinamen und die Folgenden Zeilen der Text-Datei. Dabei zählen wir die empfangenen Zeilen und schreiben die Datei. Sobald die Disconnect-Indication empfangen wurde prüfen wir ob die Anzahl empfangender Zeilen mit der mitgegebenen Zahl der Disconnect-Indication und senden einen Disconnect-Response mit einem "+" bei identischer Zeilenanzahl und einem "-" bei einem Unterschied.  
-
+**Empfangspfad**  
+Erhält der Automat im Idle eine Connect-Indication (`CNInd`), so erwidert er den Verbindungsversuch mit einem Connect-Response (`CNRes`) und wartet auf den Dateinamen sowie die folgenden Zeilen der Textdatei. Dabei zählt er die empfangenen Zeilen und schreibt die Datei. Sobald eine Disconnect-Indication (`DCNInd`) empfangen wird, prüft der Automat, ob die Anzahl der empfangenen Zeilen mit der in der DCNInd mitgelieferten Zahl übereinstimmt, und sendet einen Disconnect-Response (`DCNRes`) mit „+“ bei Identität bzw. „-“ bei Abweichung.
 
 #### ACodex
-Hier wird jede Anfrage und Antwort des ACom in einer PDU encodiert, in einem PDataReq verpackt und an den Adaption Layer weitergegeben.
-Sollte eine PData-Indication empfangen werden, so wird der Inhalt decodiert und der zugehörige Befehl im ACom ausgelöst.
-
+Der ACodex kodiert jede Anfrage und Antwort des ACom in eine PDU. Diese wird in einen `PDataReq` verpackt und an den Adaption-Layer weitergegeben. Wird eine `PDataInd` empfangen, so wird der Inhalt dekodiert und der entsprechende Befehl im ACom ausgelöst.
 
 ### 4.3.2 Adaption
 
-Der Adaption-Layer besteht aus einem Zustand "Idle" und kann auf zwei Aktionen reagieren.
-Erstens kann der A_Layer die Funktion "PDataReq" aufrufen und darauf hin wird der Payload des "PDataReq" neu in einem "DLDataReq" neu verpackt und im DL_Layer oder genauer dem DLCom aufgerufen.
-Zweitens kann der DL_Layer die Funktion "DLDataInd" aufrufen und folgend wird der Payload der "DLDataInd" neu in einer "PDataInd" neu verpackt und im A_Layer oder genauer dem ACodex aufgerufen.
+Der Adaption-Layer besteht aus einem Zustand „Idle“ und kann auf zwei Aktionen reagieren:
+1. Ruft der A_Layer die Funktion `PDataReq` auf, so wird der Payload in einen `DLDataReq` verpackt und an das DL_Layer (genauer: an den DLCom) weitergegeben.
+2. Ruft der DL_Layer die Funktion `DLDataInd` auf, so wird der Payload in eine `PDataInd` verpackt und an den ACodex weitergeleitet.
 
 
 ### 4.3.3 DL_Layer
 
 #### DLCom
-Dieser Zustandsautomat beginnt wie der ACom und kann ebenfalls logisch in "empfangen" und "senden" getrennt werden.
 
-Bekommt der Automat einen DLData-Request vom DLCodex, so wird geprüft, ob es sich um einen Verbindungsaufbau handelt. In diesem Fall wird ein Transmit im DLCodex als Broadcast ausgelöst.
-Andernfalls gab es zumindest eine Bestätigung des Verbindungsaufbaus und somit kann ein Single cast mit der zugehörigen MAC-Adresse ausgelöst werden.
+Der Zustandsautomat beginnt im Idle und kann logisch in Sende- und Empfangspfad unterteilt werden.
 
-Bei einem Eingangssignal (RX) wird zuerst geprüft für wen das Paket vorgesehen war und die empfangene Target-MAC-Addresse mit unserer verglichen. Ist es für jemand anderen spezifiziert, so wird das Paket verworfen und in den Idle zurückgekehrt. Ist es an uns addressiert, so wird der Payload der Empfangenden Nachricht in einer DLData-Indication neu verpackt und an Adaption weitergeleitet. 
-Handelt es sich um einen Broadcast, so decodieren wir die PDU der Payload und prüfen, ob unserer Name gemeint ist. Versucht jemand mit uns eine Verbindung aufzubauen, so speichern wir seine MAC-Addresse zwischen und geben die DLData-Indication an Adaption weiter.
+**Sendepfad**  
+Erhält der Automat einen `DLDataReq` vom Adaption-Layer, wird geprüft, ob es sich um einen Verbindungsaufbau (`CNReq`) handelt. In diesem Fall wird ein `Transmit`-Signal an den DLCodex mit der Broadcast-Adresse (`ff-ff-ff-ff-ff-ff`) ausgelöst. Handelt es sich um eine andere Nachricht (z. B. `Filename`, `Transmit`, `DCNReq`), wird die zwischengespeicherte MAC-Adresse des Kommunikationspartners verwendet und ein Unicast ausgelöst.
 
-
+**Empfangspfad**  
+Bei einem Eingangssignal (`RX`) vom DLCodex wird zuerst geprüft, für wen das Paket bestimmt ist. Ist die Ziel-MAC-Adresse nicht die eigene und nicht der Broadcast, wird das Paket verworfen. Bei einem Broadcast wird die PDU dekodiert und geprüft, ob der eigene PC-Name als Ziel genannt ist. Ist dies der Fall (z. B. bei einem Connect-Request), wird die MAC-Adresse des Senders zwischengespeichert und eine `DLDataInd` mit dem Payload an den Adaption-Layer gesendet. Bei einem Unicast an die eigene Adresse wird der Payload ebenfalls per `DLDataInd` weitergereicht.
 
 #### DLCodex
-Hier wird die Kommunikation mit dem physikal Layer realisiert.
-Erhalten wir vom DLCodex ein Transmit, so verpacken wir die Nachricht in einem Frame und geben ihn zum versenden an die NIC weiter.
-Andersherum prüfen wir im regelmäßigen interval, ob an der NIC ein neuer Frame angekommen ist und verpacken diesen neu und lösen einen RX im DLCom aus.
+
+Der DLCodex realisiert die Kommunikation mit dem Physical Layer (NIC).
+- Erhält er vom DLCom ein `Transmit`-Signal, so verpackt er die Nachricht in einen Ethernet-Frame (mit Ziel-MAC, Quell-MAC und Payload) und übergibt diesen zum Versenden an die NIC.
+- In regelmäßigen Intervallen prüft er, ob an der NIC ein neuer Frame angekommen ist. Ist dies der Fall, wird der Frame ausgelesen, der Payload extrahiert und ein `RX`-Signal beim DLCom ausgelöst.
 
 
 
-## 4.4 Sequenzdiagramme zum Nachweis der wichtigsten Funktionen
+# 5. Fazit
+
+Im Rahmen dieser Projektarbeit wurde der File-Transfer-Dienst „myTCP“ erfolgreich entworfen und implementiert. Ausgehend von den definierten Benutzer- und technischen Leistungsmerkmalen erfolgte eine systematische Analyse der Anforderungen und deren Abbildung auf ein an das OSI-Schichtenmodell angelehntes, dreischichtiges Kommunikationssystem. Dieses besteht aus dem Anwendungs-Layer (A_Layer), einem rein vermittelnden Adaption_Layer und dem Data-Link-Layer (DL_Layer), das die Funktionen der Bitübertragung, Sicherung und Vermittlung bündelt.
+Die Dienst- und Protokollspezifikationen wurden mit Zustandsautomaten (ACom, DLCom) und Kodierern (ACodex, DLCodex) in IBM Rhapsody modelliert. Die erstellten Sequenzdiagramme belegen die grundlegende Funktionsfähigkeit der implementierten Abläufe für Verbindungsaufbau, dateiweise Übertragung und Verbindungsabbau. Der Dienst ermöglicht es dem Benutzer, in einem halbduplexen Verfahren Textdateien zwischen zwei PCs zu senden oder zu empfangen, wobei er über Meldungen zum aktuellen Stand informiert wird.
+Ein kritischer Punkt ist die Umsetzung der technischen Leistungsmerkmale. Die Forderung nach einem **„Wiederaufsetzen bei Übertragungsfehlern“ wurde in der aktuellen Implementierung nicht realisiert**. Zwar wird die Vollständigkeit der Übertragung durch einen Zeilenabgleich am Ende überprüft und ein negativer Abschluss signalisiert, eine automatische Wiederholung fehlerhafter oder verlorengegangener Blöcke findet jedoch nicht statt. Hier besteht Potenzial für zukünftige Erweiterungen, um die Zuverlässigkeit des Dienstes weiter zu erhöhen.
+Insgesamt konnte mit „myTCP“ ein funktionsfähiger Prototyp für einen simplen File-Transfer-Dienst entwickelt werden, der die grundlegenden Konzepte des Protocol-Engineerings praktisch anwendet und demonstriert.
 
 
 [[Diagramme.pdf]]
