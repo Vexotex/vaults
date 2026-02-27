@@ -30,7 +30,9 @@
 	5. Fazit
 	6. Sequenzdiagramme zum Nachweis der wichtigsten Funktionen
 
+
 ---
+
 # 1. Glossar
 
 | Abkürzung | Bedeutung                                         |
