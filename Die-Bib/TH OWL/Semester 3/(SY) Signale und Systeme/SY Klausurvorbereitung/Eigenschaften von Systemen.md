@@ -74,3 +74,38 @@ f(u) = u(t-a) , a \neq 0 && \checkmark \\
 f(u) = \int u \space dt && \checkmark
 \end{array}
 $$
+
+statisch greift nur auf aktuelle Werte zu
+dynamisch auf vergangene oder zukünftige (muss nicht kausal sein)
+
+
+# Sprungfähigkeit
+
+![[TH OWL/Semester 3/(SY) Signale und Systeme/SY Klausurvorbereitung/Klausurvorberreitung.excalidraw.md#^frame=8Jg0uJZk3Z-6tZl5KcbA7]]
+
+Wenn das Ausgangssignal springen kann
+$$
+f(u) = 3u \quad \checkmark
+$$
+hier wäre der Sprung am Ausganssignal 3-Mal so hoch wie beim Eingangssignal kann also springen
+$$
+f(u) = \int u \space dt \quad \text{X}
+$$
+nein, weil das Integral auf einen Bereich verweist und auch wenn der sich sprungartig verändert, wenn auch steil aber nur stetig an.
+$$
+f(u) = \frac{d}{dt}u
+$$
+ja, da die Ableitung einer Sprungstelle theoretisch eine unendliche Steigung hat, würde hier auch das Ausgangssignal sprungfähig sein.
+
+
+# Durchgriff
+
+Nur, wenn das System auch Sprungfähig ist und bedeutet, dass wenn das Eingangssignal springt. Das Ausgangssignal auch sofort springt und nicht mit zeitlicher Verzögerung
+mit Durchgriff "springt das Signal durch"
+ohne Durchgriff nicht
+
+
+# Stabilität
+
+Bedeutet das sich das System nicht selber zerstört, also abklingend (oder haltend)
+Wenn das System immer weiter aufklingt, ist das System instabil
