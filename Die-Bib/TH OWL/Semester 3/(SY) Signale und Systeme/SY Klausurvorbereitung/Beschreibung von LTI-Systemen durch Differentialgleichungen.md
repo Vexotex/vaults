@@ -31,7 +31,11 @@ $$
 $$
 a = \dot{v} = \ddot{s}
 $$
-![[TH OWL/Semester 3/(SY) Signale und Systeme/SY Klausurvorbereitung/Klausurvorberreitung.excalidraw.md#^frame=hhqA5j3rHpzCN_Y9zzh7e]]
+![[TH OWL/Semester 3/(SY) Signale und Systeme/SY Klausurvorbereitung/Klausurvorberreitung.excalidraw.md#^frame=228P9FfDXjBU7yv97xyyz]]
 $$
-\ddot{y} = - \frac{c}{m} y - \ddot{y}
+\begin{array} \\
+\ddot{y} = - \frac{c}{m} y - \ddot{y} \\
+2\ddot{y} + \frac{c}{m}y = 0 \\
+\ddot{y} + \frac{c}{2m} y = 0
+\end{array}
 $$
