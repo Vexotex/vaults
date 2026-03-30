@@ -20,12 +20,15 @@
 - [[ED_P_1.pdf]]
 	- [[ED_P_1.excalidraw]]
 - [[ED_P_2.pdf]]
+	- [[ED_P_2.excalidraw]]
 - [[ED_P_3.pdf]]
 	- [[ED_P_3.excalidraw]]
 - [[ED_P_4.pdf]]
+	- [[ED_P_4.excalidraw]]
 - [[ED_P_5.pdf]]
 	- [[ED_P_5.excalidraw]]
 - [[ED_P_6.pdf]]
+	- [[ED_P_6.excalidraw]]
 
 
 $$
@@ -33,3 +36,17 @@ M\{x(-t)\}
 = \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^{T} x(\tau) \, d\tau
 = M\{x(t)\}
 $$
+# Klausur
+
+- VHDL Quellcode vorgegeben
+	- evtl. ergänzen
+- Signale vorgegeben
+	- Analyse, welche Schaltungslogik dahinter steht
+- keinen Taschenrechner
+- Alle K-Pläne in DNF
+- D-FF und JK-FF Auswendig
+- 2 Stunden Klausur
+
+# Klausurvorbereitung
+## [[ED  fragerunde 2]]
+Automaten nochmal anschauen
