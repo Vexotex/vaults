@@ -21,7 +21,9 @@ Wir benötigen eine homogene DGL 1. oder 2. Ordnung mit Konstanten Koeffizienten
 $$
 \begin{array} \\
 \text{ausgangsformel} & &  2 \dot{y} + 6 y = 0 \\
-\text{1. Normalform}  & \Leftrightarrow &  \dot{y} + 3y = 0
+\text{1.} & \Leftrightarrow &  \dot{y} + 3y = 0 \\
+
+\text{2.} & 
 \end{array}
 $$
 
@@ -49,12 +51,12 @@ $$
 \begin{array} \\
   & & 2 \ddot{y} + 6 \dot{y} = 0 \\
 1. & \Leftrightarrow &  \ddot{y} + 3 \dot{y} = 0 \\
-2. &  &  \ddot{y} \to \lambda^{2} \\
+ &  &  \ddot{y} \to \lambda^{2} \\
  &  & \dot{y} \to \lambda \\
  &  & y \to 1 \\
- & \Rightarrow  & \lambda^{2} + 3 \lambda = 0 \\
+2. & \Rightarrow  & \lambda^{2} + 3 \lambda = 0 \\
 3. & \Leftrightarrow & \lambda(\lambda+3) = 0 \\
  & \Rightarrow & \lambda_{1} = 0 \quad \lambda_{2}=-3 \\
-4. & 
+4. &
 \end{array}
 $$
