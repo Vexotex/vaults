@@ -1,5 +1,5 @@
 LTI-System = **L**inear **T**im**i**nvariant System
-
+# Mechanik
 ![[TH OWL/Semester 3/(SY) Signale und Systeme/SY Klausurvorbereitung/Klausurvorberreitung.excalidraw.md#^frame=7Sq5TF-GGDFD2jb24RAt8]]
 
 
@@ -37,5 +37,29 @@ $$
 \ddot{y} = - \frac{c}{m} y - \ddot{y} \\
 2\ddot{y} + \frac{c}{m}y = 0 \\
 \ddot{y} + \frac{c}{2m} y = 0
+\end{array}
+$$
+
+
+
+# Elektrotechnik
+![[TH OWL/Semester 3/(SY) Signale und Systeme/SY Klausurvorbereitung/Klausurvorberreitung.excalidraw.md#^frame=w-EkoWpaaMgA4bR3yUuzO]]
+$$
+U = R \cdot J \Leftrightarrow J=\frac{U}{R}
+$$
+$$
+U_{C} = \frac{1}{C} \int I_{C} \space dt
+$$
+$$
+U_{R} = U-y
+$$
+$$
+I = \frac{U_{R}}{R} = \frac{U-y}{R}
+$$
+$$
+\begin{array} \\
+U_{C} = y = \frac{1}{C} \int I \space dt = \frac{1}{C} \int \frac{u-y}{R} \space dt \quad /\frac{d}{dt} \\
+\dot{y} = \frac{1}{C} \cdot \frac{u-y}{R} = \frac{1}{RC}U - \frac{1}{RC}y \\
+\Leftrightarrow \dot{y} + \frac{1}{RC} y = \frac{1}{RC}U
 \end{array}
 $$
