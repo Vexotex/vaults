@@ -7,4 +7,5 @@ Pflichtmodule
 Wahlpflichtmodule
 - HE Hardware eingebetteter Systeme
 - SE Systemprogrammierung eingebetteter Systeme
-- 
+
+
