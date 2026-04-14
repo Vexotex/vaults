@@ -37,7 +37,7 @@
 ### Schnitt: 2,6
 
 
-# Semester 3
+# [[Semester 3 Master]]
 
 ## Module 
 - ED - Entwurf digitaler Systeme [[ED Master]]
@@ -53,7 +53,7 @@
 ### Schnitt: 
 
 
-# Semester 4
+# [[Semester 4 Master]]
 
 
 # Semester 5
