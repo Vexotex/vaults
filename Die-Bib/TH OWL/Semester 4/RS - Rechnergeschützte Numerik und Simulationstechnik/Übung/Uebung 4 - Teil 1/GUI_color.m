@@ -1,0 +1,19 @@
+allhandle.fig = figure
+set(gcf,'menubar','none','units','normalized')
+
+uimenu('label','Fenster schliessen','callback','close')
+
+allhandle.red = uicontrol('style','slider','string','Red',...
+          'units','normalized','position',[.1 .8 .8 .1],...
+          'callback','changecolor(allhandle)');
+
+allhandle.green = uicontrol('style','slider','string','Green',...
+          'units','normalized','position',[.1 .5 .8 .1],...
+          'callback','changecolor(allhandle)');
+      
+allhandle.blue = uicontrol('style','slider','string','Blue',...
+          'units','normalized','position',[.1 .2 .8 .1],...
+          'callback','changecolor(allhandle)');
+
+      
+changecolor(allhandle);
