@@ -1,7 +1,7 @@
 Pflichtmodule
 - [[DB - Datenbanken - Master]]
 - DC Datensicherheit
-- EZ Echtzeit-Datenverarbeitung
+- [[EZ - Echtzeitdatenverarbeitung - Master]]
 - PA Projektarbeit
 
 Wahlpflichtmodule
