@@ -1,5 +1,5 @@
 Pflichtmodule
-- DB Datenbanken
+- [[DB - Datenbanken - Master]]
 - DC Datensicherheit
 - EZ Echtzeit-Datenverarbeitung
 - PA Projektarbeit
