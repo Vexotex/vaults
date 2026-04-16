@@ -10,3 +10,4 @@ Wahlpflichtmodule
 - [[RS - Rechnergestützte Numerik und Simulationstechnik - Master]]
 - [[SLM - Software Lifecycle Management - Master]]
 - PV - Photovoltaik
+- [[SI - Spezielle Gebiete der Informatik - Master]]
