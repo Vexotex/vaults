@@ -5,7 +5,7 @@ Pflichtmodule
 - [[PA - Projektarbeit - Master]]
 
 Wahlpflichtmodule
-- HE Hardware eingebetteter Systeme
+- [[HE - Hardware eingebetteter Systeme - Master]]
 - [[RT1 - Regelungstechnik 1 - Master]]
 - [[RS - Rechnergestützte Numerik und Simulationstechnik - Master]]
 - [[SLM - Software Lifecycle Management - Master]]
@@ -13,8 +13,3 @@ Wahlpflichtmodule
 - [[SI - Spezielle Gebiete der Informatik - Master]] - Applied Generative AI
 
 
-
-# Klausur
-- maybe ein Formel
-- warum funkionieren dinge, warum ist das schneller, etc.
-- 
