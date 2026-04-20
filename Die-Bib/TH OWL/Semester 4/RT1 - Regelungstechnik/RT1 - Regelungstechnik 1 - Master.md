@@ -32,3 +32,12 @@
 - [[RT_Versuch_07.pdf]]
 
 
+# Notizen
+- Vier Eigenschaften eines Regelkreises
+	- 1 - 
+	- 2 - 
+	- 3 - 
+	- 4 - 
+- Kaffeemaschinen sind gefährlicher als Kreissägen
+- Enter Ordnung
+- requirement speck
