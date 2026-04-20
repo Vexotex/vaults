@@ -1,7 +1,7 @@
 Quelle: Teil 2 – Übertragungssysteme
 
 ## Klassifikation
-- **SISO** (Single-Input Single-Output) vs. **MIMO**
+- **SISO** (Single-Input Single-Output) vs. **MIMO** (Multiple-Input-Multiple-Output)
 - **Statisch**: Ausgang hängt nur von aktuellem Eingang ab (kein Gedächtnis)
 - **Dynamisch**: Ausgang hängt von Vergangenheit ab (hat Gedächtnis / Energie)
 

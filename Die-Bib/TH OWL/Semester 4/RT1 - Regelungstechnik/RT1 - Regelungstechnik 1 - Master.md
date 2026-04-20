@@ -32,13 +32,6 @@
 - [[RT_Versuch_07.pdf]]
 
 
-# Notizen
-- Vier Eigenschaften eines Regelkreises
-	- 1 - 
-	- 2 - 
-	- 3 - 
-	- 4 - 
-
 # Themen
 
 ## Teil 1 – Grundbegriffe

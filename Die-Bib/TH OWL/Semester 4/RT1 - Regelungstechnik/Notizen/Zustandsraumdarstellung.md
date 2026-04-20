@@ -2,11 +2,11 @@ Quelle: Teil 2 – Übertragungssysteme
 
 ## Allgemeine Form
 $$\dot{\mathbf{x}}(t) = \mathbf{A}\,\mathbf{x}(t) + \mathbf{B}\,u(t)$$
-$$y(t) = \mathbf{C}\,\mathbf{x}(t) + D\,u(t)$$
+$$y(t) = \mathbf{C}\,\mathbf{x}(t) + \mathbf{D}\,u(t)$$
 
 - $\mathbf{x}$: Zustandsvektor (innere Systemzustände)
 - $\mathbf{A}$: Systemmatrix, $\mathbf{B}$: Eingangsmatrix
-- $\mathbf{C}$: Ausgangsmatrix, $D$: Durchgangsterm
+- $\mathbf{C}$: Ausgangsmatrix, $\mathbf{D}$: Durchgangsterm
 
 ## Integratorkette
 - Standardform für ein System $n$-ter Ordnung
