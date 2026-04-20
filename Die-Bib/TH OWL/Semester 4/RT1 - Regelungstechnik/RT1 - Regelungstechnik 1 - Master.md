@@ -40,3 +40,54 @@
 	- 4 - 
 
 # Themen
+
+## Teil 1 – Grundbegriffe
+- [[Regelung vs Steuerung]]
+- [[Komponenten des Regelkreises]]
+- [[Anforderungen an Regelkreise]]
+- [[Reglerentwurf Workflow]]
+
+## Teil 2 – Übertragungssysteme
+- [[LTI-Systeme Grundlagen]]
+- [[Zustandsraumdarstellung]]
+- [[Übertragungsfunktion und Laplace]]
+- [[Frequenzgang und Bode-Diagramm]]
+- [[Nyquist-Ortskurve]]
+- [[Standardübertragungsglieder]]
+- [[Blockschaltbild-Algebra]]
+- [[Linearisierung nichtlinearer Systeme]]
+
+## Teil 3 – Einschleifiger Regelkreis
+- [[Einschleifiger Standardregelkreis]]
+- [[PID-Regler]]
+- [[Heuristische Einstellverfahren]]
+- [[Hurwitz-Stabilitätskriterium]]
+- [[Nyquist-Stabilitätskriterium]]
+- [[Amplituden- und Phasenreserve]]
+- [[Stationäre Genauigkeit]]
+- [[Führungsverhalten]]
+- [[Robustheit]]
+
+## Teil 4 – Frequenzbereichsverfahren
+- [[Frequenzkennlinienverfahren]]
+
+## Teil 5 – Erweiterte Regelungsstrukturen
+- [[Störgrößenaufschaltung]]
+- [[Führungsfilter]]
+- [[Anti-Windup]]
+- [[Betragsoptimum]]
+- [[Symmetrisches Optimum]]
+- [[Polvorgabe und Wurzelortskurve]]
+
+## Teil 6 – Kaskadenregelung
+- [[Kaskadenregelung]]
+- [[Gleichstrommotor Modellierung]]
+- [[Strom-Drehzahl-Lageregelung]]
+
+## Teil 7 – Implementierung, Simulation, Anwendung
+- [[Digitale Reglerrealisierung]]
+- [[Numerische Integrationsverfahren]]
+- [[Matlab und Simulink]]
+- [[Servoregler und Anwendung]]
+- [[Drehgeber und Drehzahlerfassung]]
+- [[Zweimassensystem]]
