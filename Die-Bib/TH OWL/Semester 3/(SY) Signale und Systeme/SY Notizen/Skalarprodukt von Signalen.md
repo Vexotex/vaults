@@ -1,0 +1,1 @@
+# Skalarprodukt von Signalen

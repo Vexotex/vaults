@@ -51,3 +51,48 @@ $$\frac{d}{dx} f^2(x) = 2 f(x) f'(x)$$
 -  
 
 # Themen
+
+## Einführung
+- [[Definition Signal]]
+- [[Definition System]]
+
+## Signale – Grundlagen
+- [[Signale]]
+- [[Signalklassifizierung]]
+- [[Sprungfunktion - 𝜎(t)]]
+- [[Rampenfunktion - r(t)]]
+- [[Rechteckimpuls - rect()]]
+- [[Dreieckimpuls - tri()]]
+- [[Dirac-Impuls - 𝛿(t)]]
+- [[Periodische Signale]]
+- [[Sinus-förmige Signale]]
+
+## Signaloperationen
+- [[Elementare Signaloperationen]]
+- [[Skalarprodukt von Signalen]]
+- [[Faltung]]
+- [[Korrelationsfunktion]]
+
+## Fourier-Analyse
+- [[Fourier-Reihen]]
+- [[Fourier-Koeffizienten]]
+- [[Konvergenz von Fourier-Reihen]]
+- [[Fourier-Transformation]]
+- [[Eigenschaften der Fourier-Transformation]]
+- [[Dauer-Bandbreite-Produkt]]
+
+## Systeme
+- [[Einteilung von Systemen]]
+- [[Zustandsraumdarstellung]]
+- [[Transitionsmatrix]]
+- [[LTI-Systeme]]
+- [[Systemstabilität]]
+- [[Steuerbarkeit und Beobachtbarkeit]]
+
+## Laplace & Frequenzbereich
+- [[Laplace-Transformation]]
+- [[Eigenschaften der Laplace-Transformation]]
+- [[Übertragungsfunktion]]
+- [[Wirkungsplan]]
+- [[Pol-Nullstellen-Darstellung]]
+- [[Bode-Diagramm]]

@@ -1,0 +1,1 @@
+# Eigenschaften der Fourier-Transformation
