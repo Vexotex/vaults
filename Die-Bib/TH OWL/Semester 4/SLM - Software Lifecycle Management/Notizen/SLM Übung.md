@@ -18,7 +18,10 @@ Ein HTML-Scraper, der nach einmaliger Angabe der HTML-Struktur und Suchbereich d
 
 Zeitplandokumentation
 
-| Tätigkeit | Begin | Ende | Zeitbedarf |
-| --------- | ----- | ---- | ---------- |
-| P3.1      | 13:45 |      |            |
+| Tätigkeit | Begin | Ende  | Zeitbedarf |
+| --------- | ----- | ----- | ---------- |
+| P3.1      | 13:45 | 15:50 | 1:25       |
+| P3.2      |       |       |            |
+| P3.3      |       |       |            |
+| P3.4      |       |       |            |
 [[A3.1]]
