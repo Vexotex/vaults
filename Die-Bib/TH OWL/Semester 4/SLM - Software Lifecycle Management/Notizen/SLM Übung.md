@@ -1,8 +1,5 @@
 # [[TH OWL/Semester 4/SLM - Software Lifecycle Management/Übung/001_SLM_Praktikum_Beschreibungen.pdf|001_SLM_Praktikum_Beschreibungen]]
-## A1.1
-Yu-Gi-Oh-Scraper:
-Ein HTML-Scraper, der nach einmaliger Angabe der HTML-Struktur und Suchbereich der sich wiederholenden Webseiten der Spielkarten. Alle Webseiten ausliest und anschließend strukturiert in einer SQL-Datenbank speichert, sodass später einfach Vergleiche der Stats der Spielkarten erstellt werden können.
-
+## [[A1.1]]
 
 ## [[A1.4]]
 
@@ -18,10 +15,10 @@ Ein HTML-Scraper, der nach einmaliger Angabe der HTML-Struktur und Suchbereich d
 
 Zeitplandokumentation
 
-| Tätigkeit | Begin | Ende  | Zeitbedarf |
-| --------- | ----- | ----- | ---------- |
-| A3.1      | 13:45 | 15:50 | 1:25       |
-| A3.2      |       |       |            |
-| A3.3      |       |       |            |
-| A3.4      |       |       |            |
-[[A3.1]]
+| Tätigkeit           | Begin | Ende  | Zeitbedarf |
+| ------------------- | ----- | ----- | ---------- |
+| [[A3.1]]            | 13:45 | 15:50 | 1:25       |
+| Kommulitonen finden | 15:50 | 16:05 | 0:15       |
+| [[A3.2]]            | 16:05 |       |            |
+| [[A3.3]]            |       |       |            |
+| A3.4                |       |       |            |
