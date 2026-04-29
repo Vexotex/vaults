@@ -4,6 +4,17 @@
 - [[EZ_01_Grundlagen.pdf]]
 
 
+# Übung
+- [[Einrichtung_EZ_Praktikum.pdf]]
+- [[Aufgaben_EZ_Praktikum.pdf]]
+
+# Referenzen
+- [[161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf]]
+- [[um1725-description-of-stm32f4-hal-and-lowlayer-drivers-stmicroelectronics.pdf]]
+- 
+
+
+
 # Klausur
 - ein PDF zum mitnehmen
 - E-Klausur
