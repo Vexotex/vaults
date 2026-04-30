@@ -18,3 +18,6 @@
 # Klausur
 - 90 min
 - keine Hilfsmittel
+- Doku-Abgabe 10.Juli
+	- kein Einfluss in die Note
+	- aber qualifizierung für die Klausur
