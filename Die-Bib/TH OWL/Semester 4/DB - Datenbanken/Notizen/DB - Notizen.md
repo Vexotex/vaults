@@ -9,4 +9,44 @@ Ziel dieser Datenbank ist es, vorhandene Informationen zu alten Obstsorten zur V
 ## 3.1.2 Welche Informationen sind hier niedergeschrieben und in welcher Beziehung stehen diese zueinander?
 eine Auflistung aller Sorten von Obst und deren Synonyme. Die zuordnung der Baüme, Blüten und Früchte mit den jeweiligen Bildern zur Identifizierung.
 
-## ![[3.2]]
+## ![[3.2 Muster]]
+
+
+# 4 [[2026-05-04 - DB - 04 - P - Das relationale Modell.pdf]]
+
+- [[Obstsorte]]
+	- O_ID (P)
+	- Name
+	- Allergieverträglichkeit
+	- Obstart (F)
+- [[Obstart]]
+	- Name (P)
+- [[Region - Gebiet]]
+	- R_ID (P)
+	- Bezeichnung
+- [[wächst in]]
+	- R_ID (F)
+	- O_ID (F)
+- [[Bezugsquellen]]
+	- B_ID (P)
+	- Addresse
+	- Name
+- [[erhältlich in]]
+	- B_ID (F)
+	- O_ID (F)
+- [[dargestellt]]
+	- D_ID (P)
+	- Link
+	- O_ID (F)
+- [[Literatur]]
+	- L_ID (P)
+	- Author
+	- Titel
+	- Datum
+- [[referenz in]]
+	- L_ID (F)
+	- O_ID (F)
+- [[Synonym]]
+	- S_ID (P)
+	- S_Name
+	- O_ID (F)

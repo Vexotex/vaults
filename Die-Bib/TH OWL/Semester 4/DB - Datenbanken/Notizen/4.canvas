@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"58ccfc51d08bfb08","type":"file","file":"TH OWL/Semester 4/DB - Datenbanken/Notizen/4 Tabellen/Bezugsquellen.md","x":-680,"y":140,"width":400,"height":400},
+		{"id":"c705aa56b90f1479","type":"file","file":"TH OWL/Semester 4/DB - Datenbanken/Notizen/4 Tabellen/Region - Gebiet.md","x":-1200,"y":140,"width":400,"height":400},
+		{"id":"804d1370e6823d24","type":"file","file":"TH OWL/Semester 4/DB - Datenbanken/Notizen/4 Tabellen/wächst in.md","x":-1200,"y":-361,"width":400,"height":400},
+		{"id":"ccf832fea6ed4f08","type":"file","file":"TH OWL/Semester 4/DB - Datenbanken/Notizen/4 Tabellen/erhältlich in.md","x":-680,"y":-340,"width":400,"height":400},
+		{"id":"94db246b7e6c0fc3","type":"file","file":"TH OWL/Semester 4/DB - Datenbanken/Notizen/4 Tabellen/Literatur.md","x":380,"y":140,"width":400,"height":400},
+		{"id":"48488a3bc0040ed9","type":"file","file":"TH OWL/Semester 4/DB - Datenbanken/Notizen/4 Tabellen/referenz in.md","x":380,"y":-340,"width":400,"height":400},
+		{"id":"486ed3ed4146698e","type":"file","file":"TH OWL/Semester 4/DB - Datenbanken/Notizen/4 Tabellen/Obstsorte.md","x":-140,"y":-980,"width":400,"height":400},
+		{"id":"d4004be2007cc619","type":"file","file":"TH OWL/Semester 4/DB - Datenbanken/Notizen/4 Tabellen/Obstart.md","x":-140,"y":-1640,"width":400,"height":400},
+		{"id":"45aee05ee6297dee","type":"file","file":"TH OWL/Semester 4/DB - Datenbanken/Notizen/4 Tabellen/Synonym.md","x":960,"y":-340,"width":400,"height":400},
+		{"id":"91cfb2f67c18b6c6","type":"file","file":"TH OWL/Semester 4/DB - Datenbanken/Notizen/4 Tabellen/dargestellt.md","x":-140,"y":-361,"width":400,"height":400}
+	],
+	"edges":[
+		{"id":"c6d236d60a3e72dd","fromNode":"486ed3ed4146698e","fromSide":"top","toNode":"d4004be2007cc619","toSide":"bottom"},
+		{"id":"b7b2feba1138b050","fromNode":"486ed3ed4146698e","fromSide":"bottom","toNode":"91cfb2f67c18b6c6","toSide":"top"},
+		{"id":"a79720a771261354","fromNode":"486ed3ed4146698e","fromSide":"bottom","toNode":"ccf832fea6ed4f08","toSide":"top"},
+		{"id":"1d2c854f68c2f851","fromNode":"486ed3ed4146698e","fromSide":"bottom","toNode":"804d1370e6823d24","toSide":"top"},
+		{"id":"2c45e6e22160502b","fromNode":"486ed3ed4146698e","fromSide":"bottom","toNode":"48488a3bc0040ed9","toSide":"top"},
+		{"id":"6a225176949bec0c","fromNode":"486ed3ed4146698e","fromSide":"bottom","toNode":"45aee05ee6297dee","toSide":"top"}
+	]
+}
