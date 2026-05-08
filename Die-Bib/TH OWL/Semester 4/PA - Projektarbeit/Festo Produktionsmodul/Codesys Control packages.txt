@@ -1,0 +1,14 @@
+Engineering Software CODESYS
+https://store.codesys.com/de/codesys.html
+
+Wenn die Software geladen und installiert ist, können die folgenden packages für die jeweiligen
+Steuerungs- und IO-Systeme geladen und über den CODESYS Package Manager hinzugefügt werden.
+
+Axioline
+https://store.codesys.com/de/codesys-control-for-plcnext-sl-1.html
+
+Weidmüller
+https://assets.dam.weidmueller.com/assets/api/1573a581-1289-4ba1-ad08-5e398089b32c/Original/CODESYS-Control-SL-for-Weidmueller-u-OS-4.12.2.0.zip
+
+Wago
+https://store.codesys.com/de/codesys-control-for-pfc100-sl-1.html

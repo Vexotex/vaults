@@ -1,0 +1,10 @@
+﻿3
+Es wurde ausdrücklich darauf hingewiesen, dass es keine Punkte für die Herleitung des Reglers im z-Bereich gab. 
+Es sollte die in der Vorlesung hergeleitete Form verwendet werden (stand nicht auf den Folien, sondern war nur an der Tafel angeschrieben worden).
+
+3a
+also der Ansatz von timo ist schon richtig
+daraus folgte dann allerdings, dass die Pole stabil sein müssen
+
+3b
+es war nach der Stabilität nach dem wurzelortskurvenverfahren gefragt für den verbleibenden Parameter

@@ -2,6 +2,7 @@
 - 15.04.2026
 - [[EZ_00_Organisation.pdf]]
 - [[EZ_01_Grundlagen.pdf]]
+- [[EZ_02_Asynchrone Programmierung.pdf]]
 
 
 # Übung

@@ -49,9 +49,9 @@
 **Schutzmaßnahmen**:
 
 ## Digitale Signatur
-- Alice hat privaten Schlüssel $sk_A$ (geheim) und öffentlichen Schlüssel $pk_A$ (öffentlich bekannt)
-- Alice signiert Nachricht $m$: $\sigma = \text{Sign}_{sk_A}(m)$
-- Bob verifiziert: $\text{Verify}_{pk_A}(m, \sigma) \in \{\text{TRUE}, \text{FALSE}\}$
+- Alice hat privaten Schlüssel $k_{pri}$ (private) und öffentlichen Schlüssel $p_{pup}$ (puplic)
+- Alice signiert Nachricht $m$: $\sigma = \text{Sign}_{k_{pri}}(m)$
+- Bob verifiziert: $\text{Verify}_{k_{pup}}(m, \sigma) \in \{\text{TRUE}, \text{FALSE}\}$
 
 ## MAC-Verfahren (Message Authentication Code)
 - Alice und Bob teilen geheimen Schlüssel $k_{A,B}$

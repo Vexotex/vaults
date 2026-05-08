@@ -40,7 +40,7 @@ $$D : K \times M \to M \quad \text{(Entschlüsselung)}$$
 
 ---
 
-# Angriffsszenarien
+# Angriffsszenarien AMATEUR
 
 > [[DC-01.pdf#page=65|DC-01, Seite 65]]
 
