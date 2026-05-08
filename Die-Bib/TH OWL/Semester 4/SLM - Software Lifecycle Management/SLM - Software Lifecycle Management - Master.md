@@ -32,4 +32,4 @@
 - keine Hilfsmittel
 - Doku-Abgabe 10.Juli
 	- kein Einfluss in die Note
-	- aber qualifizierung für die Klausur
+	- aber Qualifizierung für die Klausur
