@@ -27,9 +27,6 @@
 - [[TH OWL/Semester 4/SLM - Software Lifecycle Management/Übung/009_SLM_Praktikum_Änderungen.pdf|009_SLM_Praktikum_Änderungen]]
 - [[TH OWL/Semester 4/SLM - Software Lifecycle Management/Übung/010_SLM_Praktikum_Bericht.pdf|010_SLM_Praktikum_Bericht]]
 
-
-
-
 # Klausur
 - 90 min
 - keine Hilfsmittel
