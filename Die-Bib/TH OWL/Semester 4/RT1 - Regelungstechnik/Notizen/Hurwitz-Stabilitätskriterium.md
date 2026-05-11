@@ -10,7 +10,7 @@ $$N(s) = a_n s^n + a_{n-1} s^{n-1} + \ldots + a_1 s + a_0$$
 ## Bedingungen
 **Notwendige Bedingung (a)**: Alle Koeffizienten $a_i > 0$
 
-**Hinreichende Bedingung (b)**: Alle Hauptminoren der Hurwitz-Matrix positiv
+**Bedingung (b)**: Alle Hurwitzdeterminanten der Hurwitz-Matrix > 0 
 $$H = \begin{pmatrix}
 a_{n-1} & a_{n-3} & a_{n-5} & a_{n-7} & \ldots & 0 \\
 a_n     & a_{n-2} & a_{n-4} & a_{n-6} & \ldots & 0 \\
