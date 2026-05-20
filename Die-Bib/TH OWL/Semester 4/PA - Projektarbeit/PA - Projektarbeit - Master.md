@@ -1,6 +1,8 @@
 
 
 # Dokumente
+- [[Einfuehrung zur Lehrveranstaltung.pdf]]
+- [[produktionsmodell_sensoren_aktoren_pe_hcs12.pdf]]
 
 
 # Notizen
@@ -9,3 +11,9 @@
 - Quellcode wird nicht bewertet
 - Es geht um Ausarbeitung und doku
 - Ausarbeitung-Abgabe 2 Wochen vor präsentation
+
+# 13.05.
+- UML-Übersicht
+- OPC UA sinnvoll exportieren und AAS daraus generieren
+
+

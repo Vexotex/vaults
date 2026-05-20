@@ -3,6 +3,11 @@
 - [[EZ_00_Organisation.pdf]]
 - [[EZ_01_Grundlagen.pdf]]
 - [[EZ_02_Asynchrone Programmierung.pdf]]
+- [[EZ_03_1_C-Programmierung.pdf]]
+- [[EZ_03_2_Peripherie.pdf]]
+- [[EZ_03_4_Zustandsgraph Linearachse.pdf]]
+- [[EZ_04_Einplanung_Teil1.pdf]]
+- [[EZ_04_Einplanung_Teil2.pdf]]
 
 
 # Übung
