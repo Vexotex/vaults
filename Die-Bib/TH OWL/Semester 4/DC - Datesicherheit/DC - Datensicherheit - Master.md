@@ -8,11 +8,6 @@
 - [[Skytale]]
 
 
-# Klausur
-- E-Klausur
-- Alle 3 Skripte und Vorlesugnsfolien stehen zu verfügung
-
-
 # Themen
 ## DC-01 – Grundlagen
 
@@ -33,3 +28,9 @@
 
 - [[Diffie-Hellman]] – DH-Schlüsselaustausch, Diskretes Logarithmusproblem, Angriffe
 - [[RSA-Verfahren]] – Schlüsselerzeugung, Verschlüsselung, Signaturen, CRT-Optimierung
+
+
+
+# Klausur
+- E-Klausur
+- Alle 3 Skripte und Vorlesugnsfolien stehen zu verfügung
