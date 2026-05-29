@@ -8,7 +8,6 @@
 - [[106_SLM_Vorgehensmodelle.pdf]]
 - [[107a_SLM_Klassisch.pdf]]
 - [[107b_SLM_Agil.pdf]]
-- [[107b_SLM_Agil.pdf]]
 - [[108_SLM_Testen.pdf]]
 - [[109_SLM_Evolution.pdf]]
 - [[110_SLM_Metriken.pdf]]

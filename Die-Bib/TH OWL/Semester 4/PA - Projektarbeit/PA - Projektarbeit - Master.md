@@ -17,3 +17,5 @@
 - OPC UA sinnvoll exportieren und AAS daraus generieren
 
 
+[[PA Doku]]
+[[PA Mapping]]
