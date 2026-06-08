@@ -8,6 +8,7 @@
 - [[EZ_03_4_Zustandsgraph Linearachse.pdf]]
 - [[EZ_04_Einplanung_Teil1.pdf]]
 - [[EZ_04_Einplanung_Teil2.pdf]]
+- [[EZ_05_Semaphoren.pdf]]
 
 
 # Übung
