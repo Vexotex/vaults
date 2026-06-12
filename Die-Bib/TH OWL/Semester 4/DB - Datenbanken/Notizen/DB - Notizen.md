@@ -117,7 +117,6 @@ where Semester >= all (
 --- 
 Aggregat und Gruppierung
 ## 8.5
-
 ``` sql 
 SELECT avg(Note)  
 from pruefen;
@@ -140,7 +139,10 @@ where Note = 1;
 ```
 ## 8.9
 ``` sql 
-
+select professoren.Name, sum(vorlesungen.SWS)  
+from professoren, vorlesungen  
+where vorlesungen.gelesenVon = professoren.PersNr  
+group by professoren.Name;
 ```
 ---
 Outer Joins

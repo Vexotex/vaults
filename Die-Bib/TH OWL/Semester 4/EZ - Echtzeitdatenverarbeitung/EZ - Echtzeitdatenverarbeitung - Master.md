@@ -9,11 +9,16 @@
 - [[EZ_04_Einplanung_Teil1.pdf]]
 - [[EZ_04_Einplanung_Teil2.pdf]]
 - [[EZ_05_Semaphoren.pdf]]
+- [[EZ_06_SPS_1_Synchrone Programmierung.pdf]]
+- [[EZ_06_SPS_2_Virtueller Controller.pdf]]
 
 
 # Übung
 - [[Einrichtung_EZ_Praktikum.pdf]]
 - [[Aufgaben_EZ_Praktikum.pdf]]
+
+# Musterlösungen
+
 
 # Referenzen
 - [[161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf]]
@@ -24,5 +29,5 @@
 
 # Klausur
 - ein PDF zum mitnehmen
-- E-Klausur
+- E-Klausurpos
 - ähnlich wie PE

@@ -16,6 +16,11 @@
 - UML-Übersicht
 - OPC UA sinnvoll exportieren und AAS daraus generieren
 
+# 10.06.
+- Namensgebung am anfang der spezifikation
+- beliebige nodeset zu aas und integration_Layer
+	- bei convertierung zu aas config mitschreiben die interation-layer nutzen kann
+- IP-Adresse variabel beim kompilieren mit aufnehemen
 
 [[PA Doku]]
 [[PA Mapping]]

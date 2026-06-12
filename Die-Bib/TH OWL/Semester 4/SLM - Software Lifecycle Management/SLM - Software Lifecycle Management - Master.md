@@ -26,6 +26,13 @@
 - [[TH OWL/Semester 4/SLM - Software Lifecycle Management/Übung/009_SLM_Praktikum_Änderungen.pdf|009_SLM_Praktikum_Änderungen]]
 - [[TH OWL/Semester 4/SLM - Software Lifecycle Management/Übung/010_SLM_Praktikum_Bericht.pdf|010_SLM_Praktikum_Bericht]]
 
+
+# snake
+- [[Drawing 2026-06-11 11.52.08.excalidraw]]
+- [[A3.3]]
+- 
+
+
 # Klausur
 - 90 min
 - keine Hilfsmittel

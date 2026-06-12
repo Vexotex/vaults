@@ -20,3 +20,7 @@
 
 
 # [[DB - Notizen]]
+
+# Klausur
+- schriftlich
+- keine Hilfsmittel
