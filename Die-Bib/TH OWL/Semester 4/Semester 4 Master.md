@@ -8,5 +8,6 @@ Wahlpflichtmodule
 - [[RT1 - Regelungstechnik 1 - Master]]
 - [[RS - Rechnergestützte Numerik und Simulationstechnik - Master]]
 - [[SLM - Software Lifecycle Management - Master]]
+- [[KT1 - Kommunikationstechnik - Master]]
 
 

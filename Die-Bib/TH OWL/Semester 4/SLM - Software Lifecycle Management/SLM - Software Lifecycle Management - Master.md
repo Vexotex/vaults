@@ -28,9 +28,8 @@
 
 
 # snake
-- [[Drawing 2026-06-11 11.52.08.excalidraw]]
+- [[snakeVisualisierung.excalidraw]]
 - [[A3.3]]
-- 
 
 
 # Klausur
