@@ -11,6 +11,8 @@
 - [[EZ_05_Semaphoren.pdf]]
 - [[EZ_06_SPS_1_Synchrone Programmierung.pdf]]
 - [[EZ_06_SPS_2_Virtueller Controller.pdf]]
+- [[EZ_06_SPS_3_IEC 61131.pdf]]
+- [[EZ_06_SPS_4_Beispiel Verkehrsampel.pdf]]
 
 
 # Übung
@@ -23,7 +25,7 @@
 # Referenzen
 - [[161204_Mastering_the_FreeRTOS_Real_Time_Kernel-A_Hands-On_Tutorial_Guide.pdf]]
 - [[um1725-description-of-stm32f4-hal-and-lowlayer-drivers-stmicroelectronics.pdf]]
-- 
+- [[Noctua_PWM_specifications_white_paper.pdf]]
 
 
 
