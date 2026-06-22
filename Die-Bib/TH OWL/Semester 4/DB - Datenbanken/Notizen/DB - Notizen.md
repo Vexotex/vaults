@@ -153,11 +153,15 @@ from studenten s left outer join pruefen p on s.MatrNr = p.MatrNr;
 ```
 ## 8.11
 ``` sql 
-
+select *  
+FROM assistenten  
+RIGHT OUTER JOIN professoren ON professoren.PersNr = assistenten.Boss
 ```
 ## 8.12
 ``` sql 
-
+select s.MatrNr, s.Name, h.VorlNr  
+FROM studenten s  
+LEFT OUTER JOIN hoeren h ON s.MatrNr = h.MatrNr
 ```
 --- 
 Abfragen über eine Relation
@@ -227,3 +231,21 @@ Abfragen über mehrere Relationen
 ``` sql 
 
 ```
+
+
+# 10 [[2026-06-22 - DB - 10 - P - SQL - Optimierung - Anwendungsentwicklung.pdf]]
+
+## 10.1 
+**Führen Sie die SQL-Anweisung auf Seite 11 aus der aktuellen Vorlesung aus und schauen Sie sich den Ausführungsplan an.**
+``` sql
+SELECT stud.Name , stud.MatrNr FROM studenten stud, hoeren ho, vorlesungen vl, professoren prof   
+WHERE stud.MatrNr = ho.MatrNr AND ho.VorlNr = vl.VorlNr AND vl.gelesenVon = prof.PersNr AND prof.Name = 'Kant';
+```
+Durch welche Optimierungsmaßnahmen lässt sich die Abfrage beschleunigen? Führen Sie diese aus und betrachten Sie den schrittweisen Zeitgewinn.
+- indices setzten -> B-Tree wird erzeugt -> $\log_{2}(n)$ Suchzeit aber mehr speicherverbrauch für den B-Tree
+- Datenbak-aufbau für lesen oder schreiben obtimieren
+	- viele Table wenig Spalten -> hohe Schreibgeschwindigkeit
+	- wenig Table viele Spalten -> hohe Lesegeschwindigkeit
+
+
+**Was ist der Unterschied zwischen einem Full Table Scan und einer Index-Suche?**

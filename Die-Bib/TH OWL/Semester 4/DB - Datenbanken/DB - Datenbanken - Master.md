@@ -8,6 +8,7 @@
 - [[2026-06-01 - DB - 07 - VL - SQL-DDL.pdf]]
 - [[2026-06-08 - DB - 08 - VL - SQL-DML.pdf]]
 - [[2026-06-15 - DB - 09 - VL - Weitere SQL Konzepte.pdf]]
+- [[2026-06-22 - DB - 10 - VL - Optimierung aamp; Anwendungsentwicklung.pdf]]
 
 
 # Praktikum
@@ -17,6 +18,7 @@
 - [[2026-06-01 - DB - 07 - P - SQL-DDL.pdf]]
 - [[2026-06-08 - DB - 08 - P - SQL 2.pdf]]
 - [[2026-06-15 - DB - 09 - P - Weitere Konzepte.pdf]]
+- [[2026-06-22 - DB - 10 - P - SQL - Optimierung - Anwendungsentwicklung.pdf]]
 
 
 

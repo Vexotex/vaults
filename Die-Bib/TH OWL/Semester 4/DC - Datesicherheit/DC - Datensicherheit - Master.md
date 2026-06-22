@@ -1,12 +1,16 @@
-# Vorlesung
+# Skript
 - [[DC-01.pdf]]
 - [[DC-02.pdf]]
 - [[DC-03.pdf]]
 
-
-# Notizen
-- [[Skytale]]
-
+# Vorlesung
+- [[260416_dc_01_26.pdf]]
+- [[260423_dc_01_26.pdf]]
+- [[260430_dc_01_26.pdf]]
+- [[260507_dc_01_26.pdf]]
+- [[260521_dc_02_26.pdf]]
+- [[260528_dc_02_26.pdf]]
+- [[260611_dc_02_26.pdf]]
 
 # Themen
 ## DC-01 – Grundlagen

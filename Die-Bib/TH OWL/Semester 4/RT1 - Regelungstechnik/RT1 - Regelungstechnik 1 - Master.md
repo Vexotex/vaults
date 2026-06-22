@@ -26,7 +26,6 @@
 - [[RT_Versuch_02.pdf]]
 - [[RT_Versuch_03.pdf]]
 - [[RT_Versuch_04.pdf]]
-- [[RT_Versuch_04.pdf]]
 - [[RT_Versuch_05.pdf]]
 - [[RT_Versuch_06.pdf]]
 - [[RT_Versuch_07.pdf]]

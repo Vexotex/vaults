@@ -4,6 +4,7 @@
 - [[Handout RS-[0]-Inhalt-V2.pdf]]
 - [[Handout RS-IMP-[1]-Einführung-V2.pdf]]
 - [[Handout RS-NuS-[2]-Approx-Fkt-V2.pdf]]
+	- bis Seite 29
 - [[Handout RS-IMP-[3]-Datentypen-V2.pdf]]
 - [[Handout RS-IMP-[4]-Grafik-V2.pdf]]
 - [[Handout RS-IMP-[5]-M-Programmierung-V2.pdf]]
@@ -16,4 +17,3 @@
 
 # Übung
 - [[RS_Aufgaben_SS23_V01.pdf]]
-- 
