@@ -13,6 +13,7 @@
 - [[EZ_06_SPS_2_Virtueller Controller.pdf]]
 - [[EZ_06_SPS_3_IEC 61131.pdf]]
 - [[EZ_06_SPS_4_Beispiel Verkehrsampel.pdf]]
+- [[EZ_07_I_Security Einfuehrung.pdf]]
 
 
 # Übung
@@ -33,3 +34,11 @@
 - ein PDF zum mitnehmen
 - E-Klausurpos
 - ähnlich wie PE
+
+
+
+
+
+
+rpm = rps * 60
+
