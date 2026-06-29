@@ -249,3 +249,33 @@ Durch welche Optimierungsmaßnahmen lässt sich die Abfrage beschleunigen? Führ
 
 
 **Was ist der Unterschied zwischen einem Full Table Scan und einer Index-Suche?**
+
+
+# 11 [[2026-06-29 - DB - 11 - P - XML-Einstieg.pdf]]
+
+## 11.1
+```xPath
+/Name
+```
+
+## 11.2
+```xPath
+avg(//@Note)
+```
+
+## 11.3
+```xPath
+
+```
+
+## 11.4
+```xPath
+
+```
+
+## 11.5
+```xPath
+
+```
+
+
