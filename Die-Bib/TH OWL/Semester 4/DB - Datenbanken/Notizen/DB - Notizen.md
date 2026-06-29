@@ -265,17 +265,16 @@ avg(//@Note)
 
 ## 11.3
 ```xPath
-
+//Professor[@Rang="C4"]/concat(@PersNr , " " , Name/text())
 ```
 
 ## 11.4
 ```xPath
-
+//Student[@Semester > 5]/concat(Name/text() , " ", @Semester)
 ```
 
 ## 11.5
-```xPath
 
-```
+Geht nicht in XPath
 
 
