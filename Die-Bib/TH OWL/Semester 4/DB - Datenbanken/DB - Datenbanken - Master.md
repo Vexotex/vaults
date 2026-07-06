@@ -10,7 +10,7 @@
 - [[2026-06-15 - DB - 09 - VL - Weitere SQL Konzepte.pdf]]
 - [[2026-06-22 - DB - 10 - VL - Optimierung aamp; Anwendungsentwicklung.pdf]]
 - [[2026-06-29 - DB - 11 - XML-Einstieg.pdf]]
-- 
+- [[2026-07-06 - DB - 12 - VL - XML Weitere Konzepte.pdf]]
 
 
 # Praktikum
@@ -22,6 +22,7 @@
 - [[2026-06-15 - DB - 09 - P - Weitere Konzepte.pdf]]
 - [[2026-06-22 - DB - 10 - P - SQL - Optimierung - Anwendungsentwicklung.pdf]]
 - [[2026-06-29 - DB - 11 - P - XML-Einstieg.pdf]]
+- [[2026-07-06 - DB - 12 - P - XML - XSLT-XQuery .pdf]]
 
 
 

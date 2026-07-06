@@ -278,3 +278,90 @@ avg(//@Note)
 Geht nicht in XPath
 
 
+
+
+# 12 [[2026-07-06 - DB - 12 - P - XML - XSLT-XQuery .pdf]]
+## 12.1
+
+
+
+## 12.2
+### 12.2.1
+```Xquery
+xquery version "3.1";
+
+for $x in (//Name)
+return $x
+
+```
+
+### 12.2.2
+```Xquery
+xquery version "3.1";
+
+for $rang in distinct-values(//Professor/@Rang)
+order by $rang
+return $rang
+
+```
+
+### 12.2.3
+```Xquery
+xquery version "3.1";
+
+for $stud in //Student
+where some $h in //hoert satisfies $h/@MatrNr = $stud/@MatrNr
+return $stud/Name
+```
+
+
+### 12.2.4
+```Xquery
+xquery version "3.1";
+
+let $Anzahl := count(//Vorlesung)
+return $Anzahl
+```
+
+### 12.2.5
+```Xquery
+xquery version "3.1";
+
+count(distinct-values(//Student/@Semester))
+```
+
+### 12.2.6
+```Xquery
+xquery version "3.1";
+
+for $prof in (//Professor)
+where some $v in (//Vorlesung) satisfies $prof/@PersNr = $v/@gelesenVon 
+return $prof/Name
+```
+
+
+### 12.2.7
+```Xquery
+xquery version "3.1";
+
+max(distinct-values(//Student/@Semester))
+```
+
+### 12.2.8
+```Xquery
+for $p in //Professor
+let $sws := sum(//Vorlesung[@gelesenVon = $p/@PersNr]/@SWS)
+return 
+<Professor>{$p/Name}
+	<SWS>{$sws}
+    </SWS>
+</Professor>
+```
+
+### 12.2.9
+```Xquery
+for $s in //Student
+where every $p in //pruef[@MatrNr = $s/@MatrNr] 
+satisfies $p/@Note >= 3.0
+return $s/Name
+```
