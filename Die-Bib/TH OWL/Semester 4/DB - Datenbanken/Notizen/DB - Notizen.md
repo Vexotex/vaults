@@ -352,10 +352,7 @@ max(distinct-values(//Student/@Semester))
 for $p in //Professor
 let $sws := sum(//Vorlesung[@gelesenVon = $p/@PersNr]/@SWS)
 return 
-<Professor>{$p/Name}
-	<SWS>{$sws}
-    </SWS>
-</Professor>
+<Professor>{$p/Name} {$sws}</Professor>
 ```
 
 ### 12.2.9
