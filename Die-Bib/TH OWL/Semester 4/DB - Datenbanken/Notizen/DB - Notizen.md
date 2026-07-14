@@ -167,69 +167,139 @@ LEFT OUTER JOIN hoeren h ON s.MatrNr = h.MatrNr
 Abfragen über eine Relation
 ## 8.13
 ``` sql 
-
+SELECT * FROM professoren
 ```
 ## 8.14
 ``` sql 
-
+SELECT PersNr, Name FROM professoren
 ```
 ## 8.15
 ``` sql 
-
+SELECT p.PersNr, p.Name  
+FROM professoren p  
+WHERE p. Rang = 'C4'
 ```
 ## 8.16
 ``` sql 
-
+SELECT p.PersNr, p.Name  
+FROM professoren p  
+ORDER BY p.Rang
 ```
 ## 8.17
 ``` sql 
-
+SELECT p.Rang  
+FROM professoren p
 ```
 ## 8.18
 ``` sql 
-
+SELECT DISTINCT p.Rang  
+FROM professoren p
 ```
 ## 8.19
 ``` sql 
-
+SELECT DISTINCT s.Name, s.Semester  
+FROM studenten s
 ```
 ## 8.20
 ``` sql 
-
+SELECT DISTINCT s.Name, s.Semester  
+FROM studenten s  
+WHERE s.Semester >= 5
 ```
 ## 8.21 
 ``` sql 
-
+SELECT DISTINCT s.Name, s.Semester  
+FROM studenten s  
+WHERE s.Semester >= 5  
+GROUP BY s.Semester ASC
 ```
 ## 8.22
 ``` sql 
-
+SELECT * FROM hoeren
 ```
 ---
-Abfragen über mehrere Relationen
+Abfragen über mehrere  Relationen 
 ## 8.23
 ``` sql 
-
+SELECT p.Name  
+FROM professoren p  
+WHERE p.PersNr = (  
+    SELECT v.gelesenVon  
+    FROM vorlesungen v  
+    WHERE v.Titel = 'Logik'
+    )
 ```
 ## 8.24
 ``` sql 
-
+SELECT s.Name, s.MatrNr  
+FROM studenten s  
+WHERE s.MatrNr IN (  
+    SELECT h.MatrNr  
+    From hoeren h  
+    WHERE h.VorlNr = (  
+        SELECT v.VorlNr  
+        FROM vorlesungen v  
+        WHERE v.Titel = 'Glaube und Wissen'  
+        )  
+    )
 ```
 ## 8.25
 ``` sql 
-
+SELECT s.Name, s.MatrNr, v.Titel  
+FROM studenten s  
+JOIN hoeren h ON s.MatrNr = h.MatrNr  
+JOIN vorlesungen v ON h.VorlNr = v.VorlNr  
+WHERE v.gelesenVon = (  
+    SELECT PersNr  
+    FROM professoren  
+    WHERE Name = 'Kant'  
+);
+```
+oder
+```SQL
+SELECT s.Name, s.MatrNr, v.Titel
+FROM studenten s, hoeren h, vorlesungen v
+WHERE s.MatrNr = h.MatrNr
+  AND h.VorlNr = v.VorlNr
+  AND v.gelesenVon = (
+      SELECT PersNr
+      FROM professoren
+      WHERE Name = 'Kant'
+  );
 ```
 ## 8.26
 ``` sql 
-
+SELECT p.Name  
+FROM professoren p  
+  
+UNION  
+  
+SELECT a.Name  
+FROM assistenten a
 ```
+
 ## 8.27
 ``` sql 
-
+SELECT Name  
+FROM professoren  
+  
+UNION  
+  
+SELECT Name  
+FROM assistenten  
+  
+GROUP BY Name
 ```
 ## 8.28
 ``` sql 
-
+SELECT Name, Position  
+FROM (  
+    SELECT Name, 'Professor' AS Position FROM professoren  
+    UNION  
+    SELECT Name, 'Assistent' FROM assistenten  
+) AS Angestellte  
+  
+GROUP BY Name
 ```
 
 

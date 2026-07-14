@@ -15,11 +15,14 @@
 - [[EZ_06_SPS_4_Beispiel Verkehrsampel.pdf]]
 - [[EZ_07_I_Security Einfuehrung.pdf]]
 - [[EZ_09_Ueberblick sichere Softwareentwicklung.pdf]]
+- [[EZ_08_Verwaltungsschale.pdf]]
 
 
 # Übung
 - [[Einrichtung_EZ_Praktikum.pdf]]
 - [[Aufgaben_EZ_Praktikum.pdf]]
+- [[PCWorx_Konfig_und_erstes_Programm.pdf]]
+- [[produktionsmodell_sensoren_aktoren_ez_sps.pdf]]
 
 # Musterlösungen
 

@@ -17,3 +17,5 @@
 
 # Übung
 - [[RS_Aufgaben_SS23_V01.pdf]]
+	- dynamische systeme nicht Prüfungsrelevant
+	- ab 5.7 wieder
