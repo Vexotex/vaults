@@ -143,7 +143,7 @@ CASE state OF
 END_CASE;
 
 
-(* Warnleuchte - 500ms *)
+(* Warnleuchte - 100ms *)
 IF blinken = true THEN
 	blink := not blink;
 	aktor2 := blink;
