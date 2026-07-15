@@ -76,6 +76,7 @@ Falls Sie für die Steuerung weitere Zeitangaben benötigen, können Sie diese f
 ### Code
 ```StructuredText
 (* init *)
+is2te := false;
 counter := 0;
 state := 0;
 
@@ -83,21 +84,25 @@ aktor1 := false;
 aktor2 := false;
 
 blinken := false;
-blink := flase;
+blink := false;
 leuchten := false;
 
 
-(* statemaschine - 100ms *)
+(* statemachine - 100ms *)
 CASE state OF
-	0: (* Warte auf erste Lichtschranke*)
+	0: (* Warte auf erste Lichtschranke. Fahre nur bei jedem 2ten fort*)
 		IF sensor1 = false THEN
-			state := 1;
+			is2te := not is2te;
+			
+			IF is2te = true
+				state := 1;
 		END_IF
+		
 	
 	1: (* Warte 5 Sekunden Druckluft an *)
 		IF counter >= 50 THEN
 			state := 2;
-			aktor := true;
+			aktor1 := true;
 			counter := 0;
 		END_IF;
 		
@@ -106,7 +111,7 @@ CASE state OF
 	2: (* nach 0,6 sekunden wieder aus *)
 		IF counter >= 6 THEN
 			state := 3;
-			aktor := false;
+			aktor1 := false;
 			counter := 0;
 		END_IF;
 		
