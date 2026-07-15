@@ -42,6 +42,7 @@
 
 # Musterklausur
 ## Aufgabe 2 - C-Prog
+### Beschreibung
 Ein Automatisierungsvorhaben wird mit Hilfe von Prozessrechnern und dem Betriebssystem freeRTOS realisiert. Die Programme sind in der Programmiersprache C geschrieben. Es wird angenommen, dass die gleichen Randbedingungen gelten wie für die in den Übungen benutzten Rechner.
 
 Als Teilproblem eines Projektes zur Automatisierung von Fertigungsmaschinen sollen Winkelposition und Drehrichtung einer Welle an andere Programme gegeben werden.
@@ -68,7 +69,7 @@ Hinweis: Sie können für die Teile a, b und c mehrere Programme schreiben oder 
 ```c
 // ---Globale Variabeln---
 
-// input Data Register
+// input Data Register (Verfügbarkeit angenommen)
 int GPIO1 = 0x1 & (GPIOptr->idr << 0);
 int GPIO2 = 0x1 & (GPIOptr->idr << 1);
 int GPIO4 = 0x1 & (GPIOptr->idr << 3);
@@ -105,7 +106,7 @@ void HAL_GPIO_EXTI_CALLBACK (uint GPIO_Pin) {
 
 // ISR
 void ISR1(){
-	GPIO1 = 0x1 & (GPIOptr->idr << 0);
+	GPIO1 = 0x1 & (GPIOptr->idr << 0); // neuen Wert im Register einlesen
 	
 	vTaskResume(LernphaseHandel);
 	vTaskResume(BetriebHandel);
@@ -206,8 +207,5 @@ while (1){
 	}
 	State = NextState;
 }
-
-
-
-
 ```
+
