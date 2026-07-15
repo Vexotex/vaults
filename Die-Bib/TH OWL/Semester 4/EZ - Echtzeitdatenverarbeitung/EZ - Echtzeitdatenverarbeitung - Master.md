@@ -36,12 +36,123 @@
 
 # Klausur
 - ein PDF zum mitnehmen
-- E-Klausurpos
+- E-Klausur
 - ähnlich wie PE
+- eine aufgabe c
+- eine sps (structured Text)
+- Fragen zu Vorlesungsfolien
+- bis 22.07. Hilfs-pdf hochladen
+- aas nicht
 
 
 # Musterklausur
-## Aufgabe 2 - C-Prog
+
+## Aufgabe 1 - IEC61131 (30 Punkte)
+### Beschreibung
+Ein Automatisierungsvorhaben wird mit Hilfe von Phoenix-SPS Systemen mit dem Programmiersystem PCWORX realisiert. Die Programme sollen in 'Structured  
+Text' geschrieben werden. Es wird angenommen, dass die gleichen Randbedingungen gelten wie für die in den praktischen Übungen benutzten SPS Systeme.
+
+Als Teilproblem in einer Anlage wird ein Modul zum Ausschleusen von Werkstücken betrachtet, die auf einem Förderband transportiert werden. Das Modul ist nicht identisch mit dem Modul des Produktionsmodells. Aufgabe ist es, jedes zweite Werkstück auszuschleusen.
+
+Mit Lichtschranke 1 können Sie feststellen, ob sich ein Werkstück vor der Weiche befindet (Werkstück vorhanden bedeutet 'kein Licht' ).
+
+Die Weiche besteht aus einer Düse, mit der die Werkstücke angeblasen werden, um sie mit Druckluft auf die Ausschleuse-Rampe zu schieben. Von Sensor1 bis Aktor1 bewegt sich das Werkstück in 5 Sekunden. Der Druckluftimpuls soll 0,6 Sekunden dauern (true: Druckluft an, false: Druckluft aus).
+
+Falls das Werkstück spätestens 2 Sekunden nach dem Druckluftimpuls nicht von Sensor2 erfasst wird, soll die Warnleuchte blinken.
+
+Wenn die Ausschleuse-Rampe mit Werkstücken gefüllt ist (d.h. die Werkstücke stauen sich bis zur Lichtschranke 2), soll nicht mehr ausgeschleust werden und die Warnlampe am Digitalausgang 2 soll leuchten. Denken Sie daran, dass die Lichtschranke 2 bei jedem ausgeschleusten Werkstück unterbrochen wird, unabhängig vom Füllstand der Rampe.
+
+Die Anzahl der ausgeschleusten Werkstücke soll in der globalen Variablen `'anzahl_werkstuecke'` für andere Tasks abgelegt werden. 
+
+Vereinfachungen
+
+Das Band läuft dauerhaft mit konstanter Geschwindigkeit. 
+
+Die Werkstücke liegen in so großem Abstand auf dem Band, dass ein Ausschleusevorgang beendet ist, wenn das nächste Werkstück erfasst wird.
+
+Der Ablauf nach dem Störfall (Warnleuchte blinkt) wird nicht betrachtet.
+
+Falls Sie für die Steuerung weitere Zeitangaben benötigen, können Sie diese für die Klausur selbst wählen (in einem sinnvollen Verhältnis zu den gegebenen Zeiten).
+### Code
+```StructuredText
+(* init *)
+counter := 0;
+state := 0;
+
+aktor1 := false;
+aktor2 := false;
+
+blinken := false;
+blink := flase;
+leuchten := false;
+
+
+(* statemaschine - 100ms *)
+CASE state OF
+	0: (* Warte auf erste Lichtschranke*)
+		IF sensor1 = false THEN
+			state := 1;
+		END_IF
+	
+	1: (* Warte 5 Sekunden Druckluft an *)
+		IF counter >= 50 THEN
+			state := 2;
+			aktor := true;
+			counter := 0;
+		END_IF;
+		
+		counter := counter + 1;
+	
+	2: (* nach 0,6 sekunden wieder aus *)
+		IF counter >= 6 THEN
+			state := 3;
+			aktor := false;
+			counter := 0;
+		END_IF;
+		
+		counter := counter + 1;
+
+	3: (* Auf Lichtschranke 2 warten *)
+		IF sensor2 = true THEN
+			state := 4;
+			blinken := false
+			counter := 0;
+		ELSEIF counter >= 20 THEN
+			blinken := true;
+		END_IF;
+		
+		counter := counter + 1;
+	
+	4: (* Rampe voll? Wenn Lichtschranke länger als 1 sekunde 'false' *)
+		IF sensor2 = false THEN
+			state := 0;
+			leuchten := false
+			counter := 0;
+		ELSEIF counter >= 10 THEN
+			leuchten := true;
+			counter := 10;
+		END_IF;
+		
+		counter := counter + 1;
+	
+END_CASE;
+
+
+(* Warnleuchte - 500ms *)
+IF blinken = true THEN
+	blink := not blink;
+	aktor2 := blink;
+ELSEIF leuchten = true THEN
+	aktor2 := true;
+ELSE
+	aktor2 := false;
+	blink := false;
+END_IF
+```
+
+
+
+## Aufgabe 2 - C-Programmierung (50 Punkte)
 ### Beschreibung
 Ein Automatisierungsvorhaben wird mit Hilfe von Prozessrechnern und dem Betriebssystem freeRTOS realisiert. Die Programme sind in der Programmiersprache C geschrieben. Es wird angenommen, dass die gleichen Randbedingungen gelten wie für die in den Übungen benutzten Rechner.
 
@@ -174,7 +285,7 @@ while (1){
 			if (GPIO1 = 0){
 				NextState = 0;
 				richtung = 1;
-				nummer_zahn--;
+				nummer_zahn++;
 			}
 			if (GPIO2 = 1){
 				NextState = 3;
@@ -190,7 +301,7 @@ while (1){
 			if (GPIO2 = 0){
 				NextState = 0;
 				richtung = 1;
-				nummer_zahn++;
+				nummer_zahn--;
 			}
 			break;
 			
