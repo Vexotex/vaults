@@ -110,7 +110,6 @@ END_IF
 ```
 
 
-
 # Aufgabe 2 - C-Programmierung (50 Punkte)
 ## Beschreibung
 Ein Automatisierungsvorhaben wird mit Hilfe von Prozessrechnern und dem Betriebssystem freeRTOS realisiert. Die Programme sind in der Programmiersprache C geschrieben. Es wird angenommen, dass die gleichen Randbedingungen gelten wie für die in den Übungen benutzten Rechner.

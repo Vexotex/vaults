@@ -19,3 +19,8 @@
 - [[RS_Aufgaben_SS23_V01.pdf]]
 	- dynamische systeme nicht Prüfungsrelevant
 	- ab 5.7 wieder
+
+# Klausur
+- 30 min
+- 5 min vorher da sein
+- 

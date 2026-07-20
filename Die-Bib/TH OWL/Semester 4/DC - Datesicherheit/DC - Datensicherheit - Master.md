@@ -11,6 +11,12 @@
 - [[260521_dc_02_26.pdf]]
 - [[260528_dc_02_26.pdf]]
 - [[260611_dc_02_26.pdf]]
+- [[260618_dc_02_26.pdf]]
+- [[260618_dc_tls.pdf]]
+- [[260625_dc_03_26.pdf]]
+- [[260702_dc_03_26.pdf]]
+- [[260709_dc_03_26.pdf]]
+- [[260709_dc_x509.pdf]]
 
 # Themen
 ## DC-01 – Grundlagen
@@ -38,3 +44,4 @@
 # Klausur
 - E-Klausur
 - Alle 3 Skripte und Vorlesugnsfolien stehen zu verfügung
+- 
