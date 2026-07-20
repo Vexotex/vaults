@@ -1,8 +1,4 @@
-
-# (55 Punkte)
-
-## Beschreibung
-## code
+## code SS21
 ```c
 // direction ist global verfügbar
 long DIGI_OUT 0xFFFA0000 // Addresse von Warnlampe
