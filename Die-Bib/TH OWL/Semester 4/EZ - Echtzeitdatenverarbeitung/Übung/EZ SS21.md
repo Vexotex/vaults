@@ -4,6 +4,7 @@
 ## Beschreibung
 ## code
 ```c
+// direction ist global verfügbar
 long DIGI_OUT 0xFFFA0000 // Addresse von Warnlampe
 
 int state = 0;
@@ -67,7 +68,7 @@ while (1) {
 			break;
 			
 		case 3: // Error, wenn aus Ruhezone mehr als 8 Schritte
-			
+			break;
 		
 	}
 	state = nextState;
