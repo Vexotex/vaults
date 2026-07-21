@@ -177,7 +177,7 @@ SELECT PersNr, Name FROM professoren
 ``` sql 
 SELECT p.PersNr, p.Name  
 FROM professoren p  
-WHERE p. Rang = 'C4'
+WHERE p.Rang = 'C4'
 ```
 ## 8.16
 ``` sql 
