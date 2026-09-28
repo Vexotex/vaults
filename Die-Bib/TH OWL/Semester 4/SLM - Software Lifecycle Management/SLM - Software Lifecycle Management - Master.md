@@ -33,6 +33,7 @@
 
 
 # Klausur
+- [[009_SLM_Fragenrueckblick.pdf]]
 - 90 min
 - keine Hilfsmittel
 - Doku-Abgabe 10.Juli

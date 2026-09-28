@@ -9,10 +9,10 @@ Wahlplichtmodule
 - [[WV - Weitverkerhsnetze]]
 - [[SP - Systemprogrammierung eingebetteter Systeme]]
 - [[MO - Mobile Systeme]]
-- [[MH - Mathematische Optimierung]]
 - [[AL - Anwendung des Maschinelles Lernens]]
 
 - [[EP - Entrepreneurship]]
+- [[TS - Tech Startup]]
 - [[BW - Betriebswirtschaftlehre]]
 - [[MK - Managmentkompetenz]]
 
