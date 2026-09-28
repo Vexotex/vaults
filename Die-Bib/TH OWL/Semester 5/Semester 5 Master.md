@@ -10,6 +10,7 @@ Wahlplichtmodule
 - [[SP - Systemprogrammierung eingebetteter Systeme]]
 - [[MO - Mobile Systeme]]
 - [[AL - Anwendung des Maschinelles Lernens]]
+- [[RT2 - Reglungstechnik 2]]
 
 - [[EP - Entrepreneurship]]
 - [[TS - Tech Startup]]
