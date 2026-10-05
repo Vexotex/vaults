@@ -36,9 +36,10 @@ die Werkzeuge und Methoden lassen sich gut entlang der ALM-Disziplinen gliedern:
 2. (TQM) Test and Quality Management
 3. (IDM) Issue and Defect Management
 4. (CCM) Change and Configure Managment
-5. (RM) Resource Management
-6. (VM) Version Management
-7. (BRM) Build and Realease Management
+5. (AMR) Audits Metrics and Reports
+6. (RM) Resource Management
+7. (VM) Version Management
+8. (BRM) Build and Realease Management
 
 # 3. Welche Ergebnisse werden neben dem Quelltext bei der Software-Entwicklung erzeugt?
 - Analysedokumente: Lastenheft, Pflichtenheft, Funktionale Einheiten, GUI-Prototypen
@@ -58,6 +59,8 @@ die Werkzeuge und Methoden lassen sich gut entlang der ALM-Disziplinen gliedern:
 5. Evolution
 
 # 5. Was ist ein Software-Prozess?
+eine Menge von Tätigkeiten die zu einem Softwareprodukt führen
+# Was ist ein Software?
 "Software ist die Menge von Programmen oder Daten zusammen mit begleitenden Dokumenten, die für ihre Anwendung notwendig oder hilfreich sind." 
 - Hesse et al, 1984
 
@@ -146,6 +149,7 @@ EARS
 dann ist sie nicht gut
 
 # 17. Warum ist die Formulierung von guten Anforderungen wichtig?
+- eingeschränkte Genauigkeit
 - Missverständnisse vorbeugen
 - rechtliche Absicherung
 - Basierte Aufwandsabschätzung
@@ -157,6 +161,7 @@ Stabilität:
 - Wie sicher eine Anforderung umsetzbar ist
 Bedeutung:
 - Welche technische Auswirkung diese Anforderung auf die Software hat
+- must-have, can-have, should-have
 Risiko:
 - Fehleranfälligkeit
 Status: 
@@ -251,6 +256,8 @@ Vorgegebene Satzstruktur zur Definition von Anforderungen
 **Schnittstellen:** Eine Möglichkeit Module lose zu Koppeln, Erhöht die Wiederverwendbarkeit und Modifizierbarkeit der Module
 **CodeDuplizierung:** Codeblöcke, die das gleiche machen - sollten vermieden werden
 
+Modifizierbarkeit und Wiederverwendbarkeit
+
 # 32. Was sind Schwierigkeiten bei der Zeitschätzung von Aufgaben?
 - Extremfälle können stark auseinanderliegen
 - mangelnde Erfahrung mit konkretem Problem
@@ -280,6 +287,7 @@ keine ist alles nur heiße Luft
 
 # 38. Was unterscheidet Backlog, Product Backlog und Sprint Backlog?
 **Backlog:** generell
+
 Scrum spezifisch
 **Product Backlog:** Alles Issues
 **Sprint Backlog:** Issues die in diesem Sprint erledigt wrden sollen
@@ -307,6 +315,7 @@ imateriell
 - Sprint Retrospektive (Wie war der letzte Sprint, was ändern wir)
 	- PO & SM
 - Product Backlog Refinement (Backlog-update, Zeiteinschätzung, ...)
+	- PO & ET
 
 # 42. Welche Phasen gibt es im V-Modell und was wird dabei getan?
 - Analyse
@@ -342,7 +351,7 @@ Whitebox - Testfälle aus Programmstruktur
 Testfälle werden währen den einzelnen Phasen definiert
 
 # 47. Kann man V-Modell und Scrum und Kanban direkt vergleichen und warum oder warum nicht und welche Unterschiede und Gemeinsamkeiten gibt es?
-nein kann man nicht
+nein, kann man nicht
 Kanban ist nicht an Prozessphasen gebunden (ist eine Philosophie)
 und Scrum ist Agil 
 V-Modell ist Klassisch
