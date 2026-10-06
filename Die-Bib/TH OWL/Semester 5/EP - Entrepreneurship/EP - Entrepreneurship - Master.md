@@ -5,11 +5,13 @@
 - 
 
 # Notizen
-- 
+- [[261006]]
 
 
 
 # Benotung
-- Abschlusspräsentation
-- mündliche Note von Projektarbeit
+- Klausur 60 min (60%), 
+	- Erste Februarwoche
+	- 3 Fragen a 20min
+- Projektarbeit im Team mit Abschlusspräsentation (40%)
 
