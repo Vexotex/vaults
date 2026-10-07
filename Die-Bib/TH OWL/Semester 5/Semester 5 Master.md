@@ -1,6 +1,7 @@
 Pfichtmodule
+<<<<<<< HEAD
 - [[NM - Numerische Mathemaitk - Master]]
-- [[ML - Maschinelles Lernen]]
+- [[ML - Maschinelles Lernen - Master]]
 
 Wahlplichtmodule
 - [[MV - Maschinennahe Vernetzung]]
