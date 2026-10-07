@@ -1,6 +1,6 @@
 Pfichtmodule
 - [[NM - Numerische Mathematik]]
-- [[ML - Maschinelles Lernen]]
+- [[ML - Maschinelles Lernen - Master]]
 
 Wahlplichtmodule
 - [[MV - Maschinennahe Vernetzung]]
