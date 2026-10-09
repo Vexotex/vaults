@@ -1,13 +1,12 @@
 Pfichtmodule
-<<<<<<< HEAD
 - [[NM - Numerische Mathemaitk - Master]]
 - [[ML - Maschinelles Lernen - Master]]
 
 Wahlplichtmodule
-- [[MV - Maschinennahe Vernetzung]]
+- [[MV - Maschinennahe Vernetzung - Master]]
 - [[FS - Funksysteme]]
 - [[VN - Vernetzung in Fahrzeugen]]
-- [[WV - Weitverkerhsnetze]]
+- [[WV - Weitverkerhsnetze - Master]]
 - [[SP - Systemprogrammierung eingebetteter Systeme]]
 - [[MO - Mobile Systeme]]
 - [[AL - Anwendung des Maschinelles Lernens]]
