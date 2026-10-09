@@ -1,5 +1,6 @@
 Pfichtmodule
-- [[NM - Numerische Mathematik]]
+<<<<<<< HEAD
+- [[NM - Numerische Mathemaitk - Master]]
 - [[ML - Maschinelles Lernen - Master]]
 
 Wahlplichtmodule
@@ -12,7 +13,7 @@ Wahlplichtmodule
 - [[AL - Anwendung des Maschinelles Lernens]]
 - [[RT2 - Reglungstechnik 2]]
 
-- [[EP - Entrepreneurship]]
+- [[EP - Entrepreneurship - Master]]
 - [[TS - Tech Startup]]
 - [[BW - Betriebswirtschaftlehre]]
 - [[MK - Managmentkompetenz]]
